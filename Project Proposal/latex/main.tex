@@ -21,6 +21,7 @@
 % \usepackage{tabularx} % fit tables to width
 % \usepackage{multirow} % multirow columns
 \usepackage{float}  % lets you prevent LaTeX from repositioning the tables.
+\usepackage[tableposition=top]{caption}
 \usepackage{longtable}
 
 \usepackage{hyperref}       % clickable table of contents
@@ -77,6 +78,7 @@
 \begin{document}
 
 % ***Example Doc: https://docs.google.com/document/d/1mL2BloGurqLFSNqJtMGEFgTFPwOIOBwj/edit?usp=sharing&ouid=103930926745585999934&rtpof=true&sd=true
+
  
 % COVER PAGE---------------------------------------------------
 \begin{titlepage}
@@ -259,29 +261,31 @@ Since the Recommendations domains are highly important for many business use-cas
 
 \section{Recommendation Systems}
 % \centering
-\begin{longtable}{|p{0.17\linewidth}|p{0.07\linewidth}|p{0.15\linewidth}|p{0.23\linewidth}|p{0.23\linewidth}|} 
+\begin{longtable}{|p{0.17\linewidth}|p{0.18\linewidth}|p{0.27\linewidth}|p{0.27\linewidth}|} 
+% check the error here
+\caption{Related work in Recommendations Systems}
+\label{tab:related-work-table}\\
 \hline
-Research & Year & Technique Used & Improvements & Limitations \\ 
+Research & Technique Used & Improvements & Limitations \\ 
 \hline
-Amazon's Deep Learning-based movie recommendations model \autocite{larry_history_2019} & 2019 & Autoencoder, trained on chronologically sorted movie-viewing data & Outperformed item-to-item collaborative filtering  the bestseller list & \textit{Critique: The timeline doesn't consider overlapping of movies at various points in time, which will be necessary for trends.~}Tested only on movie recommendations. \\ 
+Amazon's Deep Learning-based movie recommendations model \autocite{larry_history_2019} & Autoencoder, trained on chronologically sorted movie-viewing data & Outperformed item-to-item collaborative filtering  the bestseller list & \textit{Critique: The timeline doesn't consider overlapping of movies at various points in time, which will be necessary for trends.~}Tested only on movie recommendations. \\ 
 \hline
-A hybrid recommender system for the mining of consumer preferences from their reviews \autocite{cheng_hybrid_2020} & 2020 & A framework that integrates collaborative filtering with opinion mining  sentiment analysis on users' reviews that is used to create preference profiles. & Effective in dealing with insufficient data and is more accurate and efficient than existing traditional methods. The quality of recommendations can be improved regardless of whether the dataset is rich or sparse. & The semantic strategy of opinion extraction is generic. This may not be ideal to identify different aspects in varied genres. Slang, irony or sarcasm isn't considered in the current framework. It's very dependent on text mining of user reviews.~\textit{Critique: A person has to have placed reviews on previous movies in order to create a preference profile.} \\
+A hybrid recommender system for the mining of consumer preferences from their reviews \autocite{cheng_hybrid_2020} & A framework that integrates collaborative filtering with opinion mining  sentiment analysis on users' reviews that is used to create preference profiles. & Effective in dealing with insufficient data and is more accurate and efficient than existing traditional methods. The quality of recommendations can be improved regardless of whether the dataset is rich or sparse. & The semantic strategy of opinion extraction is generic. This may not be ideal to identify different aspects in varied genres. Slang, irony or sarcasm isn't considered in the current framework. It's very dependent on text mining of user reviews.~\textit{Critique: A person has to have placed reviews on previous movies in order to create a preference profile.} \\
 \hline
-User Rating Classification via Deep Belief Network Learning and Sentiment Analysis \autocite{chen_user_2019} & 2019 & A deep learning model to process user comments and to generate a possible user rating for user recommendations have been used. A Deep Belief Network and Sentiment Analysis (DBNSA) achieves data learning for the recommendations.~ & Outperforms baseline models in training loss value, precision, and recall on the Yelp and Amazon data sets. In the Trip-Advisor data set, DBNSA has the best MSE training loss value and recall.
+User Rating Classification via Deep Belief Network Learning and Sentiment Analysis \autocite{chen_user_2019} & A deep learning model to process user comments and to generate a possible user rating for user recommendations have been used. A Deep Belief Network and Sentiment Analysis (DBNSA) achieves data learning for the recommendations.~ & Outperforms baseline models in training loss value, precision, and recall on the Yelp and Amazon data sets. In the Trip-Advisor data set, DBNSA has the best MSE training loss value and recall.
 
 DBNSA saves more time than the other baseline methods. & At present, the proposed method is not suitable for real-time testing. This method is required to be tested with a fast Deep Learning algorithm. Sarcastic comments have not been considered in user comments. \\ 
 \hline
-Cross-domain recommendations based on a hybrid approach \autocite{pes_universitydepartment_of_computer_science_bangalore_560085_india_cross-domain_2018} & 2018 & A hybrid approach of combination of content-based recommendation, user-to-user collaborative filtering and personalized recommendation techniques. & Address the limitations of single domain analysis such as data sparsity and cold start problem.
+Cross-domain recommendations based on a hybrid approach \autocite{pes_universitydepartment_of_computer_science_bangalore_560085_india_cross-domain_2018} & A hybrid approach of combination of content-based recommendation, user-to-user collaborative filtering and personalized recommendation techniques. & Address the limitations of single domain analysis such as data sparsity and cold start problem.
 
 Integration of several domains is further capable of generating higher accuracy in suggestions.
 
 Twitter sentiment analysis over the recommended entities generated by the model to help the user in decision making by knowing the positive, negative and neutral polarity percentage based on tweets done by people. & \textit{Critique: Sentiment analysis based on Twitter sentiment is calculated and shown after showing recommendations. It's ironic to recommend something and say if it's good/ bad by the system itself. Better if only positive sentiment-based items are recommended. }\\ 
 \hline
- A LSTM-Method for Bitcoin Price Prediction\autocite{ferdiansyah_lstm-method_2019} & 2019 & LSTM (Long short-term memory). & The proposed model with time series techniques can predict the price for the next days with split the data to train and test. & The result is not good enough regarding the RMSE (Root Mean Squared Error). Future work: modified LSTM layers, adding dropout and modified number of epochs, and using different instability data-sets to test how good the prediction results are or~\textit{try to use sentiment analysis combined with LSTM method}~to see the impact of the uncertainty in value bitcoin. \\ 
+ A LSTM-Method for Bitcoin Price Prediction\autocite{ferdiansyah_lstm-method_2019} & LSTM (Long short-term memory). & The proposed model with time series techniques can predict the price for the next days with split the data to train and test. & The result is not good enough regarding the RMSE (Root Mean Squared Error). Future work: modified LSTM layers, adding dropout and modified number of epochs, and using different instability data-sets to test how good the prediction results are or~\textit{try to use sentiment analysis combined with LSTM method}~to see the impact of the uncertainty in value bitcoin. \\ 
 \hline
-Using basic machine learning to predict and recommend NFTs with OpenSea data  \parencite{noauthor_what_2020} & 2021 & Multiple Regression & This considers past purchase patterns, NFTs saved in wallets to predict if another wallet containing a similar combination will be likely to own an NFT from a specific category (eg: Cryptokitties, ENS domain, etc) in the future. & Recommends NFT categories that a user may be interested in. Doesn't recommend specific NFTs. The user needs to either manually input preferences or provide his wallet key that contains all his owned assets.~\textit{Critique: This won't consider current trends. It won't consider the recognition of the creators (eg: NFT made by Beeple).} \\
+Using basic machine learning to predict and recommend NFTs with OpenSea data  \parencite{noauthor_what_2020} & Multiple Regression & This considers past purchase patterns, NFTs saved in wallets to predict if another wallet containing a similar combination will be likely to own an NFT from a specific category (eg: Cryptokitties, ENS domain, etc) in the future. & Recommends NFT categories that a user may be interested in. Doesn't recommend specific NFTs. The user needs to either manually input preferences or provide his wallet key that contains all his owned assets.~\textit{Critique: This won't consider current trends. It won't consider the recognition of the creators (eg: NFT made by Beeple).} \\
 \hline
-\caption{Related work in Recommendations Systems}
 \end{longtable}
 
 
@@ -398,6 +402,8 @@ The Aims and Research Questions mentioned above are expected to be achieved and 
 % \begin{table}[h!]
 % \centering
 \begin{longtable}{| p{0.23\linewidth} | p{0.58\linewidth}| p{0.12\linewidth}|}
+\caption{Research Objectives}
+\label{tab:research-objectives-table}\\
 \hline
 Objective &   Description & Learning Outcomes  \\ 
 \hline
@@ -428,8 +434,6 @@ Publish Findings & Producing well-structured documentation/ reports/ papers that
 \end{itemize}
 & LO4, LO8 \\
 \hline
-\caption{Research Objectives}
-\label{tab:research-objectives-table}
 \end{longtable}
 % \end{table}
 
@@ -473,6 +477,8 @@ The quality of any project is governed by three key factors: cost, time, and sco
 The methodologies chosen as appropriate for the project are listed in the table below.
 
 \begin{longtable}{| p{0.22\linewidth} | p{0.75\linewidth}|}
+\caption{Research Methodology}
+\label{tab:research-methodology-table}\\
 \hline
 Research Philosophy  & The philosophy of research influences data collection \& data analysis since it is related to the nature of reality being investigated.
 
@@ -500,8 +506,6 @@ Techniques and procedures &  Data collection and analysis techniques are conside
 
 Mediums such as online news, statistics \& trends from social media, observations, conversations, reports, surveys, documents, secondary tabular data, organizational records will be used.\\
 \hline
-\caption{Research Methodology}
-\label{tab:research-methodology-table}
 \end{longtable}
 
 
@@ -523,7 +527,7 @@ As identified in recent advancements in literature \autocite{larry_history_2019}
 % Gantt Chart
 \begin{figure}[h!]
 \centering
-\includegraphics[width=\textwidth]{images/gantt-chart.png}
+\includegraphics[width=0.8\textwidth,height=0.9\textheight]{images/gantt-chart.png}
 \caption{Gantt Chart}
 \end{figure}
 
@@ -533,6 +537,8 @@ As identified in recent advancements in literature \autocite{larry_history_2019}
 
 % \centering
 \begin{longtable}{| p{0.76\linewidth} | p{0.22\linewidth}|}
+\caption{Deliverables and dates}
+\label{tab:deliverables-table}\\
 \hline
 Deliverable &   Date  \\ 
 \hline
@@ -565,8 +571,6 @@ A research paper introducing the Recommendations System developed at the end of 
 \textbf{Public project library}   &   1\textsuperscript{st}~April 2021 \\ 
 A publicly accessible project library/ repository to set up, test and use the developed Recommendations System  &   \\
 \hline
-\caption{Deliverables and dates}
-\label{tab:deliverables-table}
 \end{longtable}
 
 \subsection{Resource Requirements}
@@ -614,6 +618,8 @@ The resources required to complete the project are identified based on the objec
 \subsection{Risk Management}
 The following are the risks identified prior to starting the project with possible mitigation steps.
 \begin{longtable}{| p{0.33\linewidth} |p{0.11\linewidth}| p{0.11\linewidth}| p{0.34\linewidth}|}
+\caption{Risk Mitigation Plan}
+\label{tab:risk-mitigation-table}\\
 \hline
 Risk Item & Severity & Frequency & Mitigation Plan \\
 \hline
@@ -625,8 +631,6 @@ Inability to complete all expected deliverables within the allocated time & 4 & 
 \hline
 Inability to explain the research work done due to illness & 2 & 1 & Have a recording of demonstration and detailed documentation with explanation \\
 \hline
-\caption{Risk Mitigation Plan}
-\label{tab:risk-mitigation-table}
 \end{longtable}
 
 \endgroup

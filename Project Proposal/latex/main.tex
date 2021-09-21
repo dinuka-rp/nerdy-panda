@@ -83,6 +83,7 @@
 % COVER PAGE---------------------------------------------------
 \begin{titlepage}
  
+%  square around cover page
 \begin{tikzpicture}[remember picture, overlay]
 \draw[line width = 1pt] ($(current page.north west) + (1cm,-1cm)$) rectangle ($(current page.south east) + (-1cm,1cm)$);
 \end{tikzpicture}
@@ -90,31 +91,45 @@
 \begin{center}
  
 % Upper part of the page
-% \text{\large Informatics Institute of Technology}\\[0.1cm]
-% \text{\large In Collaboration With}\\[0.5cm]
-% \text{\large University of Westminster, UK}\\[2.5cm]
- 
+\text{\large Informatics Institute of Technology}\\[0.1cm]
+\text{\large In Collaboration With}\\[0.5cm]
+\text{\large University of Westminster, UK}\\[0.1cm]
+
+\vfill
+% logo
+\includegraphics[width=6.0cm]{images/UniWestminster_Coat_of_Arms.png}\\[0.05cm]
+\text{\small \emph{University of Westminster, Coat of Arms}}\\[0.7cm]
+
+\vfill
 % Title
-{ \huge Trading Recommendations System for Non-fungible Tokens }\\[1cm]
+{ \Huge Trading Recommendations System for Non-fungible Tokens }\\[0.7cm]
 
 % \begin{minipage}{0.45\textwidth}
  
+\vfill
 % Authors
-\text{\large Project Proposal}\\[1cm]
+\text{\large A Project Proposal by}\\[0.1cm]
 \text{\large Dinuka Ravijaya Piyadigama}\\[0.1cm]
- \text{\small w1742104 / 2018373}\\[0.5cm]
+\text{w1742104 / 2018373}\\[0.5cm]
 
-\vfill
 % Supervisor
-\text{\large Supervisor: Guhanathan Poravi}\\[0.1cm]
-\text{\large 5\textsuperscript{th} September 2021}\\[0.1cm]
-\text{\large Department: Computer Science}\\[0.1cm]
-\text{\large Key Words: recommendations systems, non-fungible tokens,}\\[0.1cm]
-\text{\large deep learning, machine learning, data mining}\\[3cm]
+\text{\large Supervised by}\\[0.1cm]
+\text{\large Mr.Guhanathan Poravi}\\[1cm]
+
+% \vfill
+% \text{\large Department: Computer Science}\\[0.1cm]
+% \text{\large Key Words: recommendations systems, non-fungible tokens,}\\[0.1cm]
+% \text{\large deep learning, machine learning, data mining}\\[3cm]
 
 \vfill
-\large{This Project Proposal is submitted in partial fulfilment of the requirements for \\the BSc (Hons) Computer Science degree at \\the University of Westminster.} \\[0.5cm]
- 
+\large{This Project Proposal is submitted in partial fulfilment of the requirements for \\the BSc (Hons) Computer Science degree at \\the University of Westminster.} \\[0.1cm]
+
+\vfill
+\text{\large September 2021}\\[0.1cm]
+
+\vfill
+\large{\copyright The copyright for this project and all its associated products resides with Informatics Institute of Technology} \\[0.5cm]
+\vfill
  
 
 % {\small \textcopyright The copyright for this project and all its associated products resides with Informatics Institute of Technology.}

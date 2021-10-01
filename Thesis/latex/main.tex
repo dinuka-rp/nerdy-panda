@@ -20,7 +20,7 @@
 \frontmatter
 \import{}{cover_page.tex}
 
-\pagenumbering{roman} % Start roman numbering
+% \pagenumbering{roman} % Start roman numbering - this is not needed in the book class - it's automatically handled.
 
 \tableofcontents
 
@@ -33,6 +33,7 @@
 % , title=Abbreviations
 ]}
 
+% ------------------------------------------------------------
 \mainmatter
 
 \onehalfspacing % Reset line spacing to 1.5 from here on
@@ -45,6 +46,24 @@
 
 \chapter{Methodologies}
 \import{chapters/}{methodologies.tex}
+
+\chapter{Requirement Gathering}
+% \import{chapters/}{requirement_gathering.tex}
+
+\chapter{Design}
+% \import{chapters/}{design.tex}
+
+\chapter{Implementation}
+% \import{chapters/}{implementation.tex}
+
+\chapter{Testing}
+% \import{chapters/}{testing.tex}
+
+\chapter{Evaluation}
+% \import{chapters/}{evaluation.tex}
+
+\chapter{Conclusion}
+% \import{chapters/}{conclusion.tex}
 
 % \newpage
 \backmatter

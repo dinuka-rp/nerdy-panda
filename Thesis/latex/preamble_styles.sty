@@ -9,6 +9,8 @@
 \usepackage{titlesec}
 
 % Title & Section formatting ---------------------------------------
+% **previous spacings may have to be increased
+
 \titleformat{\chapter}
 {\fontsize{16pt}{0pt}\bfseries}{\MakeUppercase\chaptertitlename\ \thechapter:}{0.5em}{\MakeUppercase}
 
@@ -61,10 +63,14 @@
 
  
 \graphicspath{ {./images/} }    % path to images/ figures
+
+% Add list of figures and tables to table of contents
+\usepackage[nottoc]{tocbibind}
  
 \renewcommand{\contentsname}{Table of Contents}
 % \renewcommand{\baselinestretch}{1.5}        % entire document's spacing
 \setlist{nosep} % remove extra spacing between items in a list
+
 
 % header & footer
 \usepackage{fancyhdr}

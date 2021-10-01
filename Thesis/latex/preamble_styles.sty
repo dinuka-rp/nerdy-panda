@@ -1,0 +1,88 @@
+\ProvidesPackage{preamble_styles}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+\usepackage{setspace}   % line spacing
+
+
+\usepackage{titlesec}
+
+% Title & Section formatting ---------------------------------------
+\titleformat{\chapter}
+{\fontsize{16pt}{0pt}\bfseries}{\MakeUppercase\chaptertitlename\ \thechapter:}{0.5em}{\MakeUppercase}
+
+\titlespacing*{\chapter}{0pt}{1em plus 1.4em}{1em}
+ 
+\titleformat{\section}
+{\fontsize{14pt}{0pt}\bfseries}{\thesection}{0.5em}{}
+
+\titlespacing*{\section}{0pt}{1em plus 1.1em minus 0.5em}{0pt}
+
+\titleformat{\subsection}
+{\fontsize{14pt}{0pt}\bfseries}{\thesubsection}{0.5em}{}
+
+\titlespacing*{\subsection}{0pt}{1em plus 1.1em minus 0.5em}{0pt}
+
+% \titleformat{\subsubsection}
+% {\fontsize{13pt}{0pt}\bfseries}{\thesubsubsection}{0.5em}{}
+
+\titlespacing*{\subsubsection}{0pt}{5pt}{0pt}
+% -----------------------------------------------------
+
+\usepackage{newtxtext,newtxmath}
+\usepackage[utf8]{inputenc}
+% \usepackage[english]{babel}   % from Havard example doc
+% \usepackage{csquotes}% Recommended
+\usepackage[a4paper,top=2.54cm,bottom=2.54cm, left=2.54cm, right=2.54cm]{geometry} %Paper margins
+\usepackage{enumitem}
+
+
+% \usepackage{tabularx} % fit tables to width
+% \usepackage{multirow} % multirow columns
+\usepackage{float}  % lets you prevent LaTeX from repositioning the tables.
+\usepackage[tableposition=top]{caption}
+\usepackage{longtable}
+
+\usepackage{hyperref}       % clickable table of contents
+\hypersetup{
+    colorlinks=false, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    % linkcolor=blue,  %choose some color if you want links to stand out
+}
+\usepackage[acronym]{glossaries}    % acronyms/ abbreviations
+
+\setcounter{tocdepth}{4}        % table of content depth
+\setcounter{secnumdepth}{2}        % section numbering depth
+% \renewcommand{\thesubsubsection}{\thesection.\thesubsection.\Roman{subsubsection}} % roman numbering for 3rd depth
+
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+ 
+\graphicspath{ {./images/} }    % path to images/ figures
+ 
+\renewcommand{\contentsname}{Table of Contents}
+% \renewcommand{\baselinestretch}{1.5}        % entire document's spacing
+\setlist{nosep} % remove extra spacing between items in a list
+
+% header & footer
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% override default chapter behavior - to show header & footer
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+% remove 0 -> https://newbedev.com/remove-fancyhdr-chapter-0-header
+\rhead{\textcolor{gray}{\ifnum\value{chapter}=0 Thesis\else\chaptername\ \thechapter\ \fi}}
+\lhead{\textcolor{gray}{Trading Recommendations System for Non-fungible Tokens}}
+\rfoot{\textcolor{gray}{Page \thepage}}
+\lfoot{\textcolor{gray}{Dinuka Piyadigama | w1742104}}
+\setlength{\headheight}{14.5pt}%
+
+
+% ------Testing stuff------------------------
+\usepackage{blindtext}

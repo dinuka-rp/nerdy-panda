@@ -1,0 +1,58 @@
+\documentclass[a4paper, 12pt, oneside]{book}
+\usepackage{import}
+\usepackage{preamble_styles}
+
+\addbibresource{references_pid.bib} % import bibliography
+ 
+\makeglossaries
+\newacronym{nft}{NFT}{Non-fungible Token}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{dl}{DL}{Deep learning}
+\newacronym{ai}{AI}{Artificial Intelligence}
+\newacronym{nlp}{NLP}{Natural Language Processing}
+\newacronym{erc}{ERC}{Ethereum Request for Comments}
+\newacronym{gui}{GUI}{Graphical User Interface}
+\newacronym{p@k}{P@K}{Precision at K}
+
+% ------------------------------------------------------------
+\begin{document}
+
+\frontmatter
+\import{}{cover_page.tex}
+
+\pagenumbering{roman} % Start roman numbering
+
+\tableofcontents
+
+{\let\clearpage\relax
+\listoffigures}
+{\let\clearpage\relax
+\listoftables}
+{\let\clearpage\relax
+\printglossary[type=\acronymtype
+% , title=Abbreviations
+]}
+
+\mainmatter
+
+\onehalfspacing % Reset line spacing to 1.5 from here on
+
+\chapter{Introduction}
+\import{chapters/}{introduction.tex}
+
+\chapter{Literature Review}
+\import{chapters/}{literature_review.tex}
+
+\chapter{Methodologies}
+\import{chapters/}{methodologies.tex}
+
+% \newpage
+\backmatter
+% BIBLIOGRAPHY-----------------------------------------------
+\setlength\bibitemsep{1.5\itemsep} % add extra spacing between bib items
+\printbibliography[heading=bibintoc, title = {References}]
+
+
+% *** Appendix: Concept Map
+
+\end{document}

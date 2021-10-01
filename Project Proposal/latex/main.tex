@@ -34,6 +34,7 @@
 
 \setcounter{tocdepth}{4}        % table of content depth
 \setcounter{secnumdepth}{2}        % section numbering depth
+% \renewcommand{\thesubsubsection}{\thesection.\thesubsection.\Roman{subsubsection}} % roman numbering for 3rd depth
 
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
 \renewcommand*{\nameyeardelim}{\addcomma\space}
@@ -122,13 +123,13 @@
 % \text{\large deep learning, machine learning, data mining}\\[3cm]
 
 \vfill
-\large{This Project Proposal is submitted in partial fulfilment of the requirements for \\the BSc (Hons) Computer Science degree at \\the University of Westminster.} \\[0.1cm]
-
-\vfill
 \text{\large September 2021}\\[0.1cm]
 
 \vfill
-\large{\copyright The copyright for this project and all its associated products resides with Informatics Institute of Technology} \\[0.5cm]
+\large{This Project Proposal is submitted in partial fulfilment of the requirements for \\the BSc (Hons) Computer Science degree at \\the University of Westminster.} \\[0.1cm]
+
+% \vfill
+% \large{\copyright The copyright for this project and all its associated products resides with Informatics Institute of Technology} \\[0.5cm]
  
 
 % {\small \textcopyright The copyright for this project and all its associated products resides with Informatics Institute of Technology.}
@@ -283,25 +284,25 @@ Since the Recommendations domains are highly important for many business use-cas
 \caption{Related work in Recommendations Systems}
 \label{tab:related-work-table}\\
 \hline
-Research & Technique Used & Improvements & Limitations \\ 
+Citation & Technique Used & Improvements & Limitations \\ 
 \hline
-Amazon's Deep Learning-based movie recommendations model \autocite{larry_history_2019} & Autoencoder, trained on chronologically sorted movie-viewing data & Outperformed item-to-item collaborative filtering  the bestseller list & \textit{Critique: The timeline doesn't consider overlapping of movies at various points in time, which will be necessary for trends.~}Tested only on movie recommendations. \\ 
+\autocite{larry_history_2019} & Autoencoder, trained on chronologically sorted movie-viewing data & Outperformed item-to-item collaborative filtering  the bestseller list & \textit{Critique: The timeline doesn't consider overlapping of movies at various points in time, which will be necessary for trends.~}Tested only on movie recommendations. \\ 
 \hline
-A hybrid recommender system for the mining of consumer preferences from their reviews \autocite{cheng_hybrid_2020} & A framework that integrates collaborative filtering with opinion mining  sentiment analysis on users' reviews that is used to create preference profiles. & Effective in dealing with insufficient data and is more accurate and efficient than existing traditional methods. The quality of recommendations can be improved regardless of whether the dataset is rich or sparse. & The semantic strategy of opinion extraction is generic. This may not be ideal to identify different aspects in varied genres. Slang, irony or sarcasm isn't considered in the current framework. It's very dependent on text mining of user reviews.~\textit{Critique: A person has to have placed reviews on previous movies in order to create a preference profile.} \\
+\autocite{cheng_hybrid_2020} & A framework that integrates collaborative filtering with opinion mining  sentiment analysis on users' reviews that is used to create preference profiles. & Effective in dealing with insufficient data and is more accurate and efficient than existing traditional methods. The quality of recommendations can be improved regardless of whether the dataset is rich or sparse. & The semantic strategy of opinion extraction is generic. This may not be ideal to identify different aspects in varied genres. Slang, irony or sarcasm isn't considered in the current framework. It's very dependent on text mining of user reviews.~\textit{Critique: A person has to have placed reviews on previous movies in order to create a preference profile.} \\
 \hline
-User Rating Classification via Deep Belief Network Learning and Sentiment Analysis \autocite{chen_user_2019} & A deep learning model to process user comments and to generate a possible user rating for user recommendations have been used. A Deep Belief Network and Sentiment Analysis (DBNSA) achieves data learning for the recommendations.~ & Outperforms baseline models in training loss value, precision, and recall on the Yelp and Amazon data sets. In the Trip-Advisor data set, DBNSA has the best MSE training loss value and recall.
+\autocite{chen_user_2019} & A deep learning model to process user comments and to generate a possible user rating for user recommendations have been used. A Deep Belief Network and Sentiment Analysis (DBNSA) achieves data learning for the recommendations.~ & Outperforms baseline models in training loss value, precision, and recall on the Yelp and Amazon data sets. In the Trip-Advisor data set, DBNSA has the best MSE training loss value and recall.
 
 DBNSA saves more time than the other baseline methods. & At present, the proposed method is not suitable for real-time testing. This method is required to be tested with a fast Deep Learning algorithm. Sarcastic comments have not been considered in user comments. \\ 
 \hline
-Cross-domain recommendations based on a hybrid approach \autocite{pes_universitydepartment_of_computer_science_bangalore_560085_india_cross-domain_2018} & A hybrid approach of combination of content-based recommendation, user-to-user collaborative filtering and personalized recommendation techniques. & Address the limitations of single domain analysis such as data sparsity and cold start problem.
+\autocite{pes_universitydepartment_of_computer_science_bangalore_560085_india_cross-domain_2018} & A hybrid approach of combination of content-based recommendation, user-to-user collaborative filtering and personalized recommendation techniques. & Address the limitations of single domain analysis such as data sparsity and cold start problem.
 
 Integration of several domains is further capable of generating higher accuracy in suggestions.
 
 Twitter sentiment analysis over the recommended entities generated by the model to help the user in decision making by knowing the positive, negative and neutral polarity percentage based on tweets done by people. & \textit{Critique: Sentiment analysis based on Twitter sentiment is calculated and shown after showing recommendations. It's ironic to recommend something and say if it's good/ bad by the system itself. Better if only positive sentiment-based items are recommended. }\\ 
 \hline
- A LSTM-Method for Bitcoin Price Prediction\autocite{ferdiansyah_lstm-method_2019} & LSTM (Long short-term memory). & The proposed model with time series techniques can predict the price for the next days with split the data to train and test. & The result is not good enough regarding the RMSE (Root Mean Squared Error). Future work: modified LSTM layers, adding dropout and modified number of epochs, and using different instability data-sets to test how good the prediction results are or~\textit{try to use sentiment analysis combined with LSTM method}~to see the impact of the uncertainty in value bitcoin. \\ 
+\autocite{ferdiansyah_lstm-method_2019} & LSTM (Long short-term memory). & The proposed model with time series techniques can predict the price for the next days with split the data to train and test. & The result is not good enough regarding the RMSE (Root Mean Squared Error). Future work: modified LSTM layers, adding dropout and modified number of epochs, and using different instability data-sets to test how good the prediction results are or~\textit{try to use sentiment analysis combined with LSTM method}~to see the impact of the uncertainty in value bitcoin. \\ 
 \hline
-Using basic machine learning to predict and recommend NFTs with OpenSea data  \parencite{noauthor_what_2020} & Multiple Regression & This considers past purchase patterns, NFTs saved in wallets to predict if another wallet containing a similar combination will be likely to own an NFT from a specific category (eg: Cryptokitties, ENS domain, etc) in the future. & Recommends NFT categories that a user may be interested in. Doesn't recommend specific NFTs. The user needs to either manually input preferences or provide his wallet key that contains all his owned assets.~\textit{Critique: This won't consider current trends. It won't consider the recognition of the creators (eg: NFT made by Beeple).} \\
+\parencite{noauthor_what_2020} & Multiple Regression & This considers past purchase patterns, NFTs saved in wallets to predict if another wallet containing a similar combination will be likely to own an NFT from a specific category (eg: Cryptokitties, ENS domain, etc) in the future. & Recommends NFT categories that a user may be interested in. Doesn't recommend specific NFTs. The user needs to either manually input preferences or provide his wallet key that contains all his owned assets.~\textit{Critique: This won't consider current trends. It won't consider the recognition of the creators (eg: NFT made by Beeple).} \\
 \hline
 \end{longtable}
 
@@ -425,10 +426,10 @@ The Aims and Research Questions mentioned above are expected to be achieved and 
 \hline
 Objective &   Description & Learning Outcomes  \\ 
 \hline
-Problem Identification & Identifying a suitable and valuable problem domain to contribute towards, with identified research gaps suitable for a research project.
-& LO5 \\
-\hline
-Literature Review & Read previous work to collate relevant information on related work and critically evaluate them.
+% Problem Identification & Identifying a suitable and valuable problem domain to contribute towards, with identified research gaps suitable for a research project.
+% & LO5 \\
+% \hline
+Literature Survey & Read previous work to collate relevant information on related work and critically evaluate them.
 \begin{itemize}
 \item \textbf{RO1:} Conduct a preliminary study on existing Recommendations Systems \& Architectures.
 \item \textbf{RO2:} Analyze the perception of Recommendation techniques.
@@ -437,20 +438,18 @@ Literature Review & Read previous work to collate relevant information on relate
 \end{itemize}
 & LO4, LO2, LO5 \\
 \hline
-Project Methodology & Choosing the Research, Development and Project Methodologies that can be followed. Creating a project plan with expected activities and scheduled times for the time frame allocated for the project.
-& LO3, LO7 \\
+% Project Methodology & Choosing the Research, Development and Project Methodologies that can be followed. Creating a project plan with expected activities and scheduled times for the time frame allocated for the project.
+% & LO3, LO7 \\
+% \hline
+Requirement Analysis &  Specifying the requirements of the project using appropriate techniques and tools in order to meet the expected research gaps \& challenges to be addressed based on previous related research and any domain-specific sources of knowledge.
+\begin{itemize}
+\item \textbf{RO1:} Gather information about requirements related to desirability of owning \Gls{nft}s \& crypto-related assets.
+\item \textbf{RO2:} Gather the requirements of a Recommendations System and understand end-users' expectations.
+\item \textbf{RO3:} Get insights \&  opinions from technology \& domain experts to build a suitable system.
+\end{itemize}
+& LO1, LO2, LO5, LO7 \\
 \hline
-Requirement Specification & Specifying the requirements of the project using appropriate techniques and tools in order to meet the expected research gaps \& challenges to be addressed.
-% \begin{itemize}
-% \item Gather information about requirements related to desirability of owning \Gls{nft}s \& crypto-related assets.
-% \item Get insights \&  opinions from technology \& domain experts to build a suitable system.
-% \end{itemize}
-& LO1, LO2, LO5, LO7\\
-\hline
-Data Gathering and Analysis & Collecting and analysing data used in previous related research and any domain-specific data required to solve the research problem.  
-& LO1, LO5 \\
-\hline
-Research Design & Designing architecture and a system that is capable of solving the identified problems with recommended techniques.
+Design & Designing architecture and a system that is capable of solving the identified problems with recommended techniques.
 \begin{itemize}
 \item \textbf{RO1:} Design a price prediction system to identify the possible increase/ decrease in value of the \Gls{nft}s.
 \item \textbf{RO2:} Design an automated flow to match \Gls{nft}s with global social trends data.
@@ -459,7 +458,7 @@ Research Design & Designing architecture and a system that is capable of solving
 \end{itemize}
 & LO1 \\
 \hline
-Implementation & Implementing a system that is capable of addressing the gaps that were aimed to be solved. 
+Development & Implementing a system that is capable of addressing the gaps that were aimed to be solved. 
 \begin{itemize}
 \item \textbf{RO1:} Develop a Recommendations System that can produce relevant, timely \& trending NFTs (items).
 \item \textbf{RO2:} Integrate automation steps in the prototype to enhance features of NFT records and use them to recommend suitable NFTs.
@@ -566,8 +565,7 @@ Mediums such as online news, statistics \& trends from social media, observation
 
 \section{Development Methodology}
 \subsection{Life cycle model}
-\textbf{Agile} Software Development Life-cycle was chosen as the research development method since iterative development is needed. \textbf{Prince2}  was chosen as the product development methodology. It allows the author to develop the product in controlled environments in logical compartmentalized units.
-
+\textbf{Agile} Software Development Life-cycle was chosen as the research development method since iterative development is needed.
 
 \subsection{Design Methodology}
 % SSADM or OOAD or Anything else?
@@ -577,6 +575,8 @@ Object-Oriented Analysis and Design were chosen as the Design Methodology by the
 As identified in recent advancements in literature \autocite{larry_history_2019}, \gls{p@k} score has been identified as a suitable method of bench-marking a recommendations system for evaluation purposes. Therefore, it will be used to compare the novel solution that is to be developed against baseline models.
 
 \section{Project Management Methodology}
+\textbf{Prince2}  was chosen as the project management methodology. It allows the author to develop the product in controlled environments in logical compartmentalized units.
+ 
 \newpage
 \subsection{Scheduled Timeline}
 % Gantt Chart

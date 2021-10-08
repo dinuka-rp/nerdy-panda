@@ -6,6 +6,8 @@
 
 %  These mess with the font - check if they are ok?
 \usepackage{titlesec}
+
+% *** fix these!!! take from thesis
 \titleformat{\chapter}
 {\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
 \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
@@ -159,9 +161,10 @@
 \setcounter{page}{1} % Set the page counter to 1
 \pagenumbering{arabic} % Switch to normal numbers
 
-In recent months, the \Gls{nft} market has been growing exponentially as it appears to be the most widely accepted business application of Blockchain technology \autocite{dowling_is_2021}, since the introduction of crypto. Even though many people have got into purchasing NFTs, one of the major problems that owners, as well as potential customers face, is that they’re unable to find NFTs that are worth trading their current NFTs to. In this research project, the author tries to identify the required features to be considered for an NFT-trading Recommendations System and introduce a new Ensemble Architecture for Recommendations that can be applied in other related domains as well. The proposed architecture will try to automate several decision-making steps that a user would otherwise need to go through to find the best possible trade.
+%  Even though many people have got into purchasing \Gls{nft}s, one of the major problems that owners, as well as potential customers face, is that they’re unable to find NFTs that are worth trading their current NFTs to.
+ In this research project, the author tries to identify the required features to be considered for an NFT-trading Recommendations System and introduce a new Ensemble Architecture for Recommendations that can be applied in other related domains as well. The proposed architecture will try to automate several decision-making steps that a user would otherwise need to go through to find the best possible trade.
 
-This document defines the problem, the research value, and the research strategy that the author wishes to follow over the next few months. The necessary proofs of the problem, as well as previous research interests, are also reviewed. Finally, the expected plan of the deliverables of the project is presented in the Work Plan.
+This document defines the problem, the research gap, research challenge, and the research strategy that the author wishes to follow over the next few months. The necessary proofs of the problem, as well as previous research interests, are also reviewed. Finally, in the Work Plan, the expected schedule of the project's deliverables is presented.
 
 
 \begingroup
@@ -170,7 +173,8 @@ This document defines the problem, the research value, and the research strategy
 
 \chapter{Problem Domain}
 \section{Non-fungible Tokens (NFTs)}
-Non-fungible Tokens (NFTs) are provably scarce unique digital assets that can be used to represent ownership \autocite{noauthor_erc-721_nodate}.
+In recent months, the \Gls{nft} market has been growing exponentially as it appears to be the most widely accepted business application of Blockchain technology \autocite{dowling_is_2021}, since the introduction of crypto.
+\Gls{nft}s are provably scarce unique digital assets that can be used to represent ownership \autocite{noauthor_erc-721_nodate}.
 They can be one of a kind rare artworks, collectable trading cards, and other assets with the potential to increase in value due to scarcity \autocite{conti_what_2021, fairfield_tokenized_2021}. While being digital assets, they also can be used to represent physical assets. A digital certificate of land/ qualification can be identified as a couple of examples. The biggest winners in the NFT space over the last few months have been digital artists who were able to sell art worth over \$2.5 Billion \parencite{noauthor_off_2021}.
 
 
@@ -578,11 +582,12 @@ As identified in recent advancements in literature \autocite{larry_history_2019}
 \textbf{Prince2}  was chosen as the project management methodology. It allows the author to develop the product in controlled environments in logical compartmentalized units.
  
 \newpage
-\subsection{Scheduled Timeline}
+\section{Schedule}
+\subsection{Gantt Chart}
 % Gantt Chart
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth,height=0.9\textheight]{images/gantt-chart.png}
+\includegraphics[width=0.8\textwidth,height=0.8\textheight]{images/gantt-chart.png}
 \caption{Gantt Chart}
 \end{figure}
 
@@ -693,6 +698,8 @@ Inability to explain the research work done due to illness & 2 & 1 & Have a reco
 % *** Appendix: Concept Map
 
 \newpage
+\setcounter{page}{1} % Set the page counter to 1
+\pagenumbering{Roman} % Switch to capital roman numbers
 % BIBLIOGRAPHY-----------------------------------------------
 \setlength\bibitemsep{1.5\itemsep} % add extra spacing between bib items
 \printbibliography[heading=bibintoc, title = {References}]

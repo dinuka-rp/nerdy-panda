@@ -2,7 +2,7 @@
 \usepackage{import}
 \usepackage{preamble_styles}
 
-\addbibresource{references_pid.bib} % import bibliography
+\addbibresource{references.bib} % import bibliography
  
 \makeglossaries
 \newacronym{nft}{NFT}{Non-fungible Token}
@@ -44,29 +44,32 @@
 \chapter{Literature Review}
 \import{chapters/}{literature_review.tex}
 
-\chapter{Methodologies}
-\import{chapters/}{methodologies.tex}
+% \chapter{Methodologies}
+% \import{chapters/}{methodologies.tex}
 
-\chapter{Requirement Gathering}
-% \import{chapters/}{requirement_gathering.tex}
+% \chapter{Requirement Gathering}
+% % \import{chapters/}{requirement_gathering.tex}
 
-\chapter{Design}
-% \import{chapters/}{design.tex}
+% \chapter{Design}
+% % \import{chapters/}{design.tex}
 
-\chapter{Implementation}
-% \import{chapters/}{implementation.tex}
+% \chapter{Implementation}
+% % \import{chapters/}{implementation.tex}
 
-\chapter{Testing}
-% \import{chapters/}{testing.tex}
+% \chapter{Testing}
+% % \import{chapters/}{testing.tex}
 
-\chapter{Evaluation}
-% \import{chapters/}{evaluation.tex}
+% \chapter{Evaluation}
+% % \import{chapters/}{evaluation.tex}
 
-\chapter{Conclusion}
-% \import{chapters/}{conclusion.tex}
+% \chapter{Conclusion}
+% % \import{chapters/}{conclusion.tex}
 
 % \newpage
 \backmatter
+
+\setcounter{page}{1} % Set the page counter to 1
+\pagenumbering{Roman} % Switch to capital roman numbers
 % BIBLIOGRAPHY-----------------------------------------------
 \setlength\bibitemsep{1.5\itemsep} % add extra spacing between bib items
 \printbibliography[heading=bibintoc, title = {References}]

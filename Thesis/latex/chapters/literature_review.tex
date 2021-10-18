@@ -25,14 +25,15 @@ Creators of NFTs can also create "shares" for their NFT. This allows investors a
 \end{figure}
 
 The above figure shows the increase in news trends related to NFTs since the start of 2021. It has been exponentially increasing and hitting headlines around the globe on a daily basis.
+This depicts two factors. One is that NFTs are gaining more and more public attraction and acceptance. The second is that since there's a huge buzz among the public on social media and numerous web-sites, it makes sense to consider the opinions that are shared online by them.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=12cm]{images/NFT-sales-opensea.png}
-\caption{Monthly Ethereum-based NFT token sales volume on the OpenSea marketplace, in USD \autocite{howcroft_nft_2021}}
-\end{figure}
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=12cm]{images/NFT-sales-opensea.png}
+% \caption{Monthly Ethereum-based NFT token sales volume on the OpenSea marketplace, in USD \autocite{howcroft_nft_2021}}
+% \end{figure}
 
-% Mention other blockchains & marketplaces that sell NFTs
+% Mention other Blockchains \& marketplaces that sell NFTs
 % Market places - OpenSea, Rarible, and Grimes’ choice, Nifty Gateway
 
 
@@ -45,6 +46,9 @@ The above figure shows the increase in news trends related to NFTs since the sta
 % Are Blockchain and AI a Perfect Combination? [WWW Document], n.d. . 101 Blockchains. URL https://101blockchains.com/blockchain-and-ai/ (accessed 7.23.21).
 
 
+% Add content from 5.2  Understanding factors that affect NFT Markets in proposal
+
+
 \section{Concept Map}
 % 1/4 pg + Appendix
 
@@ -54,7 +58,12 @@ The above figure shows the increase in news trends related to NFTs since the sta
 
 There is only one study previously done with related to recommending \gls{nft}s and that study also comes in the form of a blog article on \emph{OpenSea} \autocite{noauthor_what_2020}. The article considers the use of a basic \gls{ml} technique called Multiple Regression with data gathered from OpenSea.
 
-% >>>>explain
+
+This takes into account previous purchase patterns and NFTs held in wallets to predict whether another wallet carrying a similar combination is likely to own an NFT from a certain category in the future. The categories considered here are mostly collections created by specific well-known creators. Cryptokitties and ENS domains are a couple of examples for collections that have been taken into consideration.
+
+As a final recommendation, this system is capable of presenting NFT categories. Since users can't purchase an entire category, they will have to go back to the process of picking which NFT to purchase in the recommended collection.
+
+This doesn't take into consideration of current global trends and it will not take into account the creators' recognition. An NFT minted by Beeple or a major league like NBA are bound to capture more attention of buyers compared to an NFT minted by a person who hasn't gained any reputation in this space. The major concern with regarding this system is that the user must either enter his preferences manually or provide his wallet key, which holds all of his owned assets, in order to get a recommendation from the system. Although, getting a users' public key can by no means cause any threat of loosing the \gls{nft}s, it can be lead to lack of privacy, which is a tradition that the people into crypto-related assets have a tendancy to be concerned about.
 
 
 \begin{quote} 
@@ -65,7 +74,7 @@ There is only one study previously done with related to recommending \gls{nft}s 
 \autocite{noauthor_what_2020}
 \end{quote}
 
-% mini-explanation
+As mentioned in the same blog post, this tradition is also been identified as a reason to why we have not yet seen much development related to Recommendation Systems in this space. Another reason could be because of the very recent spark in interest this domain has seen in recent times, as mentioned in the Problem Domain.
 
 
 \bigbreak
@@ -129,6 +138,7 @@ Investor's attitudes towards assets’ features, information about the adoption 
 The number of assets, investors and assets' features and investor preferences were fixed within the period of analysis. In a normal use-case scenario, it's highly likely that all these would fluctuate and evolve with the asset's adoption probabilities and expected returns. This revelation clarifies the fact that crypto related assets have a tendency to change with time, social acceptance and trends. Therefore, it is important to consider these factors when building a crypto-related Recommendations System.
 
 
+% move this to problem solving approaches??
 % Lamon, C., Nielsen, E., Redondo, E., n.d. Cryptocurrency Price Prediction Using News and Social Media Sentiment 6.
 
 % (-)Abraham, J., Higdon, D., Nelson, J., Ibarra, J., 2018. Cryptocurrency Price Prediction Using Tweet Volumes and Sentiment Analysis 1, 22.
@@ -138,6 +148,9 @@ The number of assets, investors and assets' features and investor preferences we
 % While some studies present various methods to analyse news and social media sentiment, especially with the use of Twitter & Google Trends \autocite{},  
 
 % ---------- 
+
+% *** add a summary of all discussed systems here??
+
 
 
 \bigbreak
@@ -159,10 +172,13 @@ Furthermore, sentiment analysis is also proposed as future work to be combined w
 
 
 \subsection{Benchmarking}
-
+% 1
 % *** make a table on MSE, MAE, P@K, etc and explain what they test - cite
 
+
 % ***cite & explain: the difficulty in benchmarking recommendation systems paper
+
+
 
 % Since the only work related to an NFT Recommendation System does not have a specific measure of benchmarking, the \gls{p@k} measurement can be used for this purpose as well as \gls{mse}
 % can evaluation and benchmarking be the same?
@@ -187,13 +203,14 @@ There have been many attempts to expand the capabilities of Recommendations by m
 
 % NLP techniques that can be applied (Sentiment analysis, word/ noun matching)
 
-
 \section{Review of Evaluation Approaches}
 %  (quantitative or qualitative)
 % 4pgs+-
 
+
 \section{Tools}
 % 3/4pgs+-
+
 
 \section{Chapter Summary}
 % 1/2 pg

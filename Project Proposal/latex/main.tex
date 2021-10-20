@@ -49,7 +49,7 @@
 %  Even though many people have got into purchasing \Gls{nft}s, one of the major problems that owners, as well as potential customers face, is that they’re unable to find NFTs that are worth trading their current NFTs to.
  In this research project, the author tries to identify the required features to be considered for an NFT-trading Recommendations System and introduce a new Ensemble Architecture for Recommendations that can be applied in other related domains as well. The proposed architecture will try to automate several decision-making steps that a user would otherwise need to go through to find the best possible trade.
 
-This document defines the problem, the research gap, research challenge, and the research strategy that the author wishes to follow over the next few months. The necessary proofs of the problem, as well as previous research interests, are also reviewed. Finally, in the Work Plan, the expected schedule of the project's deliverables is presented.
+This document defines the problem, the research gap, the research challenge, and the research strategy that the author wishes to follow over the next few months. The necessary proofs of the problem, as well as previous research interests, are also reviewed. Finally, in the Work Plan, the expected schedule of the project's deliverables is presented.
 
 
 \begingroup
@@ -144,7 +144,7 @@ Marketplaces allow searching for NFTs by keywords, categories \& pricing, but do
 This applies to someone who wants to purchase an NFT that shows similar characteristics to another NFT that has already been purchased by a previous buyer or oneself. Since there can be only one owner for an NFT at a time, recommendations using standard collaborative filtering is also not entirely ideal. Content-based approaches won't help identify trending items.
 
 \bigbreak
-In order to help with the exploration of these digital assets, it's identified that several steps that the user has to follow in order to identify trending items that are timely, popular among the community and may have an expected value can be automated. 
+To help with the exploration of these digital assets, it's identified that several steps that the user has to follow to identify trending items that are timely, popular among the community and may have an expected value can be automated. 
 
 \section{Problem Statement}
 It is difficult to find NFTs of comparable value that is trending among the community, timely and relevant to the user’s identified interest or the NFT that the user currently owns.
@@ -152,7 +152,7 @@ It is difficult to find NFTs of comparable value that is trending among the comm
 \chapter{Research Motivation}
 % This has to be to the point!!!!
 %  Refer to why it's important to solve this problem in NFTs
-The problem identified in this proposal applies to both people who have a lot of domain knowledge about NFTs and people who have no idea how valuable items are in relation to their interests. Whoever it is, there's no solution that would mimic the exact thinking pattern of a person who is searching for a suitable NFT.
+The problem identified in this proposal applies to both people who have a lot of domain knowledge about NFTs and people who have no idea how valuable items are in relation to their interests. Whoever it is, no solution would mimic the exact thinking pattern of a person who is searching for a suitable NFT.
 
 As mentioned in the work of \textcite{cheng_hybrid_2020}, Recommendation Systems play a significant role in the resolution of the problem of information overload. In order to provide ideal recommendations to a user, it is important to understand the user's thought process as well as other factors that affect a decision to trade.
 
@@ -228,10 +228,24 @@ The very first study done examining the pricing of NFTs suggests that \emph{"pro
 % *** figure \autocite{noauthor_erc-721_nodate} - The comparison between NFT internet & the internet today can be used to show the value of NFTs in the thesis.
 
 
-\emph{"The value of an NFT is entirely determined by what someone else is willing to pay for it."} \autocite{conti_what_2021}
+\begin{quote} 
+\centering 
+\emph{"The value of an NFT is entirely determined by what someone else is willing to pay for it."}
+\\
+\raggedleft
+\autocite{conti_what_2021}
+\end{quote}
+
 % "As a result, demand will drive the price rather than fundamental, technical, or economic indicators, which typically influence stock prices and, at the very least, serve as the basis for investor demand".
 
-\emph{"Ultimately owning the real thing is as valuable as the market makes it. The more a piece of content is screen-grabbed, shared, and generally used the more value it gains. Owning the verifiable real thing will always have more value than not."} \autocite{noauthor_erc-721_nodate}
+\begin{quote} 
+\centering 
+\emph{"Ultimately owning the real thing is as valuable as the market makes it. The more a piece of content is screen-grabbed, shared, and generally used the more value it gains. Owning the verifiable real thing will always have more value than not."}
+\\
+\raggedleft
+\autocite{noauthor_erc-721_nodate}
+\end{quote}
+
 
 These statements prove that the demand for investment in NFTs will be heavily reliant on the public's acceptance of the item is.
 
@@ -262,7 +276,7 @@ The author's research contribution can be summarized as follows:
 
 \section{Technological Contribution}
 
-A Hybrid Recommendations technique that attempts to use public trends in a way that hasn't been attempted in previous research will be explored in order to facilitate the recommendation of relevant, trending and timely items. Automation of several decision-making steps that a user would otherwise need to go through to find the best possible trade will be integrated into the Recommendations Architecture. It is hypothesized that this novel recommendations architecture will be able to be applied to other items as well in order to give enhanced recommendations based on trends.
+A Hybrid Recommendations technique that attempts to use public trends in a way that hasn't been attempted in previous research will be explored in order to facilitate the recommendation of relevant, trending and timely items. Automation of several decision-making steps that a user would otherwise need to go through to find the best possible trade will be integrated into the Recommendations Architecture. It is hypothesized that this novel recommendations architecture will be able to be applied to other items as well to give enhanced recommendations based on trends.
 
 \section{Domain Contribution}
 
@@ -334,7 +348,7 @@ Literature Survey & Read previous work to collate relevant information on relate
 Requirement Analysis &  Specifying the requirements of the project using appropriate techniques and tools in order to meet the expected research gaps \& challenges to be addressed based on previous related research and any domain-specific sources of knowledge.
 \begin{itemize}
 \item \textbf{RO1:} Gather information about requirements related to desirability of owning \Gls{nft}s \& crypto-related assets.
-\item \textbf{RO2:} Gather the requirements of a Recommendations System and understand end-users' expectations.
+\item \textbf{RO2:} Gather the requirements of a Recommendations System and understand end-user expectations.
 \item \textbf{RO3:} Get insights \&  opinions from technology \& domain experts to build a suitable system.
 \end{itemize}
 & LO1, LO2, LO5, LO7 \\
@@ -366,7 +380,7 @@ Testing and Evaluation & Testing the created system \& Data science models with 
 Documenting the progress of the research & Documenting and notifying the continuous progress of the research project and any faced obstacles. 
 & LO8, LO6 \\
 \hline
-Publish Findings & Producing well-structured documentation/ reports/ papers that critically evaluate the research.
+Publish Findings & Produce well-structured documentation/ reports/ papers that critically evaluate the research.
 \begin{itemize}
 \item \textbf{RO1:} Publishing a review paper on related work.
 \item \textbf{RO2:} Publishing evaluation \& testing results identified from the research.
@@ -463,7 +477,7 @@ Mediums such as online news, statistics \& trends from social media, observation
 Object-Oriented Analysis and Design were chosen as the Design Methodology by the author to support an incremental methodology that can be used to extend the system with the ability to reuse system components.
 
 \subsection{Evaluation Methodology}
-As identified in recent advancements in literature \autocite{larry_history_2019}, \gls{p@k} score has been identified as a suitable method of evaluating a Recommendations System. This is also identified as the Top-N strategy in several past literature. Therefore, it will be used to compare the novel solution that is to be developed against baseline models.
+As identified in recent advancements in literature \autocite{larry_history_2019}, \gls{p@k} score has been identified as a suitable method of evaluating a Recommendations System. This is also identified as the Top-N strategy in several past literatures. Therefore, it will be used to compare the novel solution that is to be developed against baseline models.
 
 \subsubsection{Benchmarking}
 Precision, recall, \gls{mae} and \gls{rmse} will be used to Benchmark the Recommendation System \autocite{dayan_recommenders_2011}, to help evaluate future researches in this domain by conducting comparative benchmarking-analysis.

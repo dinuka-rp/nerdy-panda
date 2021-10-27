@@ -26,6 +26,8 @@
 
 \pagenumbering{roman} % Start roman numbering
 
+{\setstretch{1}  % only for toc, lof, lot, acronyms - change line spacing to 1 of Word
+
 \tableofcontents
 
 {\let\clearpage\relax
@@ -36,10 +38,8 @@
 \printglossary[type=\acronymtype
 % , title=Abbreviations
 ]}
-
+}
 % ------------------------------------------------------------
-
-\onehalfspacing % Reset line spacing to 1.5 from here on
 
 \chapter{Introduction}
 
@@ -64,7 +64,6 @@ They can be one of a kind rare artworks, collectable trading cards, and other as
 
 
 NFTs were introduced by Ethereum \autocite{wood_ethereum_2014} as an improvement proposal \autocite{noauthor_eip-2309_nodate, noauthor_erc_nodate} in the \gls{erc}-721 standard \autocite{noauthor_erc-721_nodate}. This allows anyone to implement a Smart Contract with the ERC-721 standard and let people mint NFTs as well as, keep track of the tokens produced by it. This allows the created tokens to be validated.
-%*** can be user later? Furthermore, the standard implements functionalities to transfer tokens from Blockchain accounts, to get the current token balance of an account, to get the owner of a specific token, the total supply of tokens available on the network, etc. Apart from the item itself, the creator can include metadata such as their signature in the NFT. What began on the Ethereum Blockchain with the ERC-721 standard has since been adopted by other Blockchains. 
 
 % \bigbreak
 % Smart Contracts
@@ -80,24 +79,6 @@ While a digital file can be copied regardless of whether it's an NFT or not, wha
 % That is something that cannot be copied or taken from the owner. 
 If an NFT that contains your certificate/ domain is held under your wallet on the Blockchain, no one else can get it from you unless they have your digital wallet's private key. Similar to a deed. But, anyone can see, validate and admire what you own.
 
-% \bigbreak
-
-% Benefits for creators, collectors, buyers
-%*** can be user later? NFTs have a feature to allow a creator to make a certain percentage as royalty whenever the NFT is transferred to a new buyer. Since the items can be verified on the Blockchain, it also ensures that the original creator of the NFT can be tracked down and given due credit, any date in the future, no matter how many wallets it gets passed through \autocite{chevet_blockchain_2018}. Apart from the fact that a buyer can claim the right of ownership of the original item, they also get to financially support the creator. Ultimately, NFTs may gain value over time due to their scarcity. This gives collectors an additional advantage of being able to sell it for a higher price later on.
-
-% Creators of NFTs can also create "shares" for their NFT. This allows investors and fans to own a portion of an NFT without having to purchase the entire thing \autocite{noauthor_erc-721_nodate}.
-
-% *** add this to LR
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=10cm]{NFT-news-trends.png}
-% \caption{News trend in 2021 related to NFTs \autocite{dowling_fertile_2021}}
-% \end{figure}
-
-% The above figure shows the increase in news trends related to NFTs since the start of 2021. It has been exponentially increasing and hitting headlines around the globe on a daily basis.
-
-
-
 % ----------------
 
 \section{NFT Marketplaces}
@@ -108,21 +89,10 @@ If an NFT that contains your certificate/ domain is held under your wallet on th
 OpenSea, which was the first NFT marketplace is also considered to be the largest. In the attempt to become the "Amazon of NFTs", OepnSea raised \$23 million in a Series A \autocite{hackett_this_2021}, following a \$100 million raise in a Series B round, ended the company in a valuation of \$1.5 billion \autocite{dfinzer_announcing_2021, matney_nft_2021}. Open Sea saw nearly \$150 million in sales in the month of June.
 These marketplaces are set to increase access to the digital goods industry \autocite{chevet_blockchain_2018}.
 
-% *** add this to LR
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=12cm]{images/NFT-sales-opensea.png}
-% \caption{Monthly Ethereum-based NFT token sales volume on the OpenSea marketplace, in USD \autocite{howcroft_nft_2021}}
-% \end{figure}
-
-% Mention other blockchains & marketplaces that sell NFTs
-% Market places - OpenSea, Rarible, and Grimes’ choice, Nifty Gateway
-
 
 An NFT purchased on an Ethereum marketplace can be traded on any other Ethereum marketplace for a completely different NFT. Creators don't necessarily need to sell their NFT on a market. They can do the transaction peer-to-peer, completely secured by Blockchain. No one is needed to intermediate and an owner isn't locked onto any platform \autocite{noauthor_erc-721_nodate}.
 
 % How they can benefit from Recommendations - add to motivation? - already mentioned in problem
-
 
 \section{Recommendation Systems}
 Recommendation Systems have been driving engagement and consumption of content as well as items on almost every corner of the internet over the last decade.
@@ -156,17 +126,14 @@ The problem identified in this proposal applies to both people who have a lot of
 
 As mentioned in the work of \textcite{cheng_hybrid_2020}, Recommendation Systems play a significant role in the resolution of the problem of information overload. In order to provide ideal recommendations to a user, it is important to understand the user's thought process as well as other factors that affect a decision to trade.
 
-% There have been many attempts to expand the capabilities of Recommendations by making use of public opinion. Collaborative Filtering was one approach to achieve that. Another identified approach was to make use of user-data on social media. This has been integrated into Machine Learning-based Hybrid Recommendation Architectures in many ways. In recent research done by Amazon \autocite{larry_history_2019} it is understood that when a timeline is considered for recommendations, an \emph{Autoencoder} Deep Learning model is capable of Recommending the best possible combination of movies to users.
-
 Since the Recommendations domains are highly important for many business use-cases and the NFT domain is seeing a booming acceptance with a bright future ahead, this work is expected to add value to the progression of advancements \& accessibility related to the domains of NFTs, Blockchain \& Recommendation Systems.
-% AI & Blockchain - extremely important technologies for businesses. This lets me get to work with both domains \autocite{} AI & Blockchain article
-% *** mention that since NFTs are also originating from computer science, it's important to understand the factors that affect the pricing and market created by them - here?
+
 \endgroup
 % group is broken here to prevent end of line going to the next page
 
 \chapter{Related Work}
 
-\section{Recommendation Systems}
+% \section{Recommendation Systems}
 % \centering
 \begin{longtable}{|p{0.17\linewidth}|p{0.18\linewidth}|p{0.27\linewidth}|p{0.27\linewidth}|} 
 % check the error here
@@ -179,7 +146,7 @@ Citation & Technique Used & Improvements & Limitations \\
 \hline
 \autocite{cheng_hybrid_2020} & A framework that integrates collaborative filtering with opinion mining  sentiment analysis on users' reviews that is used to create preference profiles. & Effective in dealing with insufficient data and is more accurate and efficient than existing traditional methods. The quality of recommendations can be improved regardless of whether the dataset is rich or sparse. & The semantic strategy of opinion extraction is generic. This may not be ideal to identify different aspects in varied genres. Slang, irony or sarcasm isn't considered in the current framework. It's very dependent on text mining of user reviews.~\textit{Critique: A person has to have placed reviews on previous movies in order to create a preference profile.} \\
 \hline
-\autocite{chen_user_2019} & A deep learning model to process user comments and to generate a possible user rating for user recommendations have been used. A Deep Belief Network and Sentiment Analysis (DBNSA) achieves data learning for the recommendations.~ & Outperforms baseline models in training loss value, precision, and recall on the Yelp and Amazon data sets. In the Trip-Advisor data set, DBNSA has the best MSE training loss value and recall.
+\autocite{chen_user_2019} & A deep learning model to process user comments and to generate a possible user rating for user recommendations have been used. & Outperforms baseline models in training loss value, precision, and recall on the Yelp and Amazon data sets. In the Trip-Advisor data set, DBNSA (Deep Belief Network and Sentiment Analysis) has the best MSE training loss value and recall.
 
 DBNSA saves more time than the other baseline methods. & At present, the proposed method is not suitable for real-time testing. This method is required to be tested with a fast Deep Learning algorithm. Sarcastic comments have not been considered in user comments. \\ 
 \hline
@@ -203,51 +170,32 @@ Twitter sentiment analysis over the recommended entities generated by the model 
 % Abraham, J., Higdon, D., Nelson, J., Ibarra, J., 2018. Cryptocurrency Price Prediction Using Tweet Volumes and Sentiment Analysis 1, 22.
 %? Netlify representation of recommendations
 
-
-% Deep learning models - 
-%X Facebook DLRM?, Embeddings Neu Embeddings?
-
-%X Rendle, S., Krichene, W., Zhang, L., Anderson, J., 2020. Neural Collaborative Filtering vs. Matrix Factorization Revisited, in: Fourteenth ACM Conference on Recommender Systems, RecSys ’20. Association for Computing Machinery, New York, NY, USA, pp. 240–248. https://doi.org/10.1145/3383313.3412488
-
-
 % ***this section might have to be changed?
-\section{Understanding factors that affect NFT Markets}
-% Facts to be considered related to NFTs when recommending
-% \autocite{noauthor_off_2021} - price of NFTs have a relationship between the hype of the society and the interests of the community.
-It is understood that the pricing of NFTs is moved by the changes in the pricing of cryptocurrencies, but appears to have comparatively less volatility. But the spillover between NFT markets has been identified to be very low compared to the high spillover effect among individual crypto markets \autocite{dowling_is_2021}.
+% \section{Understanding factors that affect NFT Markets}
+% % Facts to be considered related to NFTs when recommending
+% % \autocite{noauthor_off_2021} - price of NFTs have a relationship between the hype of the society and the interests of the community.
+% It is understood that the pricing of NFTs is moved by the changes in the pricing of cryptocurrencies, but appears to have comparatively less volatility. But the spillover between NFT markets has been identified to be very low compared to the high spillover effect among individual crypto markets \autocite{dowling_is_2021}.
 
-The very first study done examining the pricing of NFTs suggests that \emph{"prospects for future studies are potentially limitless, as at the beginning of any new market"} \autocite{dowling_fertile_2021}. As a future study, the author has suggested identifying if there's a fundamental model that drives the price determination in NFTs.
+% The very first study done examining the pricing of NFTs suggests that \emph{"prospects for future studies are potentially limitless, as at the beginning of any new market"} \autocite{dowling_fertile_2021}. As a future study, the author has suggested identifying if there's a fundamental model that drives the price determination in NFTs.
 
-% There're several factors that affect the desirablity of owning NFTs. When a person searches for NFTs he would be interested in knowing if the item is trending among the community - similar to the nature of crypto
+% \begin{quote} 
+% \centering 
+% \emph{"The value of an NFT is entirely determined by what someone else is willing to pay for it."}
+% \\
+% \raggedleft
+% \autocite{conti_what_2021}
+% \end{quote}
 
-% *** \/Related Work?
-% CryptoKitties was one of the first NFT games & applications?
-% Mention about NBA top-shot, Nike's CryptoKicks \autocite{}, artists work, etc. as industries that have stepped into the NFT craze and then...
-% how the technology will evolve in the future.
-
-% *** figure \autocite{noauthor_erc-721_nodate} - The comparison between NFT internet & the internet today can be used to show the value of NFTs in the thesis.
-
-
-\begin{quote} 
-\centering 
-\emph{"The value of an NFT is entirely determined by what someone else is willing to pay for it."}
-\\
-\raggedleft
-\autocite{conti_what_2021}
-\end{quote}
-
-% "As a result, demand will drive the price rather than fundamental, technical, or economic indicators, which typically influence stock prices and, at the very least, serve as the basis for investor demand".
-
-\begin{quote} 
-\centering 
-\emph{"Ultimately owning the real thing is as valuable as the market makes it. The more a piece of content is screen-grabbed, shared, and generally used the more value it gains. Owning the verifiable real thing will always have more value than not."}
-\\
-\raggedleft
-\autocite{noauthor_erc-721_nodate}
-\end{quote}
+% \begin{quote} 
+% \centering 
+% \emph{"Ultimately owning the real thing is as valuable as the market makes it. The more a piece of content is screen-grabbed, shared, and generally used the more value it gains. Owning the verifiable real thing will always have more value than not."}
+% \\
+% \raggedleft
+% \autocite{noauthor_erc-721_nodate}
+% \end{quote}
 
 
-These statements prove that the demand for investment in NFTs will be heavily reliant on the public's acceptance of the item is.
+% These statements prove that the demand for investment in NFTs will be heavily reliant on the public's acceptance of the item is.
 
 % ----------------
 
@@ -324,7 +272,7 @@ The Aims and Research Questions mentioned above are expected to be achieved and 
 % breakdown all the rows into atomic objectives to be done
 % \begin{table}[h!]
 % \centering
-\begin{longtable}{| p{0.23\linewidth} | p{0.58\linewidth}| p{0.12\linewidth}|}
+\begin{longtable}{| p{0.135\linewidth} | p{0.67\linewidth}| p{0.12\linewidth}|}
 \caption{Research Objectives}
 \label{tab:research-objectives-table}\\
 \hline
@@ -339,6 +287,7 @@ Literature Survey & Read previous work to collate relevant information on relate
 \item \textbf{RO2:} Analyze the perception of Recommendation techniques.
 \item \textbf{RO3:} Conduct a preliminary study on \Gls{nft}s.
 \item \textbf{RO4:} Analyze user desires and factors that affect the likability of owning \Gls{nft}s.
+\vspace{-7mm}       % remove line spacing after itemize
 \end{itemize}
 & LO4, LO2, LO5 \\
 \hline
@@ -350,6 +299,7 @@ Requirement Analysis &  Specifying the requirements of the project using appropr
 \item \textbf{RO1:} Gather information about requirements related to desirability of owning \Gls{nft}s \& crypto-related assets.
 \item \textbf{RO2:} Gather the requirements of a Recommendations System and understand end-user expectations.
 \item \textbf{RO3:} Get insights \&  opinions from technology \& domain experts to build a suitable system.
+\vspace{-7mm}       % remove line spacing after itemize
 \end{itemize}
 & LO1, LO2, LO5, LO7 \\
 \hline
@@ -359,6 +309,7 @@ Design & Designing architecture and a system that is capable of solving the iden
 \item \textbf{RO2:} Design an automated flow to match \Gls{nft}s with global social trends data.
 \item \textbf{RO3:} Design a data-preprocessing pipeline to add Smart Contract data related to \Gls{nft}s in the system.
 \item \textbf{RO4:} Design a \Gls{dl} or \Gls{ml} Recommendations model that is capable of appropriately utilizing feature-enhanced data to produce recommendations.
+\vspace{-7mm}       % remove line spacing after itemize
 \end{itemize}
 & LO1 \\
 \hline
@@ -367,6 +318,7 @@ Development & Implementing a system that is capable of addressing the gaps that 
 \item \textbf{RO1:} Develop a Recommendations System that can produce relevant, timely \& trending NFTs (items).
 \item \textbf{RO2:} Integrate automation steps in the prototype to enhance features of NFT records and use them to recommend suitable NFTs.
 \item \textbf{RO3:} Develop an algorithm that can utilize factors that are considered to affect the desirability of owning an NFT by a person.
+\vspace{-7mm}       % remove line spacing after itemize
 \end{itemize}
 & LO1, LO5, LO6 \\
 \hline
@@ -374,6 +326,7 @@ Testing and Evaluation & Testing the created system \& Data science models with 
 \begin{itemize}
 \item \textbf{RO1:} Create a test plan and perform unit, integration and functional testing.
 \item \textbf{RO2:} Evaluate the novel model by bench-marking with  \Gls{p@k} score, compared against baseline models.
+\vspace{-7mm}       % remove line spacing after itemize
 \end{itemize}
 & LO4 \\
 \hline
@@ -386,6 +339,7 @@ Publish Findings & Produce well-structured documentation/ reports/ papers that c
 \item \textbf{RO2:} Publishing evaluation \& testing results identified from the research.
 \item \textbf{RO3:} Making the code or models created in the research process available for future advancements in research.
 \item \textbf{RO4:} Making any modified data-sets or re-creation strategies available to the public, to train \& test models related to similar use cases of utilized data.
+\vspace{-7mm}       % remove line spacing after itemize
 \end{itemize}
 & LO4, LO8 \\
 \hline
@@ -417,9 +371,12 @@ The following are the parts that will not be covered by the project:
 \end{itemize}
 
 \section{Prototype Diagram}
+% \vspace{-7mm}       % remove spacing
+% this diagram has gone to a different place after line spacing adjustment
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=\textwidth]{images/Protyotype Feature Diagram.png}
+\includegraphics[height=0.5\textheight]{images/Protyotype Feature Diagram.png}
+\vspace{-7mm}       % remove spacing
 \caption{Prototype Feature Diagram \textit{(self-composed)}}
 \end{figure}
 
@@ -499,6 +456,7 @@ Precision, recall, \gls{mae} and \gls{rmse} will be used to Benchmark the Recomm
 
 \newpage
 \subsubsection{Deliverables}
+\vspace{-7mm}       % remove spacing
 
 % \centering
 \begin{longtable}{| p{0.76\linewidth} | p{0.22\linewidth}|}
@@ -546,7 +504,7 @@ The resources required to complete the project are identified based on the objec
 \item \textbf{Operating System(Linux/ macOS/ Windows)} - Linux will be the default choice for development since of the ease of support for multiple development tools and performance benefits. macOS/ Windows will be used for research documentation \& study purposes.
 \item \textbf{Python} - The language that will be used to create the Machine Learning \& Deep Learning models. Python is an all-purpose language that has been used in many projects that integrate with data science.
 \item \textbf{Tensorflow/ Scikit learn Python packages} - Libraries that will be used to support model development, training \& testing.
-\item \textbf{Golang/ NodeJS} - The Application Programming interface that will be used to communicate with the \Gls{ml} backend and the front-end. Golang will allow the application to support concurrency and multi-threaded communications while being extremely lightweight and fast. This will be used to avoid any bottlenecks that could occur at this point in the system. NodeJS will be kept as a secondary option in the case of requiring any pre-built features that are not directly supported by Golang \& aren't directly relevant to the research.
+\item \textbf{Golang/ NodeJS} - The API that will be used to communicate with the \Gls{ml} backend and the front-end. Golang will allow the application to support concurrency and multi-threaded communications while being extremely lightweight and fast. This will be used to avoid any bottlenecks that could occur at this point in the system. NodeJS will be kept as a secondary option in the case of requiring any pre-built features that are not directly supported by Golang \& aren't directly relevant to the research.
 \item \textbf{JavaScript (React)} - The front-end of the application, where recommendations will be shown. This is also an important part of the project since it will be the users' point of interaction with the system.
 \item \textbf{PyCharm/ VSCode/ GoLand} - Development environments to support development of the project.
 \item \textbf{Google Colab} - Cloud development environment to build, train \& test ML \& Deep Learning models.
@@ -582,6 +540,7 @@ The resources required to complete the project are identified based on the objec
 
 \subsection{Risk Management}
 The following are the risks identified prior to starting the project with possible mitigation steps.
+
 \begin{longtable}{| p{0.33\linewidth} |p{0.11\linewidth}| p{0.11\linewidth}| p{0.34\linewidth}|}
 \caption{Risk Mitigation Plan}
 \label{tab:risk-mitigation-table}\\

@@ -19,12 +19,12 @@
 \titleformat{\section}
 {\fontsize{14pt}{0pt}\bfseries}{\thesection}{0.8em}{}
 
-\titlespacing*{\section}{0pt}{1em plus 1.2em minus 0.5em}{0.7em}
+\titlespacing*{\section}{0pt}{1em plus 1.2em minus 0.5em}{0.1em}
 
 \titleformat{\subsection}
 {\fontsize{12pt}{0pt}\bfseries}{\thesubsection}{0.5em}{}
 
-\titlespacing*{\subsection}{0pt}{1em plus 1.1em minus 0.5em}{0.5em}
+\titlespacing*{\subsection}{0pt}{1em plus 1.1em minus 0.5em}{0.1em}
 
 % \titleformat{\subsubsection}
 % {\fontsize{13pt}{0pt}\bfseries}{\thesubsubsection}{0.5em}{}
@@ -69,8 +69,11 @@
  
 \renewcommand{\contentsname}{Table of Contents}
 % \renewcommand{\baselinestretch}{1.5}        % entire document's spacing
+\setstretch{1.5}  % change line spacing to 1.5 of Word
 \setlist{nosep} % remove extra spacing between items in a list
 
+% itemize bullet point indentation
+% \setlist[itemize]{leftmargin=*}     % no indentation
 
 % header & footer
 \usepackage{fancyhdr}

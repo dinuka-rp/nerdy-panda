@@ -12,19 +12,19 @@
 % **previous spacings may have to be increased
 
 \titleformat{\chapter}
-{\fontsize{16pt}{0pt}\bfseries}{\MakeUppercase\chaptertitlename\ \thechapter:}{0.5em}{\MakeUppercase}
+{\fontsize{16pt}{0pt}\bfseries}{\thechapter}{1em}{}
 
-\titlespacing*{\chapter}{0pt}{1em plus 1.4em}{1em}
+\titlespacing*{\chapter}{0pt}{1.2em plus 1.8em}{1em}
  
 \titleformat{\section}
-{\fontsize{14pt}{0pt}\bfseries}{\thesection}{0.5em}{}
+{\fontsize{14pt}{0pt}\bfseries}{\thesection}{0.8em}{}
 
-\titlespacing*{\section}{0pt}{1em plus 1.1em minus 0.5em}{0pt}
+\titlespacing*{\section}{0pt}{1em plus 1.2em minus 0.5em}{0.3em}
 
 \titleformat{\subsection}
 {\fontsize{12pt}{0pt}\bfseries}{\thesubsection}{0.5em}{}
 
-\titlespacing*{\subsection}{0pt}{1em plus 1.1em minus 0.5em}{0pt}
+\titlespacing*{\subsection}{0pt}{1em plus 1.1em minus 0.5em}{0.1em}
 
 % \titleformat{\subsubsection}
 % {\fontsize{13pt}{0pt}\bfseries}{\thesubsubsection}{0.5em}{}
@@ -41,7 +41,7 @@
 
 
 % \usepackage{tabularx} % fit tables to width
-% \usepackage{multirow} % multirow columns
+\usepackage{multirow} % multirow columns
 \usepackage{float}  % lets you prevent LaTeX from repositioning the tables.
 \usepackage[tableposition=top]{caption}
 \usepackage{longtable}
@@ -53,6 +53,8 @@
     % linkcolor=blue,  %choose some color if you want links to stand out
 }
 \usepackage[acronym]{glossaries}    % acronyms/ abbreviations
+\emergencystretch=0.5em
+% https://tex.stackexchange.com/a/172000
 
 \setcounter{tocdepth}{4}        % table of content depth
 \setcounter{secnumdepth}{2}        % section numbering depth
@@ -69,6 +71,7 @@
  
 \renewcommand{\contentsname}{Table of Contents}
 % \renewcommand{\baselinestretch}{1.5}        % entire document's spacing
+\setstretch{1.5}  % change line spacing to 1.5 of Word
 \setlist{nosep} % remove extra spacing between items in a list
 
 

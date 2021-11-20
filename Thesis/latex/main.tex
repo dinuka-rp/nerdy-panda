@@ -19,6 +19,7 @@
 \newacronym{mlp}{MLP}{Multilayer Perceptron}
 \newacronym{lstm}{LSTM}{Long short-term memory}
 \newacronym{api}{API}{Application Programming Interface}
+\newacronym{rnn}{RNN}{Recurrent Neural Network}
 
 
 % ------------------------------------------------------------
@@ -38,8 +39,8 @@
 {\let\clearpage\relax
 \listoftables}
 {\let\clearpage\relax
-\printglossary[type=\acronymtype
-% , title=Abbreviations
+\printglossary[type=\acronymtype,nonumberlist, style=super
+%,title=Abbreviations
 ]}
 }
 
@@ -79,16 +80,20 @@
 
 \setcounter{page}{1} % Set the page counter to 1
 \pagenumbering{Roman} % Switch to capital roman numbers
+
+
+
 % BIBLIOGRAPHY-----------------------------------------------
 \setlength\bibitemsep{1.5\itemsep} % add extra spacing between bib items
 \printbibliography[heading=bibintoc, title = {References}]
 
 
-% *** Appendix
+
+% ------ Appendix --------
 \appendix
 \renewcommand{\thechapter}{\alph{chapter}}
-
-% *** better to have entire appendix in one file - easy to navigate
 \import{}{appendix.tex}
+
+
 
 \end{document}

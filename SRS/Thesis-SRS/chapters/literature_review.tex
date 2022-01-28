@@ -362,20 +362,8 @@ The first way would be identifying if the system is capable of recommending item
 The first way to evaluating the outcome can be done utilizing current data and pre-identified conditions. For the second approach, the evaluation algorithm would require feedback from the public. This can be done by having open beta testing. It would take more time \& effort, but it will be capable of evaluating a system qualitatively on the final goal instead of a possibility.
 
 If we look at evaluating this system from an expected-output performance point of view, \textit{\gls{p@k}}, also identified as \textit{Top-N strategy} in several literature is the most common method of evaluating a Recommendations System.
-This measure and the benchmarking methods that have been mentioned below can be used to \textbf{quantitatively} evaluate Recommendation Systems.
+This measure and the metrics that have been mentioned below can be used to \textbf{quantitatively} evaluate Recommendation Systems.
 
-% cite Netflix paper - Elahi, E., Chandrashekar, A., 2020. Learning Representations of Hierarchical Slates in Collaborative Filtering, in: Fourteenth ACM Conference on Recommender Systems, RecSys ’20. Association for Computing Machinery, New York, NY, USA, pp. 703–707. https://doi.org/10.1145/3383313.3418484
-% use this ^ to get to why this is needed -> Aggregate diversity
-Since the goal of the Recommendations System is to provide the user with multiple options, it is better if the system can produce options across a diverse range. To evaluate the diversity of items across the produce recommendations, \textit{Aggregate diversity} can be measured.
-
-Apart from these metrics, quality-of-service measures such as CPU \& Memory usage can be considered for evaluation as well. 
-
-\bigbreak
-In the review questioning the advancements of Recommendation Systems, \autocite{dacrema_are_2019} the author mentions that the lack of used datasets and code-bases hinder the ability to properly benchmark and evaluate new research related to Recommendation Systems. The importance of reproducibility of research related to Recommendations Systems have future been elaborated in reviews that follow \autocite{dacrema_troubling_2021, ferrari_dacrema_critically_2020, dacrema_methodological_2020}.
-
-
-\subsection{Benchmarking}
-The following are some benchmarking strategies that can be used to assess the performance of Recommendation Systems.
 
 \begin{longtable}{|p{0.2\linewidth}|p{0.4\linewidth}|p{0.28\linewidth}|} 
 \caption{Benchmarking techniques for Recommendation Systems}
@@ -395,10 +383,25 @@ Recall & The ratio of relevant items presented by the system to the total number
 
 \gls{mae} \& \gls{rmse} are used to measure the accuracy of predicted user-ratings (1-5 star ratings) per item, per user. Precision \& recall are used to measure if the system successfully predicts which items the user will select or consume \autocite{dayan_recommenders_2011}.
 
-\bigbreak
-A common test dataset is required in order to consider the results produced by these methods to be valid. Since there’s no previous \gls{nft} Recommendation System found in research, the author will not be able to conduct a comparative benchmark analysis on the proposed system.
 
-The benchmarks produced by this system will be made available public together with the used datasets in order to allow future researchers to evaluate new Recommendation Systems in this domain.
+\bigbreak
+% cite Netflix paper - Elahi, E., Chandrashekar, A., 2020. Learning Representations of Hierarchical Slates in Collaborative Filtering, in: Fourteenth ACM Conference on Recommender Systems, RecSys ’20. Association for Computing Machinery, New York, NY, USA, pp. 703–707. https://doi.org/10.1145/3383313.3418484
+% use this ^ to get to why this is needed -> Aggregate diversity
+Since the goal of the Recommendations System is to provide the user with multiple options, it is better if the system can produce options across a diverse range. To evaluate the diversity of items across the produce recommendations, \textit{Aggregate diversity} can be measured.
+
+Apart from these metrics, quality-of-service measures such as CPU \& Memory usage can be considered for evaluation as well. 
+
+\bigbreak
+In the review questioning the advancements of Recommendation Systems, \autocite{dacrema_are_2019} the author mentions that the lack of used datasets and code-bases hinder the ability to properly benchmark and evaluate new research related to Recommendation Systems. The importance of reproducibility of research related to Recommendations Systems have future been elaborated in reviews that follow \autocite{dacrema_troubling_2021, ferrari_dacrema_critically_2020, dacrema_methodological_2020}.
+
+
+\subsection{Benchmarking}
+% The following are some benchmarking strategies that can be used to assess the performance of Recommendation Systems.
+
+\bigbreak
+A common test dataset is required in order to consider the results produced by these methods to be valid. Since there’s no previous \gls{nft} Recommendation System found in research, the author will not be able to conduct a comparative benchmark analysis on the proposed system. Therefore, a \textbf{Baseline-Benchmarking} strategy will be followed.
+
+The evaluation benchmark results produced by this system will be made available public together with the used datasets in order to allow future researchers to evaluate new Recommendation Systems in this domain.
 
 
 % \section{Tools}

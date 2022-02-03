@@ -431,8 +431,79 @@ Prior to development, the system's boundaries and interactions should be determi
 \section{Requirements}
 
 \subsection{Functional Requirements}
+The MoSCoW technique was used to determine the priority levels of system needs based on their importance.
+
+\begin{longtable}{|l|p{0.8\linewidth}|}
+\caption{Levels of priority according to the "MoSCoW" technique.}\\ 
+\hline
+\textbf{Priority Level} & \textbf{Description}                                                                                                    \endfirsthead 
+\hline
+Must have (M)           & This level's requirement is a prototype's core functional requirement, and it must be implemented.                      \\ 
+\hline
+Should have (S)         & Important requirements aren't absolutely necessary for the expected prototype to work, but they do add a lot of value.  \\ 
+\hline
+Could have (C)          & Desirable requirements that are optional and aren't deemed essential critical to the project's scope.                   \\ 
+\hline
+Will not have (W)       & The requirements that the system may not have and that are not considered a top priority at this time.                  \\
+\hline
+\end{longtable}
+
+
+\begin{longtable}{|l|p{0.64\linewidth}|l|l|}
+\caption{Functional requirements}\\ 
+\hline
+\textbf{FR ID} & \textbf{Requirement} & \begin{tabular}[c]{@{}l@{}}\textbf{Priority}\\\textbf{Level}\end{tabular} & \textbf{Use Case} \endfirsthead 
+\hline
+FR1 & Users must be able to add a chosen NFT to be considered as the reference point to generating recommendations. & M & UC1 \\ 
+\hline
+FR2 & Admins should be able to add a collection of NFT to be used as recommendations. & S & UC1 \\ 
+\hline
+FR3 & The system could be able to fetch relevant data of the NFT using an entered token Id. & C & UC1 \\ 
+\hline
+FR4 & Users must be able to set/ adjust the bias and parameters to be used by the Recommendations System using parametric selections prior to generating recommendations. & M & UC2 \\ 
+\hline
+FR5 & Admins should be able to adjust the default bias of the Recommendations System. & S & UC3 \\ 
+\hline
+FR6 & Users must be able to view recommendations with the click of a button. & M & UC4 \\
+\hline
+FR7 & The prototype could have an option to receive user feedback regarding the satisfaction level of the generated recommendations by the system. & C & UC4 \\
+\hline
+FR8 & The system could show the reasons for recommending each item to users. & C & UC4 \\ \hline
+FR9 & The system should generate price predictions and consider the results for recommendations. & S & UC5 \\ 
+\hline
+FR10 & Opinion mining trends data must be used to generate \gls{nft} recommendations. & M & UC7 \\
+\hline
+FR11 & A user could be allowed to feed data-points such as interested public figures, websites to use as opinion mining data for recommendations. & C & UC8 \\ 
+\hline
+FR12 & Admins should be able to~feed data-points such as interested public figures, websites to use as opinion mining data for recommendations. & S & UC8 \\
+\hline
+FR13 & User-input could be aggregated and used as a reinforcement learning bias for the Recommendations Model. & C &  \\
+\hline
+FR14 & The system will not act as a decentralized system. & W &  \\
+\hline
+% FR15 search NFTs by tags?
+\end{longtable}
+
 
 \subsection{Non-functional Requirements}
+
+\begin{longtable}{|l|l|p{0.46\linewidth}|l|}
+\caption{Non-functional requirements}\\ 
+\hline
+\textbf{NFR ID} & \textbf{Requirement} & \textbf{Description} & \textbf{Priority Level} \endfirsthead 
+\hline
+1 & Performance & Although recommendations should be provided upon user-input, the recommendations matrix \& opinion-mining data can be pre-procesesd and stored in-memory to be used. Real-time processing isn't essential. & Desirable \\ 
+\hline
+2 & Quality of Output & The quality of the output should be of the highest possible level, utilizing all the available data. & Important \\ 
+\hline
+3 & Security & The application should prevent any attackers from manipulating results and extracting user-inputs. Security could be assured by means of testing. & Desirable \\ 
+\hline
+4 & Usability & Since the purpose of the system is to automate and make it easy for the user to explore NFTs, the usability of the system must be easy for users of all levels of expertise. & Important \\ 
+\hline
+5 & Scalability & The prototype may open up for testing for many users. Considering the hype around \gls{nft}s and the interest in the project, the system may have to support many concurrent user-requests. & Desirable \\
+\hline
+\end{longtable}
+
 
 \section{Chapter Summary}
 In this chapter, a Rich Picture Diagram was drawn to illustrate how the system connects with the society to understand the stakeholders of the system. Saunder's Onion model was used to represent the stakeholders with the flow of influence of each stakeholder. Requirement gathering techniques were utilized to gather all the required data and opinions of possible stakeholders of the system. Lastly, the system's use cases, functional, and non-functional requirements were specified based on the insights derived from the requirement elicitation techniques.

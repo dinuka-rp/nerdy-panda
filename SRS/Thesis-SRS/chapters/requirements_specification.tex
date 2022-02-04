@@ -33,9 +33,10 @@ The Stakeholder Onion Model illustrates recognized stakeholders who are associat
 \label{fig:stakeholder-onion}
 \end{figure}
 
+\pagebreak
 \subsection{Stakeholder Viewpoints}
 
-\begin{longtable}{|p{0.25\linewidth}|p{0.27\linewidth}|p{0.4\linewidth}|} 
+\begin{longtable}{|p{0.2\linewidth}|p{0.23\linewidth}|p{0.51\linewidth}|} 
 \caption{Roles and benefits of identified stakeholders}\\ 
 \hline
 \textbf{Stakeholder} & \textbf{Role} & \textbf{Benefits/ Role Description} \\* 
@@ -46,7 +47,7 @@ Investors &  & Makes a profit out of the investments put into marketing, deploym
 \hline
 NFT Marketplace Developers & Operational - Maintenance & Integrates the system into NFT Marketplaces. \\* 
 \hline
-Blockchain Experts & \multirow{3}{*}{Expert, Quality Regulator} & Provides expert advice \& insights into domain knowledge, to improve the system’s performance. \\* 
+Blockchain Experts & \multirow{3}{*}{\parbox{8em}{Expert, Quality Regulator}} & Provides expert advice \& insights into domain knowledge, to improve the system’s performance. \\* 
 \cline{1-1}\cline{3-3}
 Data Scientists &  & Provides performance improvements for the performance of the Data scienc models/ algorithms used. \\* 
 \cline{1-1}\cline{3-3}
@@ -54,11 +55,11 @@ Data Engineers &  & Provides advice on possible data that can be exploited, to m
 \hline
 NFT Creators & Financial Beneficiary & Gets a better opportunity to get their creations in the eye of potential buyers. Makes a profit by selling creations to people who are interested in the creations. \\* 
 \hline
-NFT Traders & \multirow{2}{*}{Fundamental Beneficiary} & It becomes easier for traders to sell NFTs as well as explore more NFTs to purchase. It also allows them to explore NFTs that may be worth owning for a future trade. \\* 
+NFT Traders/ Collectors & \multirow{2}{*}{\parbox{8em}{Fundamental Beneficiary}} & It becomes easier for traders to sell NFTs as well as explore more NFTs to purchase. It also allows them to explore NFTs that may be worth collecting for a future trade. \\* 
 \cline{1-1}\cline{3-3}
-NFT Collectors, Potential NFT Buyers &  & It becomes more convenient for these parties to explore NFTs that they’re interested in. \\ 
+Potential NFT Buyers &  & It becomes more convenient for these parties to explore NFTs that they’re interested in. \\ 
 \hline
-NFT Marketplace Manager & System Owner, Operational - Administration & Makes sure that the system is up \& running, while managing the operational staff. \\ 
+NFT Marketplace Manager & System Owner, Operational - Administration & Inputs data sources for opinion mining, sets default biases. Makes sure that the system is up \& running, while managing the operational staff. \\ 
 \hline
 Operational Staff & Operational - Support & Makes sure that the system is up \& running, while attending to users’ requests \& issues. \\* 
 \hline
@@ -207,7 +208,7 @@ The outcome of interviews were processed to a \textbf{thematic analysis} based o
 % \pagebreak
 % \subsubsection{Thematic Analysis of findings from Interviews}
 
-\begin{longtable}{|p{0.25\linewidth}|p{0.69\linewidth}|}
+\begin{longtable}{|p{0.22\linewidth}|p{0.72\linewidth}|}
 \caption{Thematic analysis of interview findings}\\ 
 \hline
 \textbf{Theme} & \textbf{Analysis} \endfirsthead 
@@ -250,96 +251,121 @@ Furthermore, it was revealed that Sri Lanka does not have Machine Intelligence/ 
 \hline
 \textbf{Aim of question} & To understand how a potential buyer would proceed to purchase an NFT. \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Findings}} \\
+\multicolumn{2}{|l|}{\textbf{Findings \& Conclusion}} \\
 
 \multicolumn{2}{|l|}{
-\centering
 \includegraphics[width=\textwidth]{images/SRS/survey/survey-1.png}
-} \\ 
+}
+\\
 \multicolumn{2}{|l|}{
 \parbox{\textwidth}{
 A majority of the participants thought that considering the price increase over time would be the primary factor of consideration when purchasing an \gls{nft}, while the second most impact to be considered was trends in social media. Finding NFTs that have been created by creators/ artists who have created valuable \gls{nft}s in the past, an \gls{nft} that is similar to what is already highly valuable and picking items related to personal interests saw similar weightings when making purchase decisions.
-}} \\
+}
+}
+
+% \multicolumn{2}{|l|}{
+% \parbox{\textwidth}{
+% \begin{wrapfigure}{l}{0.70\textwidth}
+% \includegraphics[width=0.70\textwidth]{images/SRS/survey/survey-1.png}
+% \end{wrapfigure}
+
+% A majority of the participants thought that considering the price increase over time would be the primary factor of consideration when purchasing an \gls{nft}, while the second most impact to be considered was trends in social media. Finding NFTs that have been created by creators/ artists who have created valuable \gls{nft}s in the past, an \gls{nft} that is similar to what is already highly valuable and picking items related to personal interests saw similar weightings when making purchase decisions.
+% }
+% }
+\\
 \hline
 \textbf{Question} & \textbf{Who do you think will be benefited from using this system?} \\
 \hline
 \textbf{Aim of question} & To identify the beneficiaries of the proposed system. \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Findings}} \\
+\multicolumn{2}{|l|}{\textbf{Findings \& Conclusions}} \\
 
 \multicolumn{2}{|l|}{
-\centering
-\includegraphics[height=2.3in]{images/SRS/survey/survey-2.png}
-} \\ 
-\multicolumn{2}{|l|}{
 \parbox{\textwidth}{
+\begin{wrapfigure}{l}{0.5\textwidth}
+\includegraphics[width=0.5\textwidth]{images/SRS/survey/survey-2.png}
+\end{wrapfigure}
+
 While more than 50\% of participants aggreed that the proposed system would benefit the suggested beneficiaries, 81.8\% thought that \gls{nft} collectors/ traders/ buyers would benefit. Since, they are the ultimate target users, it's satisfying to see such positive responses.
-}} \\
+}
+}
+\\
 \hline
 \textbf{Question} & \textbf{Do you think that this system would benefit people who have no expertise in Blockchain/ NFTs as well as people who have a decent amount of expertise in Blockchain/ NFTs?} \\
 \hline
 \textbf{Aim of question} & To identify how valuable the system would be to people of all levels of expertise in Blockchain/ NFTs \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Findings}} \\
+\multicolumn{2}{|l|}{\textbf{Findings \& Conclusion}} \\
 
 \multicolumn{2}{|l|}{
-\includegraphics[height=2.3in]{images/SRS/survey/survey-3.png}
-} \\ 
-\multicolumn{2}{|l|}{
 \parbox{\textwidth}{
-With he majority of responses saying that people of all levels of expertise in Blockchain/ NFTs would benefit from the system depicts that the proposed system would be beneficial for above-average users as well.
-}} \\
+\begin{wrapfigure}{l}{0.53\textwidth}
+\includegraphics[width=0.46\textwidth]{images/SRS/survey/survey-3.png}
+\end{wrapfigure}
+
+With majority of the responses suggesting that people of all levels of expertise in Blockchain/ NFTs would benefit from the system depicts that the proposed system would be beneficial for above-average users as well.
+
+}
+}
+\\
+% \pagebreak
 \hline
 \textbf{Question} & \textbf{How much do you think that a Recommendations System would benefit you, if you ever plan on purchasing an NFT?} \\
 \hline
 \textbf{Aim of question} & To identify if the respondents think that the system would benefit them. \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Findings}} \\
+\multicolumn{2}{|l|}{\textbf{Findings \& Conclusion}} \\
 
 \multicolumn{2}{|l|}{
-\centering
-\includegraphics[height=2.3in]{images/SRS/survey/survey-4.png}
-} \\ 
-\multicolumn{2}{|l|}{
 \parbox{\textwidth}{
-52.3\% of users thought that a Recommendations System would definitely be useful to them if they plan on purchasing an \gls{nft}, while 34.1\% thought that it may be useful. Meanwhile, 13.6\% of users thought that they don't think that they could find a suitable NFT without the help of a Recommendations System. 100\% of the results were aligned towards seeing a possible benefit of the proposed system.
-}} \\
+\begin{wrapfigure}{l}{0.6\textwidth}
+\includegraphics[width=0.6\textwidth]{images/SRS/survey/survey-4.png}
+\end{wrapfigure}
+
+52.3\% of users thought that a Recommendations System would definitely be useful to them if they plan on purchasing an \gls{nft}, while 34.1\% thought that it may be useful. Meanwhile, 13.6\% of users thought that they don't think that they could find a suitable \gls{nft} without the help of a Recommendations System. 100\% of the results were aligned towards seeing a possible benefit of the proposed system.
+}
+}
+\\
 \hline
 \textbf{Question} & \textbf{How much would you expect a Recommendations System that considers social media trends to be beneficial for businesses to integrate into their online platforms?} \\
 \hline
 \textbf{Aim of question} & To identify the importance of the technological contribution in the project \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Findings}} \\
+\multicolumn{2}{|l|}{\textbf{Findings \& Conclusion}} \\
 
 \multicolumn{2}{|l|}{
-\centering
-\includegraphics[width=\textwidth]{images/SRS/survey/survey-5.png}
-} \\ 
-\multicolumn{2}{|l|}{
 \parbox{\textwidth}{
+\begin{wrapfigure}{l}{0.48\textwidth}
+\includegraphics[width=0.48\textwidth]{images/SRS/survey/survey-5.png}
+\end{wrapfigure}
+
 The results from this question suggests that the technological contribution that has been highlighted in this project, which addresses an advancement of development of Recommendation Systems is expected to be extremely beneficial for business applications.
-}} \\
+}
+}
+\\
 \hline
 \textbf{Question} & \textbf{Do you think that a user would benefit more if one platform provides recommendations that differ from another platform with the same dataset?} \\
 \hline
 \textbf{Aim of question} & To identify if the proposed Recommendations System will benefit from implementing a Reinforcement Learning technique or a variable bias to adapt and suite different platforms. \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Findings}} \\
+\multicolumn{2}{|l|}{\textbf{Findings \& Conclusion}} \\
 
 \multicolumn{2}{|l|}{
-\centering
-\includegraphics[height=2.3in]{images/SRS/survey/survey-6.png}
-} \\ 
-\multicolumn{2}{|l|}{
 \parbox{\textwidth}{
+\begin{wrapfigure}{l}{0.5\textwidth}
+\includegraphics[width=0.5\textwidth]{images/SRS/survey/survey-6.png}
+\end{wrapfigure}
+
 A majority of participants thought that having varied recommendations in different platforms, using the same recommendations algorithm. This leads to the requirement of implementing a variable bias towards the factors considered for recommendations or implementing a reinforcement learning technique, for the model to adjust based on user-inputs. Having a pre-configurable bias will also allow to achieve this, but the results from recommendations may not be optimum.
-}} \\
+}
+}
+\\
 \hline
 \textbf{Question} & \textbf{What functionalities would you like to have in a Trading Recommendations System for Non-fungible Tokens?} \\
 \hline
 \textbf{Aim of question} & To identify the non-function requirements of the system, that would make the system as user-friendly as possible \\
 \hline
-\multicolumn{2}{|l|}{\textbf{Findings}} \\
+\multicolumn{2}{|l|}{\textbf{Findings \& Conclusion}} \\
 
 \multicolumn{2}{|l|}{
 \parbox{\textwidth}{
@@ -369,9 +395,10 @@ Most responses form the participants revolved around considering price-predictio
 \hline
 \end{longtable}
 
+\pagebreak
 \section{Summary of Findings}
 
-\begin{longtable}{|l|p{0.7\linewidth}|c|l|l|l|}
+\begin{longtable}{|l|p{0.72\linewidth}|c|l|l|l|}
 \caption{Summary of Findings}\\ 
 \hline
 \textbf{Id} & \textbf{Finding} & \begin{turn}{-90} \parbox{5.2em}{\setstretch{0.8}{\textbf{Literature Review}}} \end{turn} & \begin{turn}{-90}\textbf{Interviews}\end{turn} & \begin{turn}{-90}\textbf{Survey}\end{turn} & \begin{turn}{-90}\textbf{Prototyping}\end{turn}  \endfirsthead 
@@ -433,7 +460,7 @@ Prior to development, the system's boundaries and interactions should be determi
 \subsection{Functional Requirements}
 The MoSCoW technique was used to determine the priority levels of system needs based on their importance.
 
-\begin{longtable}{|l|p{0.8\linewidth}|}
+\begin{longtable}{|l|p{0.77\linewidth}|}
 \caption{Levels of priority according to the "MoSCoW" technique.}\\ 
 \hline
 \textbf{Priority Level} & \textbf{Description}                                                                                                    \endfirsthead 
@@ -449,10 +476,13 @@ Will not have (W)       & The requirements that the system may not have and that
 \end{longtable}
 
 
-\begin{longtable}{|l|p{0.64\linewidth}|l|l|}
+\begin{longtable}{|l|p{0.71\linewidth}|c|l|}
 \caption{Functional requirements}\\ 
 \hline
-\textbf{FR ID} & \textbf{Requirement} & \begin{tabular}[c]{@{}l@{}}\textbf{Priority}\\\textbf{Level}\end{tabular} & \textbf{Use Case} \endfirsthead 
+\begin{tabular}[c]{@{}l@{}}\textbf{FR}\\\textbf{ID}\end{tabular}
+& \textbf{Requirement} & \begin{tabular}[c]{@{}c@{}}\textbf{Priority}\\\textbf{Level}\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}\textbf{Use}\\\textbf{Case}\end{tabular}
+\endfirsthead 
 \hline
 FR1 & Users must be able to add a chosen NFT to be considered as the reference point to generating recommendations. & M & UC1 \\ 
 \hline
@@ -487,7 +517,7 @@ FR14 & The system will not act as a decentralized system. & W &  \\
 
 \subsection{Non-functional Requirements}
 
-\begin{longtable}{|l|l|p{0.46\linewidth}|l|}
+\begin{longtable}{|l|l|p{0.5\linewidth}|l|}
 \caption{Non-functional requirements}\\ 
 \hline
 \textbf{NFR ID} & \textbf{Requirement} & \textbf{Description} & \textbf{Priority Level} \endfirsthead 

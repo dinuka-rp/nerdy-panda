@@ -1,0 +1,106 @@
+\documentclass[a4paper, 12pt, oneside]{book}
+\usepackage{import}
+\usepackage{preamble_styles}
+
+\addbibresource{references.bib} % import bibliography
+ 
+\makeglossaries
+\newacronym{nft}{NFT}{Non-fungible Token}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{dl}{DL}{Deep learning}
+\newacronym{ai}{AI}{Artificial Intelligence}
+\newacronym{nlp}{NLP}{Natural Language Processing}
+\newacronym{erc}{ERC}{Ethereum Request for Comments}
+\newacronym{gui}{GUI}{Graphical User Interface}
+\newacronym{p@k}{P@K}{Precision at K}
+\newacronym{mse}{MSE}{Mean Squared Error}
+\newacronym{rmse}{RMSE}{Root Mean Square Error}
+\newacronym{mae}{MAE}{Mean Absolute Error}
+\newacronym{mlp}{MLP}{Multilayer Perceptron}
+\newacronym{lstm}{LSTM}{Long short-term memory}
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{rnn}{RNN}{Recurrent Neural Network}
+
+
+% ------------------------------------------------------------
+\begin{document}
+
+\frontmatter
+\import{}{cover_page.tex}
+
+% \pagenumbering{roman} % Start roman numbering - this is not needed in the book class - it's automatically handled.
+
+{\setstretch{1}  % only for toc, lof, lot, acronyms - change line spacing to 1 of Word
+
+\tableofcontents
+
+{\let\clearpage\relax
+\listoffigures}
+{\let\clearpage\relax
+\listoftables}
+{\let\clearpage\relax
+\printglossary[type=\acronymtype,nonumberlist, style=super
+%,title=Abbreviations
+]}
+}
+
+
+\chapter{Abstract}
+\import{}{abstract.tex}
+
+% ------------------------------------------------------------
+\mainmatter
+
+
+\chapter{Introduction}
+\import{chapters/}{pspd-introduction.tex}
+
+% \chapter{Literature Review}
+% \import{chapters/}{literature_review.tex}
+
+% \chapter{Methodologies}
+% \import{chapters/}{methodologies.tex}
+
+\chapter{Software Requirements Specification}
+\import{chapters/}{requirements_specification.tex}
+
+% \chapter{Social, Legal, Ethical and Professional Issues}
+% \import{chapters/}{slec.tex}
+
+\chapter{Initial Design}
+\import{chapters/}{design.tex}
+
+\chapter{Initial Implementation}
+\import{chapters/}{implementation.tex}
+
+% \chapter{Testing}
+% \import{chapters/}{testing.tex}
+
+% \chapter{Evaluation}
+% \import{chapters/}{evaluation.tex}
+
+% \chapter{Conclusion}
+% \import{chapters/}{conclusion.tex}
+
+% \newpage
+\backmatter
+
+\setcounter{page}{1} % Set the page counter to 1
+\pagenumbering{Roman} % Switch to capital roman numbers
+
+
+
+% BIBLIOGRAPHY-----------------------------------------------
+\setlength\bibitemsep{1.5\itemsep} % add extra spacing between bib items
+\printbibliography[heading=bibintoc, title = {References}]
+
+
+
+% ------ Appendix --------
+\appendix
+\renewcommand{\thechapter}{\alph{chapter}}
+\import{}{appendix.tex}
+
+
+
+\end{document}

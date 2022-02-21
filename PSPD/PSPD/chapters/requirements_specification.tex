@@ -36,6 +36,8 @@ The Stakeholder Onion Model illustrates recognized stakeholders who are associat
 \pagebreak
 \subsection{Stakeholder Viewpoints}
 
+\vspace{-4mm}       % remove line spacing after
+
 \begin{longtable}{|p{0.2\linewidth}|p{0.23\linewidth}|p{0.51\linewidth}|} 
 \caption{Roles and benefits of identified stakeholders}\\ 
 \hline
@@ -90,7 +92,9 @@ Testers & Quality Inspector & Tests the system \& ensures that it's suitable to 
 In order to gather requirements for the development of the research project, there were multiple requirement elicitation methodologies that were followed. literature review, interviews, survey \& prototyping were the methodologies chosen for this purpose.
 The reasons to choosing the specified requirement elicitation methodologies have been discussed below.
 % Tell why you chose the specified requirement elicitation methodologies
-% Table
+
+\pagebreak
+% \vspace{-4mm}       % remove line spacing after
 
 \begin{longtable}{|p{0.96\linewidth}|}
 \caption{Requirement Elicitation Methodologies}\\
@@ -120,30 +124,44 @@ Since the project was chosen to follow the \textit{Agile} Software Development L
 The analysis of data gathered through the chosen means of requirement elicitation have been presented below.
 % Discuss findings
 
+\pagebreak
+
 \subsection{Literature Review}
 
-\begin{longtable}{|p{0.96\linewidth}|}
-\caption{Findings through Literature Review}\\
-\hline
-\textbf{Findings} \\
-\hline
-In completion of the review of literature, it was identified that a Recommendations System for \gls{nft}s would benefit the majority of users to make purchase decisions as well as allow them to explore relevant items, that would in return benefit the market places, creators \& traders who are selling them as Recommendations Systems have proven to improve sales of e-commerce sites in the past.
-\bigbreak
-When exploring technologies that can be applied to achieve the required outcome, it was understood that the use of Deep learning hasn't been able to improve the output of recommendations compared to other fields of applications, in most cases. It was identified that implementing a custom hybrid ensembled model with the integration of social media trends has not been explored in literature. But, the use of data from similar users' timelines has been mentioned as possible future work. Neverthless, it was also identified that pricing of \gls{nft}s \& contract data have not been considered for any previous implementations either. The only study related to recommending \gls{nft}s only recommends \gls{nft} collections that a user may be interested in, but not actual \gls{nft}s themselves.
-\\
-\hline
-\end{longtable}
+\vspace{-4mm}       % remove line spacing after
 
 \begin{longtable}{|p{0.77\linewidth}|p{0.17\linewidth}|} 
 \caption{Findings through Literature Review}
 \label{tab:lr-findings-table}\\
 \hline
-Finding & Citation \\ 
+\textbf{Finding} & \textbf{Citation} \\ 
 \hline
-%  & \autocite{larry_history_2019} \\ 
+In completion of the review of literature, it was identified that a Recommendations System for \gls{nft}s would benefit the majority of users to make purchase decisions as well as allow them to explore relevant items, that would in return benefit the market places, creators \& traders who are selling them as Recommendations Systems have proven to improve sales of e-commerce sites in the past. & \autocite{naumov_deep_2019, vanderbilt_science_nodate} \\ 
+\hline
+When exploring technologies that can be applied to achieve the required outcome, it was understood that the use of Deep learning hasn’t been able to improve the output of recommendations compared to other fields of applications, in most cases. & \autocite{choi_local_2021} \\
+\hline
+It was identified that implementing a custom hybrid ensembled model with the injection of social media trends has not been explored in literature. & \autocite{ayushi_cross-domain_2018, cheng_hybrid_2020} \\
+\hline
+The use of data from similar users’ timelines for recommendations has been mentioned as possible future work. & \autocite{chen_user_2019} \\
+\hline
+Pricing of \gls{nft}s \& contract recognition data have not been considered for any previous implementations of Recommender Systems & \autocite{noauthor_what_2020} \\
+\hline
+The only study related to recommending \gls{nft}s only recommends \gls{nft} collections that a user may be interested in, but not actual \gls{nft}s themselves. & \autocite{noauthor_what_2020} \\
 \hline
 \end{longtable}
 
+
+% \begin{longtable}{|p{0.96\linewidth}|}
+% \caption{Findings through Literature Review}\\
+% \hline
+% \textbf{Findings} \\
+% \hline
+% In completion of the review of literature, it was identified that a Recommendations System for \gls{nft}s would benefit the majority of users to make purchase decisions as well as allow them to explore relevant items, that would in return benefit the market places, creators \& traders who are selling them as Recommendations Systems have proven to improve sales of e-commerce sites in the past.
+% \bigbreak
+% When exploring technologies that can be applied to achieve the required outcome, it was understood that the use of Deep learning hasn't been able to improve the output of recommendations compared to other fields of applications, in most cases. It was identified that implementing a custom hybrid ensembled model with the integration of social media trends has not been explored in literature. But, the use of data from similar users' timelines has been mentioned as possible future work. Neverthless, it was also identified that pricing of \gls{nft}s \& contract data have not been considered for any previous implementations either. The only study related to recommending \gls{nft}s only recommends \gls{nft} collections that a user may be interested in, but not actual \gls{nft}s themselves.
+% \\
+% \hline
+% \end{longtable}
 
 \subsection{Interviews}
 % interview Google form: https://forms.gle/9SchzfH3AzpLVbRo7
@@ -254,6 +272,7 @@ Furthermore, it was revealed that Sri Lanka does not have Machine Intelligence/ 
 % interview & questionnaire questions: https://docs.google.com/document/d/1oNKIeRZbnVcRPimWl0f07go6Uovjzdk5vwATmVQCbFQ/edit
 % survey Google form: https://forms.gle/w2zNTNBjiqZ3KNSg8
 
+\vspace{-4mm}       % remove line spacing after
 \begin{longtable}{|p{0.18\linewidth}|p{0.74\linewidth}|}
 \caption{Analysis of replies to questionnaire}\\
 \hline
@@ -394,20 +413,23 @@ Most responses form the participants revolved around considering price-predictio
 
 
 \subsection{Prototyping}
-
-\begin{longtable}{|p{0.96\linewidth}|}
-\caption{Findings through Prototyping}\\
-\hline
-\textbf{Findings} \\
-\hline
-
+% \vspace{-4mm}       % remove line spacing after
+% \begin{longtable}{|p{0.96\linewidth}|}
+% \caption{Findings through Prototyping}\\
+% \hline
+% \textbf{Findings} \\
+% \hline
+Through iterative prototyping, there were many requirements \& challengers that emerged. Firstly, there was no dataset. The data had to be pulled from an open \gls{api} and filtered. The main challenge that was met here was the overwhelming amount of data that was received related to each \gls{nft} and rate limits of the \gls{api}. The data received had to be filtered quite a lot and the most usable data points possible to be used for recommendations had to be identified \& extracted. Not all \gls{nft}s contained usable content-information. This had to be addressed with normalizing several fields and finding alternatives to map items using other available data.
 \\
-\hline
-\end{longtable}
+The integration of social trends data brought in a new valid perspective that could be used for recommendations.
+% \\
+% \hline
+% \end{longtable}
 
-\pagebreak
+% \pagebreak
 \section{Summary of Findings}
 
+\vspace{-4mm}
 \begin{longtable}{|l|p{0.72\linewidth}|c|l|l|l|}
 \caption{Summary of Findings}\\ 
 \hline
@@ -555,7 +577,7 @@ FR14 & The system will not act as a decentralized system. & W &  \\
 
 
 \subsection{Non-functional Requirements}
-
+\vspace{-4mm}
 \begin{longtable}{|l|l|p{0.5\linewidth}|l|}
 \caption{Non-functional requirements}\\ 
 \hline

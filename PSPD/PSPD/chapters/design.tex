@@ -58,35 +58,76 @@ While the entire architecture is represented in a modular approach for ease of u
 
 The reason for following a microservices architecture is to allow the system to scale while ensuring that points of failure can be easily recognized and taken care of seperately. The distributed nature of the system is expected to be seen in the connection between the numerous Recommendations Models and the Recommendations Diversifier. These combined together through output-pipelines, will act as an Ensebled Recommendations System. Although the system will be capable of distributing the load at this point, the expectation with the prototype is to run this in a single machine.
 
-The purpose of each module that is represented in the above architecture are described below.
+\noindent The purpose of each module that is represented in the above architecture are described below.
 
+% \begin{enumerate}
+% \item Data Tier
+\subsubsection{Data Tier}
 \begin{enumerate}
-\item Data Tier
-%     \begin{enumerate}
-%      \item Second level item
-%      \item Second level item
-%      \begin{enumerate}
-%       \item Third level item
-%       \item Third level item
-%      \end{enumerate}
-%   \end{enumerate}
-\item Logic Tier
-\item Presentation Tier (Client Tier)
+    \item Smart Contract Data - Data that is retrieved from Blockchain Smart Contracts. For convenience purposes, the data is fetched from the OpenSea API. Contains all the available data of each \gls{nft}.
+    \begin{enumerate}
+        \item \gls{nft} Asset Data - All the content of each \gls{nft}.
+        \item \gls{nft} Sales Events Data - Past sales data from \gls{nft} trading.
+        \item \gls{nft} Bids Events Data - All the current bids of each \gls{nft}.  % might not be used for the prototype.
+    \end{enumerate}
+    \item Social Trends Data - Data gathered from social trends sites (Twitter, news sites, etc.)
+    \item Anonymous past user-bias preference Data - Each user's preferred bias stored anonymously. This can be identified by a user's selection based on their requirement or based on the feedback received for each recommendation. This can be a temporary data-store that can be cleared once the user-session has ended.
 \end{enumerate}
+
+% \item Logic Tier
+\subsubsection{Logic Tier}
+\begin{enumerate}
+    \item Data Preprocessors - The preprocessing code required to modify/ extract required data that is usable for recommendations from all the available data.
+    \begin{enumerate}
+        \item \gls{nlp} Data parser - Responsible for extracting all the required data from what was collected through data mining techniques.
+        \item \gls{nft} Data Preprocessor - Used to modify and separate data that can be utilized from smart contracts and processed trends data.
+    \end{enumerate}
+    \item Recommendations Models - The various models that are used to provide recommendations based on identified diverse data-points.
+    % \begin{enumerate}
+    %     \item Trends Based Recommender - 
+    %     \item Content Based Recommender - 
+    %     \item Traits Based Recommender - 
+    %     \item Total-rarity Based Recommender - 
+    %     \item Contract - Clustering Based Recommender - 
+    %     \item Price Prediction Recommender - 
+    % \end{enumerate}
+    \item Recommendations Diversifier - The module that combines the recommendations produced by all the Recommendations Models, considering the bias.
+    \item User Satisfaction Monitor - The feedback received by user's will be filtered and updated through this module, to update the moving bias while preserving user-anonymity,
+    \item Recommendations Evaluator - The module that evaluates the user's satisfaction with the recommendations produced, to separately identify under-performing \& high-performing models.
+    \item Progress Polling API - The web-polling API that will be used to update the progress of recommendations generation in the frontend.
+    \item Backend Proxy - The interface that exposes the backend services to the frontend.
+\end{enumerate}
+
+% \item Presentation Tier (Client Tier)
+\subsubsection{Presentation Tier (Client Tier)}
+\begin{enumerate}
+    \item User Input \& Options Wizard - The UI that is presented to the user to enter the desired \gls{nft}(s) to be considered to recommendations as well as desired parameters and data-points (for advanced users).
+    \item Recommendations Feed UI - The UI that will show all the recommendations generated for a user. This will be similar to a home page on Youtube/ any other social network.
+    \item \gls{nft} Item UI - The UI that will show a chosen \gls{nft} with it's data and explained recommendations.
+    \item Admin Options \& Stats UI - The UI that will be exposed to a system Admin, allowing him to view the stats such as the general bias of the system. This will have options to defined the data-sources to be used for trends based recommendations and to adjust the bias.
+\end{enumerate}
+% \end{enumerate}
 
 
 
 \subsection{Component Diagram}
 % Is this necessary?
-
+>> Component Diagram figure comes here
 
 \section{Low-Level Design}
 % Low-Level Design / System Design
 \subsection{Choice of the Design Paradigm}
 % SSADM seems to be the most suitable for this project- give reasons
+Although the author was very tempted to use OOAD (Object Oriented Analysis and Design) to build the prototype due to the ease of extendability and further development of the system, the decision was made to use \textbf{SSADM (Structured Systems Analysis and Design Method)} based on the following factors.
+\begin{itemize}
+\item The project's core research component being inclined towards Data science. Therefore, it doesn't gain a noticeable benefit by using Object Oriented approaches.
+\item The programming languages that are expected to be used for implementation don't support OOP by nature.
+\item Ease of implementation of a MVP (Minimum Viable Product) for demonstrating the research application using the prototype.
+\item The time constraint of having to implement \& document a research within the time span of 10 months.
+\end{itemize}
 
 
-\section{Design Diagrams}
+% \subsection{Design Diagrams}
 % (component / class / sequence) - if OOP
 % Any diagram that is relevant according to your choice of paradigm.
 

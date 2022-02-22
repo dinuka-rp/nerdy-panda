@@ -487,33 +487,41 @@ Prior to development, the system's boundaries and interactions should be determi
 
 \section{Use Case Descriptions}
 
-
-% \begin{longtable}{|p{0.2\textwidth}|p{0.77\textwidth}|}
-% \caption{test use case description}\\ 
-% \hline
-% Use Case & Change the State of a Ticket \endfirsthead 
-% \hline
-% Id & UC:04 \\ 
-% \hline
-% Description & Change the state of a Ticket that has been created  saved in the system. \\ 
-% \hline
-% Primary Actor & User \\ 
-% \hline
-% Supporting Actors (if any) & none \\ 
-% \hline
-% Stakeholders and Interests (if any)~ & Users that have been already assigned to the Ticket, All users of the System (other Developers  Admins). \\ 
-% \hline
-% Pre-‐Conditions & \begin{tabular}[c]{@{}l@{}}A user has to be logged into the system.\\The required Ticket to be updated has to have been created.\end{tabular} \\ 
-% \hline
-% Post Conditions & \begin{tabular}[c]{@{}l@{}}Success end condition\\The state of a Ticket gets updated in the system.\end{tabular} \\ 
-% \hline
-% Trigger & A user wishes to update the state of a Ticket in the system. \\ 
-% \hline
-% Main Success Scenario~ & \begin{tabular}{@{\labelitemi\hspace{\dimexpr\labelsep+0.5\tabcolsep}}l@{}}User selects the current state of a Ticket.\\User selects the new state of the Ticket.\\System authenticates the User.\\System updates the state of the Ticket.\\System displays the updated list of Tickets with the updated ticket status.\end{tabular} \\ 
-% \hline
-% Variations & A user can change the state of the Ticket when updating the Ticket. \\
-% \hline
-% \end{longtable}
+\begin{longtable}{|p{0.23\linewidth}|p{0.75\linewidth}|}
+\caption{Use case description UC:04}\\ 
+\hline
+Use Case & View Recommendations \endfirsthead 
+\hline
+Id & UC:04 \\ 
+\hline
+Description & Display the most relevant NFT Recommendations based on the user's selection \& available data in the system. \\ 
+\hline
+Primary Actor & User \\ 
+\hline
+Supporting Actors (if any) & none \\ 
+\hline
+Stakeholders and Interests (if any) & Admins, NFT Traders, NFT creator \\ 
+\hline
+Pre-‐Conditions & The NFT data and trends data have to have been pre-processed. The recommendations have to have been generated. \\ 
+\hline
+Post Conditions & Success end condition: The user is presented with recommended NFTs. \\ 
+\hline
+Trigger & A user wishes to find similar NFTs to those that are currently being viewed or to explore possible interests based on past views. \\ 
+\hline
+Main Success Scenario & 
+\vspace{-7mm}       % remove line spacing before itemize
+\begin{itemize}
+\item User chooses the option to view recommendations.
+\item System recognizes the user's preferred bias for recommendations.
+\item System filters out and diversifies recommendations based on the user-bias and general bias that has been set in the system.
+\item System displays the recommended NFTs. 
+\end{itemize}
+\vspace{-7mm}       % remove line spacing after itemize
+\\ 
+\hline
+Variations & A user can be presented with recommended NFTs based on past interests shown and views in a feed similar to a social network/ e-commerce store. \\
+\hline
+\end{longtable}
 
 
 \section{Requirements}
@@ -575,7 +583,7 @@ FR14 & The system will not act as a decentralized system. & W &  \\
 % FR15 search NFTs by tags?
 \end{longtable}
 
-
+\pagebreak
 \subsection{Non-functional Requirements}
 \vspace{-4mm}
 \begin{longtable}{|l|l|p{0.5\linewidth}|l|}

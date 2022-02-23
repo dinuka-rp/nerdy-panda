@@ -46,6 +46,7 @@ The system's architecture is depicted in the diagram below. The data, logic, and
 
 The research contribution in this system lies in data preprocessing of the \textit{data tier}, recommendations models and in the recommendations diversifier of the \textit{logic tier}.
 
+% drawio file: https://drive.google.com/file/d/1w8qtT_7XMVVc8TiNLongVLBngfqhQPMg/view?usp=sharing
 
 \begin{figure}[h!]
 \centering
@@ -110,9 +111,15 @@ The reason for following a microservices architecture is to allow the system to 
 
 
 
-\subsection{Component Diagram}
-% Is this necessary?
->> Component Diagram figure comes here
+% \subsection{Component Diagram}
+% Is this necessary? no - this is for OOAD
+
+% \begin{figure}[h!]
+% \centering
+% \frame{\includegraphics[width=\textwidth]{images/Design/component-diagram.png}}
+% \caption{Component Diagram \textit{(self-composed)}}
+% \label{fig:component-diagram}
+% \end{figure}
 
 \section{System Design}
 % Low-Level Design / System Design
@@ -133,12 +140,43 @@ Although the author was very tempted to use OOAD (Object Oriented Analysis and D
 
 \subsection{Data Flow Diagram}
 
+The Data Flow Diagram presented below provides a more extensive breakdown of the components of the Context Diagram that was presented in the SRS.
+% https://www.lucidchart.com/pages/data-flow-diagram
+% drawio file: https://drive.google.com/file/d/1XFBAVPGVhEBqQPh0X6YoGenb3icNOS3I/view?usp=sharing
+
+\begin{figure}[h!]
+\centering
+\setlength{\fboxsep}{10pt}%
+\setlength{\fboxrule}{0.5pt}%
+\fbox{\includegraphics[width=0.95\textwidth]{images/Design/Data Flow Diagram L1.png}}
+% https://tex.stackexchange.com/a/423679
+\caption{Data Flow Diagram - Level 1\textit{(self-composed)}}
+\label{fig:data-flow-diagram-l1}
+\end{figure}
+
+% Add a L2 Data flow diagram, if there's space left
+
 \subsection{Algorithm Design}
+
 
 \subsection{UI Design}
 % low fidelity wireframes
 
+\pagebreak
 \subsection{System Process Flow Chart}
+The algorithm's flow and decision structures are depicted in the flowchart below. It explains a significant proportion of the system since the expected implementation is primarily procedural.
+
+% might have to show this page in landscape orientation
+\begin{figure}[h!]
+\centering
+\setlength{\fboxsep}{10pt}%
+\setlength{\fboxrule}{0.5pt}%
+\fbox{\includegraphics[width=0.95\textwidth]{images/Design/System Process Flow Chart.png}}
+\caption{System Process Flow Chart\textit{(self-composed)}}
+\label{fig:system-process-flowchart}
+\end{figure}
+
+% TODO: add price prediction, evaluation & bias altering based on feedback to flow chart
 
 \section{Chapter Summary}
 The design, architectural aspects and the flow of the project were documented in this chapter followed by the expected UI wireframes to be implemented for the end-user's interaction with the system.

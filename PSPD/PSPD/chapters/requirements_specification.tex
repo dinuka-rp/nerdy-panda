@@ -267,7 +267,7 @@ Furthermore, it was revealed that Sri Lanka does not have Machine Intelligence/ 
 % \hline
 \end{longtable}
 
-
+\pagebreak
 \subsection{Survey}
 % interview & questionnaire questions: https://docs.google.com/document/d/1oNKIeRZbnVcRPimWl0f07go6Uovjzdk5vwATmVQCbFQ/edit
 % survey Google form: https://forms.gle/w2zNTNBjiqZ3KNSg8
@@ -469,7 +469,9 @@ Prior to development, the system's boundaries and interactions should be determi
 
 \begin{figure}[h!]
 \centering
-\frame{\includegraphics[width=\textwidth]{images/SRS/context-diagram.png}}
+\setlength{\fboxsep}{10pt}%
+\setlength{\fboxrule}{0.5pt}%
+\fbox{\includegraphics[width=0.95\textwidth]{images/SRS/context-diagram.png}}
 \caption{Context Diagram \textit{(self-composed)}}
 \label{fig:context-diagram}
 \end{figure}
@@ -487,30 +489,31 @@ Prior to development, the system's boundaries and interactions should be determi
 
 \section{Use Case Descriptions}
 
-\begin{longtable}{|p{0.23\linewidth}|p{0.75\linewidth}|}
+\vspace{-4mm}
+\begin{longtable}{|p{0.23\linewidth}|p{0.73\linewidth}|}
 \caption{Use case description UC:04}\\ 
 \hline
 Use Case & View Recommendations \endfirsthead 
 \hline
 Id & UC:04 \\ 
 \hline
-Description & Display the most relevant NFT Recommendations based on the user's selection \& available data in the system. \\ 
+Description & Display the most relevant \gls{nft} Recommendations based on the user's selection \& available data in the system. \\ 
 \hline
 Primary Actor & User \\ 
 \hline
 Supporting Actors (if any) & none \\ 
 \hline
-Stakeholders and Interests (if any) & Admins, NFT Traders, NFT creator \\ 
+Stakeholders and Interests (if any) & Admins, \gls{nft} Traders, \gls{nft} creator \\ 
 \hline
-Pre-‐Conditions & The NFT data and trends data have to have been pre-processed. The recommendations have to have been generated. \\ 
+Pre-‐Conditions & The \gls{nft} data and trends data have to have been pre-processed. The recommendations have to have been generated. \\ 
 \hline
-Post Conditions & Success end condition: The user is presented with recommended NFTs. \\ 
+Post Conditions & Success end condition: The user is presented with recommended \gls{nft}s. \\ 
 \hline
-Trigger & A user wishes to find similar NFTs to those that are currently being viewed or to explore possible interests based on past views. \\ 
+Trigger & A user wishes to find similar \gls{nft}Ts to those that are currently being viewed or to explore possible interests based on past views. \\ 
 \hline
 Main Success Scenario & 
 \vspace{-7mm}       % remove line spacing before itemize
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 \item User chooses the option to view recommendations.
 \item System recognizes the user's preferred bias for recommendations.
 \item System filters out and diversifies recommendations based on the user-bias and general bias that has been set in the system.
@@ -520,6 +523,43 @@ Main Success Scenario &
 \\ 
 \hline
 Variations & A user can be presented with recommended NFTs based on past interests shown and views in a feed similar to a social network/ e-commerce store. \\
+\hline
+\end{longtable}
+
+\vspace{-4mm}
+\begin{longtable}{|p{0.23\linewidth}|p{0.73\linewidth}|}
+\caption{Use case description UC:07}\\ 
+\hline
+Use Case & Ranking \gls{nft}s based on Opinion mining data \endfirsthead 
+\hline
+Id & UC:07 \\ 
+\hline
+Description & Rank \gls{nft}s for recommendations based on gathered social media trends data, opinion mining data \& content in \gls{nft}s. \\ 
+\hline
+Primary Actor & none \\ 
+\hline
+Supporting Actors (if any) & Admins, Users \\ 
+\hline
+Stakeholders and Interests (if any) & \gls{nft} Collectors, \gls{nft} Traders, \gls{nft} creator \\ 
+\hline
+Pre-‐Conditions & New data-points have been added by an admin or a user and the trends have been extracted. \\ 
+\hline
+Post Conditions & Success end condition: Rank \gls{nft}s \\ 
+\hline
+Trigger & An admin or a user wishes to find \gls{nft}s that have content related to what's trending on the internet at the current moment in time. \\ 
+\hline
+Main Success Scenario & 
+\vspace{-7mm}       % remove line spacing before itemize
+\begin{itemize}[leftmargin=*]
+    % \item System pre processes new opinion mining data to produce extracted trends data.
+    \item System matches data of each \gls{nft} in the current data-set with extracted trends data.
+    \item System calculates a score for each \gls{nft} based on the matches \& impact of the identified trends.
+    \item System re-ranks \gls{nft}s based on the calculated scores.
+\end{itemize}
+\vspace{-7mm}       % remove line spacing after itemize
+\\ 
+\hline
+Variations & When recommendations are produced using other methods apart from trends, the data ranking scores generated here can be used to re-rank the recommendations when presenting to a user. \\
 \hline
 \end{longtable}
 
@@ -583,7 +623,7 @@ FR14 & The system will not act as a decentralized system. & W &  \\
 % FR15 search NFTs by tags?
 \end{longtable}
 
-\pagebreak
+% \pagebreak
 \subsection{Non-functional Requirements}
 \vspace{-4mm}
 \begin{longtable}{|l|l|p{0.5\linewidth}|l|}

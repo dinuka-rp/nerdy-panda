@@ -172,7 +172,7 @@ The equation composed below is designed to be used to calculate the total trends
 T_{t_{s},i} = \sum^{i_{s}}_{i_{s}=1} \left[\sum^{k_{w}}_{k_{w}=1} s_{c} \left(\frac{t_{vt,c}}{Med(T_{vt})})\right) m u \right]/ N_{i_{s}}
 \end{equation}
 % \]
-\caption{Social trend-match calculation for recommendations \textit{(self-composed)}}
+\caption*{Equation for social trend-match score for recommendations \textit{(self-composed)}}
 \end{figure}
 
 % describe algorithm
@@ -187,9 +187,12 @@ $t_{vt,c}$ - Tweet volume at this moment in time of the chosen content \\
 $Med(T_{vt})$ - Median Tweet volume at this moment in time\\
 
 \noindent The following equation extracts the calculation of the impact score of the chosen trend ($i_{t}$), as described above. Twitter data has been taken as the example source here. The data source can be even an internet forum.
+\begin{figure}[h!]
 \begin{equation}
 i_{t} = \frac{t_{vt,c}}{Med(T_{vt})}
 \end{equation}
+\caption*{Equation for the calculation of the impact score of a chosen trend \textit{(self-composed)}}
+\end{figure}
 
 For trends that don't have a measurable volume, $t_{vt,c}$ can be taken as $\left(T_{vt}{min} - 1\right)$ to give it the lowest possible value, or as $Med(T_{vt})$ to omit the impact score all-together.
 
@@ -254,4 +257,4 @@ The algorithm's flow and decision structures are depicted in the flowchart below
 % TODO: add price prediction, evaluation & bias altering based on feedback to flow chart
 
 \section{Chapter Summary}
-The design, architectural aspects and the flow of the project were documented in this chapter followed by the expected UI wireframes to be implemented for the end-user's interaction with the system.
+The design, architectural aspects and the flow of the project and novel author-designed algorithms were documented in this chapter followed by the expected UI wireframes to be implemented for the end-user's interaction with the system.

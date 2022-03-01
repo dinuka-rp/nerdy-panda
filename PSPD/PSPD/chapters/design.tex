@@ -97,6 +97,7 @@ The reason for following a microservices architecture is to allow the system to 
     \item Recommendations Evaluator - The module that evaluates the user's satisfaction with the recommendations produced, to separately identify under-performing \& high-performing models.
     \item Progress Polling API - The web-polling API that will be used to update the progress of recommendations generation in the frontend.
     \item Backend Proxy - The interface that exposes the backend services to the frontend.
+    \item Trends Data Fetcher - Fetch global trends data from social \gls{api}s or by scanning through news websites.
 \end{enumerate}
 
 % \item Presentation Tier (Client Tier)
@@ -104,7 +105,7 @@ The reason for following a microservices architecture is to allow the system to 
 \begin{enumerate}
     \item User Input \& Options Wizard - The UI that is presented to the user to enter the desired \gls{nft}(s) to be considered to recommendations as well as desired parameters and data-points (for advanced users).
     \item Recommendations Feed UI - The UI that will show all the recommendations generated for a user. This will be similar to a home page on Youtube/ any other social network.
-    \item \gls{nft} Item UI - The UI that will show a chosen \gls{nft} with it's data and explained recommendations.
+    \item \gls{nft} Item UI - The UI that will show a chosen \gls{nft} with it's data and recommendations.
     \item Admin Options \& Stats UI - The UI that will be exposed to a system Admin, allowing him to view the stats such as the general bias of the system. This will have options to defined the data-sources to be used for trends based recommendations and to adjust the bias.
 \end{enumerate}
 % \end{enumerate}
@@ -169,7 +170,7 @@ The equation composed below is designed to be used to calculate the total trends
 \begin{figure}[h!]
 % \[
 \begin{equation}
-T_{t_{s},i} = \sum^{i_{s}}_{i_{s}=1} \left[\sum^{k_{w}}_{k_{w}=1} s_{c} \left(\frac{t_{vt,c}}{Med(T_{vt})})\right) m u \right]/ N_{i_{s}}
+T_{t_{s},i} = \frac{\sum^{N_{i_{s}}}_{i_{s}=1} \left[\sum^{k_{w}}_{k_{w}=1} s_{c} \left(\frac{t_{vt,c}}{Med(T_{vt})}\right) \frac{m u}{\left(\mu + n_{m}\right)} \right]}{N_{i_{s}}}
 \end{equation}
 % \]
 \caption*{Equation for social trend-match score for recommendations \textit{(self-composed)}}
@@ -177,14 +178,16 @@ T_{t_{s},i} = \sum^{i_{s}}_{i_{s}=1} \left[\sum^{k_{w}}_{k_{w}=1} s_{c} \left(\f
 
 % describe algorithm
 \noindent$T_{t_{s},i}$ - Total trends score for one item\\
-$N_{i_{s}}$ - Number of sources of information.\\
-$i_{s}$ - Number of information sources\\
+$N_{i_{s}}$ - Total number of information sources\\
+$i_{s}$ - Source of information\\
 $k_{w}$ - Number of keywords in the current item\\
 $s_{c}$ - Sentiment score surrounding chosen trend content\\
 $m$ - Match value, a Boolean used to check if the current evaluated content contains the chosen trend to be matched against. \\
 $u$ - User priority, used to check the current user's interest in the chosen trend. This is 1 by default\\
 $t_{vt,c}$ - Tweet volume at this moment in time of the chosen content \\
 $Med(T_{vt})$ - Median Tweet volume at this moment in time\\
+$\mu$ - set to 0.1 to avoid division by 0 error for today's trends
+$n_{m}$ - Number of days between the current day \& the day of the trend.
 
 \noindent The following equation extracts the calculation of the impact score of the chosen trend ($i_{t}$), as described above. Twitter data has been taken as the example source here. The data source can be even an internet forum.
 \begin{figure}[h!]

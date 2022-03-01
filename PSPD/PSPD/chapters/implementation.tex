@@ -11,7 +11,7 @@ The technologies that were used to implement the prototype at each layer are sho
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{images/Implementation/tech-stack.png}
+\frame{\includegraphics[width=0.8\textwidth]{images/Implementation/tech-stack.png}}
 \caption{Technology Stack}
 \label{fig:teck-stack}
 \end{figure}
@@ -19,7 +19,9 @@ The technologies that were used to implement the prototype at each layer are sho
 % TODO: add a description (if not described later)
 % \blindtext
 
+\textbf{Linux} will be the default choice for development since of the ease of support for multiple development tools and performance benefits. MacOS/ Windows will be used for research documentation \& study purposes.
 
+\noindent The rest of the choices in the above tech-stack have been explained in the following sections.
 
 \subsection{Data Selection}
 % Data Selection (if data science project)
@@ -103,6 +105,7 @@ React & A UI library that makes it easy to build interactive websites. Used as a
 \hline
 \end{longtable}
 
+% \pagebreak
 \subsection{IDE’s Utilized}
 % Tabular form and justify.
 \vspace{-4mm}
@@ -144,7 +147,7 @@ IDE – Product & VSCode, Golang, Pycharm \\
 \hline
 Version Control & Git, GitHub \\
 \hline
-Application hosting & Netlify, AWS,
+Application hosting & Netlify, AWS
 % Google Cloud App Engine?
 \\
 \hline
@@ -154,21 +157,94 @@ Application hosting & Netlify, AWS,
 \section{Implementation of core functionalities}
 % Discuss core functionalities with support of code segments.
 
-% Since a Recommendations System's ultimate goal is to reduce the amount of information overload and
+Since a Recommendations System's ultimate goal is to reduce the amount of information overload and provide the user with the best possible options, it was essential to build a dataset to suit the expected requirements. Just throwing in all the data fetched from \gls{api}s into a \gls{dl} wouldn't give an expected successful recommendation. Therefore, the fetched data was heavily preprocessed.
 
-% nft data extraction
+\subsubsection{NFT Data Mining}
+Continuously being able to add new \gls{nft}s or even adding an initial set of \gls{nft}s should be possible in the system for users' convenience. When doing so, we need to make sure that relevant information is extracted.
 
-% nlp pre processing
+% FIGURE: code segment
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/nft-data-extraction.png}
+\caption{Implementation code segment: \gls{nft} data mining \& preprocessing}
+\label{fig:code-nft-data-mining}
+\end{figure}
 
-% vectorizing
+\vspace{-6mm}
+The data extraction is done to extract information required for recommendations, to view details of items \& to save information for recommendation algorithms/ predictions that are potentially possible in the future.
 
-% matching
+\subsubsection{\gls{nlp} Preprocessing, Vectorizing \& Recommendations}
+
+%  -- using a countvectorizer with reasoning
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/content vectorizor.png}
+\caption{Implementation code segment: Content Vectorizor}
+\label{fig:code-content-vectorizor}
+\end{figure}
+
+A Count Vectorizor was used from the \textit{scikit learn} library to vectorize all words, to be used for similarity matching. The reason for choosing the Count Vectorizor over a Tf-Idf Vectorizor was because Tf-Idf will give lower scores to more common words found in the dataset. Since our intent is to identify all the possible matches and primarily rank the content based results using global trends, it made more sense to go with a Count Vectorizor.
+
+% generating a cosine similarity matrix
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/cosine-matrix.png}
+\caption{Implementation code segment: Generating the Cosine Similarity Matrix}
+\label{fig:code-cosine-matrix}
+\end{figure}
+A Cosine Similarity Matrix is then generated from the \textit{scikit learn} library to identify all the matching words contained across all \gls{nft}s content. This generates the recommendation ahead of time.
+
+% -- matching using trends
+% -- matching using trait-rarity - trait-rarity recommendations
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/trait-rarity recommendations.png}
+\caption{Implementation code segment: Produce Trait Rarity Based Recommendations}
+\label{fig:code-trait-rarity-rec}
+\end{figure}
+
+The above recommendation generation algorithms were created to cater towards matching \gls{nft}s within a collection, since most of the major \gls{nft}-collections have comparatively more unique data in traits compared to descriptions. Trait rarity similarity was identified to be the best way to identify total uniqueness which represents the value of each \gls{nft}. Although the calculation of total rarity was done during the course of the research, recommending similar total rarities is a novel implementation in the application domain.
+
+\subsubsection{Trends Extraction, Preprocessing \& Recommendations}
+% trends data preprocessing
+% preprocessing trends
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/preprocessing trends.png}
+\caption{Implementation code segment: Preprocess Trends Data}
+\label{fig:code-preprocess-trends}
+\end{figure}
+
+The above code segment preprcoesses trends that are fetched from the live Twitter \gls{api}.
+
+% tweet volume extraction
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/tweet-volume calculation.png}
+\caption{Implementation code segment: Calculating Trends Score}
+\label{fig:code-tweet-volume-extraction}
+\end{figure}
+
+The above code segment assigns a tweet volume for trends with no volume \& calculates the median Tweet volume which used to calculate the impact score of each trend.
+
+% calculating trends score for trends based recommendations
+The below code segment is used to calculate the trends score for each \gls{nft} and finally make trends-based recommendations.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/calculating trends score.png}
+\caption{Implementation code segment: Calculating Trends Score}
+\label{fig:code-trends-score}
+\end{figure}
 
 % ensembling
 
 \section{Self-Reflection}
 % reflection on your current prototype.
+The current prototype implementation covers the core research component focused in the research, but there're point of improvements that the author would like to achieve before the end of the final prototype. The use of multiple data sources for trends is something that can be added as a plugin, to increase the trends-score and find more matches for trends based recommendations. Furthermore, the utilization of item-to-item collaborative filtering and price prediction would be a great addition, to complete \& present the recommendations ecosystem that is possible to be created with the suggested design architecture.
 
+Prior to adding more models to the system, the author's primary goal in implementation over the next few weeks would be to implement the front-end, \gls{api} proxy and database connection to present a completed, user-friendly minimum viable product.
+
+Considering the tight deadline and time-constraint to achieve a completed core research component, the level of completion of the prototype together with the research documentation is extremely satisfactory.
 % Results of evaluation metrics and if possible also have the qualitative evaluation - check across a time period, how the recommendations vary and appear to be timely compared to recommendations produced without integrating social trends.
 
 \section{Video Demo}

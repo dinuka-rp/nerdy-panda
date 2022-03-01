@@ -154,7 +154,7 @@ Application hosting & Netlify, AWS
 \end{longtable}
 
 
-\section{Implementation of core functionalities}
+\section{Implementation of Core Functionalities}
 % Discuss core functionalities with support of code segments.
 
 Since a Recommendations System's ultimate goal is to reduce the amount of information overload and provide the user with the best possible options, it was essential to build a dataset to suit the expected requirements. Just throwing in all the data fetched from \gls{api}s into a \gls{dl} wouldn't give an expected successful recommendation. Therefore, the fetched data was heavily preprocessed.
@@ -178,12 +178,12 @@ The data extraction is done to extract information required for recommendations,
 %  -- using a countvectorizer with reasoning
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{images/Implementation/code/content vectorizor.png}
-\caption{Implementation code segment: Content Vectorizor}
-\label{fig:code-content-vectorizor}
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/content vectorizer.png}
+\caption{Implementation code segment: Content Vectorizer}
+\label{fig:code-content-vectorizer}
 \end{figure}
 
-A Count Vectorizor was used from the \textit{scikit learn} library to vectorize all words, to be used for similarity matching. The reason for choosing the Count Vectorizor over a Tf-Idf Vectorizor was because Tf-Idf will give lower scores to more common words found in the dataset. Since our intent is to identify all the possible matches and primarily rank the content based results using global trends, it made more sense to go with a Count Vectorizor.
+A Count Vectorizer was used from the \textit{scikit learn} library to vectorize all words, to be used for similarity matching. The reason for choosing the Count Vectorizer over a Tf-Idf Vectorizer was because Tf-Idf will give lower scores to more common words found in the dataset. Since our intent is to identify all the possible matches and primarily rank the content based results using global trends, it made more sense to go with a Count Vectorizer.
 
 % generating a cosine similarity matrix
 \begin{figure}[h!]
@@ -203,7 +203,7 @@ A Cosine Similarity Matrix is then generated from the \textit{scikit learn} libr
 \label{fig:code-trait-rarity-rec}
 \end{figure}
 
-The above recommendation generation algorithms were created to cater towards matching \gls{nft}s within a collection, since most of the major \gls{nft}-collections have comparatively more unique data in traits compared to descriptions. Trait rarity similarity was identified to be the best way to identify total uniqueness which represents the value of each \gls{nft}. Although the calculation of total rarity was done during the course of the research, recommending similar total rarities is a novel implementation in the application domain.
+The above recommendation generation algorithms were created to cater towards matching \gls{nft}s within a collection, since most of the major \gls{nft}-collections have comparatively more unique data in traits compared to descriptions. Trait rarity similarity was identified to be the best way to identify total uniqueness which represents the value of each \gls{nft}. Although the calculation of total rarity was explored by \textit{rarity tools} during the course of the research, recommending similar total rarities is a novel implementation in the application domain.
 
 \subsubsection{Trends Extraction, Preprocessing \& Recommendations}
 % trends data preprocessing
@@ -246,6 +246,8 @@ Prior to adding more models to the system, the author's primary goal in implemen
 
 Considering the tight deadline and time-constraint to achieve a completed core research component, the level of completion of the prototype together with the research documentation is extremely satisfactory.
 % Results of evaluation metrics and if possible also have the qualitative evaluation - check across a time period, how the recommendations vary and appear to be timely compared to recommendations produced without integrating social trends.
+
+Embarrassing concepts of Decentralized Systems \& paving the path to Web 3.0, the research contribution brought forward in this project is expected to open up even more possibilities with time.
 
 \section{Video Demo}
 % Upload video to Youtube as unlisted video and provide Link to video demo

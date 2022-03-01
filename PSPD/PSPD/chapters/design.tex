@@ -141,9 +141,10 @@ Although the author was very tempted to use OOAD (Object Oriented Analysis and D
 
 \subsection{Data Flow Diagram}
 
-The Data Flow Diagram presented below provides a more extensive breakdown of the components of the Context Diagram that was presented in the SRS.
+The Level 1 Data Flow Diagram presented below provides a more extensive breakdown of the components of the Context Diagram that was presented in the SRS.
 % https://www.lucidchart.com/pages/data-flow-diagram
-% drawio file: https://drive.google.com/file/d/1XFBAVPGVhEBqQPh0X6YoGenb3icNOS3I/view?usp=sharing
+
+% drawio file: https://drive.google.com/file/d/1DQPTdYkTfFSAUxmJynjc8LRu-U7pKUMc/view?usp=sharing
 
 \begin{figure}[h!]
 \centering
@@ -151,11 +152,25 @@ The Data Flow Diagram presented below provides a more extensive breakdown of the
 \setlength{\fboxrule}{0.5pt}%
 \fbox{\includegraphics[width=0.95\textwidth]{images/Design/Data Flow Diagram L1.png}}
 % https://tex.stackexchange.com/a/423679
-\caption{Data Flow Diagram - Level 1\textit{(self-composed)}}
+\caption{Data Flow Diagram - Level 1 \textit{(self-composed)}}
 \label{fig:data-flow-diagram-l1}
 \end{figure}
 
+
 % Add a L2 Data flow diagram, if there's space left
+\noindent The Level 2 Data Flow Diagram presented below provides a more extensive breakdown of the components of the above Level 1 Data Flow Diagram.
+
+% drawio file: https://drive.google.com/file/d/1XFBAVPGVhEBqQPh0X6YoGenb3icNOS3I/view?usp=sharing
+
+\begin{figure}[h!]
+\centering
+\setlength{\fboxsep}{10pt}%
+\setlength{\fboxrule}{0.5pt}%
+\fbox{\includegraphics[width=0.95\textwidth]{images/Design/Data Flow Diagram L2.png}}
+% https://tex.stackexchange.com/a/423679
+\caption{Data Flow Diagram - Level 2 \textit{(self-composed)}}
+\label{fig:data-flow-diagram-l2}
+\end{figure}
 
 \subsection{Algorithm Design}
 
@@ -186,8 +201,8 @@ $m$ - Match value, a Boolean used to check if the current evaluated content cont
 $u$ - User priority, used to check the current user's interest in the chosen trend. This is 1 by default\\
 $t_{vt,c}$ - Tweet volume at this moment in time of the chosen content \\
 $Med(T_{vt})$ - Median Tweet volume at this moment in time\\
-$\mu$ - set to 0.1 to avoid division by 0 error for today's trends
-$n_{m}$ - Number of days between the current day \& the day of the trend.
+$\mu$ - Constant, set to 0.1 to avoid division by 0 error for today's trends\\
+$n_{m}$ - Number of days between the current day \& the day of the trend.\\
 
 \noindent The following equation extracts the calculation of the impact score of the chosen trend ($i_{t}$), as described above. Twitter data has been taken as the example source here. The data source can be even an internet forum.
 \begin{figure}[h!]
@@ -210,18 +225,35 @@ The beauty of this equation is that it isn't necessarily required to be applied 
 % mention these and how they get enhanced with the designed algorithm
 % these aren't created algorithms: >basic content based recommendations >consider owner-clustering (giving scores to this may be considerable as an overview algorithm for design)
 
-% \subsubsection{Inter-Collection Recommendations}
+\subsubsection{Recommendations based on Rarity}
 % same-collection
 % >>TODO:Add this to LR!!! total-rarity calculation
 % 
 
+\begin{figure}[h!]
+\begin{equation}
+T_{r,t} = \sum^{Nt}_{t=1} \frac{1}{\left(\frac{c_{t}}{T_{N}}\right)}
+\end{equation}
+\caption*{Equation for the calculation of the total trait rarity score of an \gls{nft} \textit{()}}
+\end{figure}
+
+\noindent$T_{r,t}$ - Total rarity of a trait\\
+$Nt$ - Total number of traits in the \gls{nft}\\
+$c_{t}$ - Trait count of the chosen trait (number of occurrences in the collection)
+$T_{N}$ - Total supply of \gls{nft}s in the collection
+
+The absolute difference between the total rarities are calculated when a \gls{nft} from a collection is chosen. The lowest scoring items are recommended to the user. This gives the \gls{nft}s that maybe as closely valuable as the initially chosen \gls{nft}. This allows to recommend \gls{nft}s that don't have unique content descriptions.
+
+Furthermore, the traits are fed into a Content-based Recommendations Model to get \gls{nft}s with the most similar traits to be recommended.
+
+
 % mention these and how they get enhanced with the designed algorithm
 % these aren't created algorithms: >traits-based matches >consider creator-clustering (giving scores to this may be considerable as an overview algorithm for design)
 
+
+
 % \bigbreak
 % >>using a varying bias instead of weighted bias for diversity in recommendations
-
-
 \subsubsection{Varying Bias for Recommendations Diversifier}
 Finally, all these recommendations produced by algorithmic models had to be presented to the user in a suitable manner. Instead of going with a weighted-bias which was recommended by the experts that were interviewed, it was decided to make this bias variable with time. 
 
@@ -229,15 +261,42 @@ The reason for opting for this in-contrast to having a pre-trained weights \& bi
 
 The calculation of this bias draws concepts from Reinforcement learning techniques.
 % >>calculating default bias
+\begin{figure}[h!]
+\begin{equation}
+B_{w,p} = \frac{\left[ \sum^{n_{g}}_{i=0} \frac{b_{p,s}}{\left( \alpha + n_{m} \right)} \right]}{N_{n_{g}}} 
+\end{equation}
+\caption*{Equation for the calculation of the recommendations bias in combining outputs in ensembled models \textit{(self-composed)}}
+\end{figure}
 
+\noindent $B_{w,p}$ - Default Bias weighting for a chosen pipeline that recommendations are given from\\
+$b_{p,s}$ - Successful bias selection for a chosen pipeline for the last n days\\
+$\alpha$ - Constant, set to 0.001 to avoid division by 0 error for today's bias selections\\
+$n_{m}$ - Number of days away from the current day.\\
+$n_{g}$ - Grouped days (Eg: 1 day, 7 days, 1 month, 3 months, 6 months, 1 year)\\
+$N_{n_{g}}$ - Total number of grouped days considered
 
 % >Evaluating recommendations
 
 % >how it's decided to push the recommendations towards admin's bias - this in turn may alter the default bias
 
 
-% \bigbreak
-% TODO: discuss how absolute distance to total_rarity can be used for matches between NFTs
+\subsubsection{Applying Bias Push}
+
+When presenting recommendations, the author decided to allow a system admin to be capable of suggesting a push towards a preferred direction to allow the bias to be altered.
+
+\begin{figure}[h!]
+\begin{equation}
+B_{c,p} = b_{l,p} + \left( B_{w,p} - b_{a,p} \right)
+\end{equation}
+\caption*{Equation for the calculation of the recommendations bias in combining outputs in ensembled models \textit{(self-composed)}}
+\end{figure}
+
+\noindent$B_{c,p}$ - Current bias of a chosen recommendations pipeline\\
+$b_{l,p}$ - Last applied user bias for the chosen recommendations pipeline. This can be 0 or null\\
+$B_{w,p}$ - Default bias of a chosen recommendations pipeline\\
+$b_{a,p}$ - Admin suggested bias of a chosen recommendations pipeline\\
+
+The above bias will be applied only to user's who haven't chosen a preferred bias. It can be applied to users who have chosen the bias as well, but it is suggested to be applied after initially showing recommendations to the user using their requested bias.
 
 
 \subsection{UI Design}

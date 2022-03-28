@@ -19,12 +19,12 @@
 \titleformat{\section}
 {\fontsize{14pt}{0pt}\bfseries}{\thesection}{0.8em}{}
 
-\titlespacing*{\section}{0pt}{1em plus 1.2em minus 0.5em}{0.3em}
+\titlespacing*{\section}{0pt}{0.8em plus 1em minus 0.5em}{0.2em}
 
 \titleformat{\subsection}
 {\fontsize{12pt}{0pt}\bfseries}{\thesubsection}{0.5em}{}
 
-\titlespacing*{\subsection}{0pt}{1em plus 1.1em minus 0.5em}{0.1em}
+\titlespacing*{\subsection}{0pt}{1em plus 1.5em minus 0.5em}{0.1em}
 
 % \titleformat{\subsubsection}
 % {\fontsize{13pt}{0pt}\bfseries}{\thesubsubsection}{0.5em}{}
@@ -45,13 +45,21 @@
 \usepackage{float}  % lets you prevent LaTeX from repositioning the tables.
 \usepackage[tableposition=top]{caption}
 \usepackage{longtable}
+\usepackage[skip=2pt]{caption} % https://tex.stackexchange.com/questions/45990/how-can-i-modify-vertical-space-between-figure-and-caption
+
+% \renewcommand{\arraystretch}{1.5} % https://www.overleaf.com/learn/latex/Questions/How_do_I_change_column_or_row_separation_in_LaTeX_tables%3F
 
 \usepackage{hyperref}       % clickable table of contents
+%  https://tex.stackexchange.com/a/847
 \hypersetup{
-    colorlinks=false, %set true if you want colored links
+    colorlinks=true, %set true if you want colored links
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
     linktoc=all,     %set to all if you want both sections and subsections linked
-    % linkcolor=blue,  %choose some color if you want links to stand out
 }
+
+
 \usepackage[acronym]{glossaries}    % acronyms/ abbreviations
 \emergencystretch=0.5em
 % https://tex.stackexchange.com/a/172000
@@ -63,11 +71,11 @@
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
 \renewcommand*{\nameyeardelim}{\addcomma\space}
 
- 
+\usepackage{wrapfig}    % Wrapping text around figures
 \graphicspath{ {./images/} }    % path to images/ figures
 
 % Add list of figures and tables to table of contents
-\usepackage[nottoc]{tocbibind}
+% \usepackage[nottoc]{tocbibind}
  
 \renewcommand{\contentsname}{Table of Contents}
 % \renewcommand{\baselinestretch}{1.5}        % entire document's spacing
@@ -93,6 +101,8 @@
 \setlength{\headheight}{14.5pt}%
 
 \usepackage[title]{appendix}
+
+\usepackage{rotating}
 
 % ------Testing stuff------------------------
 \usepackage{blindtext}

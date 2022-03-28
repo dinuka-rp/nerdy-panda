@@ -20,7 +20,7 @@
 \newacronym{lstm}{LSTM}{Long short-term memory}
 \newacronym{api}{API}{Application Programming Interface}
 \newacronym{rnn}{RNN}{Recurrent Neural Network}
-
+\newacronym{ide}{IDE}{Integrated Development Environment}
 
 % ------------------------------------------------------------
 \begin{document}
@@ -30,18 +30,26 @@
 
 % \pagenumbering{roman} % Start roman numbering - this is not needed in the book class - it's automatically handled.
 
+\chapter*{Abstract}
+\import{}{abstract.tex}
+
+
 {\setstretch{1}  % only for toc, lof, lot, acronyms - change line spacing to 1 of Word
 
 \tableofcontents
 
-{\let\clearpage\relax
-\listoffigures}
+% {\let\clearpage\relax
+\listoffigures
+% }
+
 {\let\clearpage\relax
 \listoftables}
-{\let\clearpage\relax
+
+% {\let\clearpage\relax
 \printglossary[type=\acronymtype,nonumberlist, style=super
 %,title=Abbreviations
-]}
+]
+% }
 }
 
 % ------------------------------------------------------------
@@ -49,31 +57,34 @@
 
 
 \chapter{Introduction}
-% \import{chapters/}{introduction.tex}
+\import{chapters/}{introduction.tex}
 
 \chapter{Literature Review}
 \import{chapters/}{literature_review.tex}
 
 \chapter{Methodologies}
-% \import{chapters/}{methodologies.tex}
+\import{chapters/}{methodologies.tex}
 
 \chapter{Software Requirements Specification}
-% \import{chapters/}{requirements_specification.tex}
+\import{chapters/}{requirements_specification.tex}
 
-% \chapter{Design}
-% % \import{chapters/}{design.tex}
+\chapter{Social, Legal, Ethical and Professional Issues}
+% \import{chapters/}{slec.tex}
 
-% \chapter{Implementation}
-% % \import{chapters/}{implementation.tex}
+\chapter{Design}
+\import{chapters/}{design.tex}
+
+\chapter{Implementation}
+\import{chapters/}{implementation.tex}
 
 % \chapter{Testing}
-% % \import{chapters/}{testing.tex}
+% \import{chapters/}{testing.tex}
 
 % \chapter{Evaluation}
-% % \import{chapters/}{evaluation.tex}
+% \import{chapters/}{evaluation.tex}
 
 % \chapter{Conclusion}
-% % \import{chapters/}{conclusion.tex}
+% \import{chapters/}{conclusion.tex}
 
 % \newpage
 \backmatter

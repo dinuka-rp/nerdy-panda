@@ -1,0 +1,91 @@
+\section{Chapter Overview}
+This chapter discusses how testing was carried out to ensure that functions flowed as expected. It will cover testing objectives and procedures such as model testing, benchmarking, functional testing, non-functional testing, module, and integration testing.
+
+\section{Objectives and Goals of Testing}
+The primary goal of software testing is to ensure that the system is performing as expected based on the requirements acquired.
+
+These expectations can be broken down as follows
+\begin{itemize}
+\item Ensure that all models of the system are working as intended and that they have been tested in order to achieve the desired optimum results.
+\item Ensure that the system meets the MoSCoW technique's mandatory "Must have" and "Should have" functional requirements.
+\item Apply possible benchmarking techniques that can be used to benchmark the developed system for future work.
+\item Identify if the required \& important non-functional requirements have been satisfied.
+\item Identify possible points of improvements/ bug fixes that can be applied to the system.
+\end{itemize}
+
+
+\section{Testing Criteria}
+With the goal of narrowing the gap between the intended and implemented systems, a criterion to test the system in two ways was defined. The following are the two methods for testing:
+\begin{enumerate}
+\item Functional Quality - This focuses on the system's development characteristics and technical requirements in order to see how well it meets the specified design based on functional requirements.
+\item Structural Quality - This tests the system's non-functional requirements while ensuring that it meets the functional requirements' performance criteria.
+\end{enumerate}
+
+
+\section{Model Testing}
+The \gls{nft} trait rarity and trait content based Recommendation Systems were matched against each other to demonstrate the difference in recommendations produced by each other even though they are both generated based on the traits and overall repetition of each of these traits across a collection.
+
+The trends-based recommender that is expected to enhance content-based Recommendation Systems with Collaborative-filtering-like capabilities without collecting user click-data was tested to identify if the expected output was obtained. These findings are further elaborated under qualitative evaluations in the next chapter.
+
+\subsection{Trait Rarity \& Content based Recommendations Systems}
+
+% TODO: test if the closest 10 are obtained in both algorithms
+
+\vspace{-4mm}
+\begin{table}[h!]
+\centering
+\caption{Testing Trait Content \& Trait Rarity based recommendations}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Testing Method} & \textbf{precision@k} &
+\textbf{recall@k} & \textbf{f1\_score@k} \\
+\hline
+self-scored & 1.0 & 1.0 & 1.0 \\
+\hline
+combined-scored & 1.0 & 0.5 & 0.67\\
+\hline
+\end{tabular}
+\end{table}
+
+The above precision \& recall @k are customized precision \& recalls created for the purpose of testing \& evaluating Recommendations Systems.
+
+These were calculated using the below formulae.
+
+\[\text{Recommender System Precision} = \frac{\text{no. of recommendations that are relevant}}{\text{no. of items that we recommended}}\]
+
+\[\text{Recommender System Recall} = \frac{\text{no. of recommendations that are relevant}}{\text{no. of all the possible relevant items}}\]
+
+The formula for f1 score is the same, except that the above altered precision \& recall were used.
+
+The reason that both the models were self-scored \& combined-scored was to demonstrate that although they produce the best possible results by themselves, using only one of the models won't give all the possible results. This is further explained with aggregate diversity in the evaluation chapter of this thesis.
+
+% TODO: discuss the results - why both precision & recall annot be high in a recommendations system. - here or in eval? here seems to be better?
+
+% TODO: reference to the graphs in appendix
+
+
+\subsection{Trends based Recommendations System}
+
+
+
+\section{Benchmarking}
+% mention aggregate diversity of trait content & rarity based recommendations here.
+
+
+\section{Functional Testing}
+
+
+\section{Module \& Integration Testing}
+
+
+\section{Non-functional Testing}
+
+\subsection{Performance}
+
+\subsection{Security}
+
+\subsection{Important Non-functional Requirement Completion Percentage}
+
+\section{Limitations of Testing Process}
+
+\section{Chapter Summary}

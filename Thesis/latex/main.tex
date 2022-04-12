@@ -30,9 +30,17 @@
 
 % \pagenumbering{roman} % Start roman numbering - this is not needed in the book class - it's automatically handled.
 
+\chapter*{Declaration}
+\import{}{declaration.tex}
+
 \chapter*{Abstract}
 \import{}{abstract.tex}
 
+\chapter*{Publications}
+\import{}{publications.tex}
+
+\chapter*{Acknowledgement}
+\import{}{acknowledgement.tex}
 
 {\setstretch{1}  % only for toc, lof, lot, acronyms - change line spacing to 1 of Word
 
@@ -57,16 +65,16 @@
 
 
 \chapter{Introduction}
-\import{chapters/}{introduction.tex}
+% \import{chapters/}{introduction.tex}
 
 \chapter{Literature Review}
-\import{chapters/}{literature_review.tex}
+% \import{chapters/}{literature_review.tex}
 
 \chapter{Methodologies}
-\import{chapters/}{methodologies.tex}
+% \import{chapters/}{methodologies.tex}
 
 \chapter{Software Requirements Specification}
-\import{chapters/}{requirements_specification.tex}
+% \import{chapters/}{requirements_specification.tex}
 
 \chapter{Social, Legal, Ethical and Professional Issues}
 % \import{chapters/}{slec.tex}
@@ -77,14 +85,14 @@
 \chapter{Implementation}
 \import{chapters/}{implementation.tex}
 
-% \chapter{Testing}
-% \import{chapters/}{testing.tex}
+\chapter{Testing}
+\import{chapters/}{testing.tex}
 
-% \chapter{Evaluation}
-% \import{chapters/}{evaluation.tex}
+\chapter{Evaluation}
+\import{chapters/}{evaluation.tex}
 
-% \chapter{Conclusion}
-% \import{chapters/}{conclusion.tex}
+\chapter{Conclusion}
+\import{chapters/}{conclusion.tex}
 
 % \newpage
 \backmatter

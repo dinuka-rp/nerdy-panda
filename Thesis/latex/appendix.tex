@@ -1,5 +1,11 @@
+
+% TODO: Name all appendices properly in an incremental order!!
+
+% \vspace{-7mm}
+% {\let\clearpage\relax
 \chapter{Appendix A - Concept Map}
-\label{appendix:A}
+% }
+\label{appendix:A-concept-map}
 % concept map
 
 \begin{figure}[h!]
@@ -13,6 +19,50 @@
 
 % \chapter{Appendix  - Requirement Engineering Survey}
 
+\chapter{Appendix  - UI Wireframes}
+\label{appendix:UI-Wireframes}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{images/appendix/UI Wireframes/Reference NFT entry.png}
+\caption{UI Wireframe - Reference NFT entry \textit{(self-composed)}}
+% \label{fig:ui-wireframes-1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{images/appendix/UI Wireframes/Loading-Generating Recommendations.png}
+\caption{UI Wireframe - Loading-Generating Recommendations \textit{(self-composed)}}
+% \label{fig:ui-wireframes-1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{images/appendix/UI Wireframes/Generated Recommendations.png}
+\caption{UI Wireframe - Generated Recommendations \textit{(self-composed)}}
+% \label{fig:ui-wireframes-1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{images/appendix/UI Wireframes/Admin Trends.png}
+\caption{UI Wireframe - Admin Trends \textit{(self-composed)}}
+% \label{fig:ui-wireframes-1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{images/appendix/UI Wireframes/Admin Default Bias selection.png}
+\caption{UI Wireframe - Admin Default Bias selection \textit{(self-composed)}}
+% \label{fig:ui-wireframes-1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{images/appendix/UI Wireframes/User Bias selection.png}
+\caption{UI Wireframe - User Bias selection \textit{(self-composed)}}
+% \label{fig:ui-wireframes-1}
+\end{figure}
 
 \chapter{Appendix C - Evaluations}
 \label{appendix:C}
@@ -20,24 +70,26 @@
 \section*{Appendix C1 - Evaluations received by Evaluators}
 
 % TODO: have a table for each cateogry/ separate by category row.
+% OR group evaluators - separate using row with category ID?
 
-\begin{longtable}{|p{0.17\linewidth}|p{0.17\linewidth}|p{0.56\linewidth}|}
+\vspace{-4mm}
+\begin{longtable}{|p{0.26\linewidth}|p{0.66\linewidth}|}
 \caption{Evaluations received by Evaluators}
 \label{tab:evaluators-eval-feedback}
 \\
 \hline
-\textbf{Evaluator} & \textbf{Qualifications/ Position of Employment} & \textbf{Feedback} \endfirsthead
+\textbf{Evaluator} & \textbf{Feedback} \endfirsthead
 \hline
- &  &  \\
+% name & Qualifications/~ Position of Employment 
+&  \\
 \hline
- &  &  \\
+ & \\
 \hline
- &  &  \\
+ & \\
 \hline
- &  & \\
+ & \\
 \hline
 \end{longtable}
-
 
 \section*{Appendix C2 - Evaluation of Functional Requirements}
 
@@ -52,17 +104,17 @@
 \begin{tabular}[c]{@{}c@{}}\textbf{Use}\\\textbf{Case}\end{tabular} & \textbf{Evaluation}
 \endfirsthead 
 \hline
-FR1 & Users must be able to add a chosen NFT to be considered as the reference point to generating recommendations. & M & UC1 & \\ 
+FR1 & Users must be able to add a chosen NFT to be considered as the reference point to generating recommendations. & M & UC1 & Implemented \\ 
 \hline
 FR2 & Admins should be able to add a collection of NFT to be used as recommendations. & S & UC1 & \\ 
 \hline
-FR3 & The system could be able to fetch relevant data of the NFT using an entered token Id. & C & UC1 & \\ 
+FR3 & The system could be able to fetch relevant data of the NFT using an entered token Id. & C & UC1 & Implemented \\ 
 \hline
 FR4 & Users must be able to set/ adjust the bias and parameters to be used by the Recommendations System using parametric selections prior to generating recommendations. & M & UC2 & \\ 
 \hline
 FR5 & Admins should be able to adjust the default bias of the Recommendations System. & S & UC3 & \\ 
 \hline
-FR6 & Users must be able to view recommendations with the click of a button. & M & UC4 & \\
+FR6 & Users must be able to view recommendations with the click of a button. & M & UC4 & Implemented \\
 \hline
 FR7 & The prototype could have an option to receive user feedback regarding the satisfaction level of the generated recommendations by the system. & C & UC4 & \\
 \hline

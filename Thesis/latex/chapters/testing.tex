@@ -22,19 +22,67 @@ With the goal of narrowing the gap between the intended and implemented systems,
 \end{enumerate}
 
 
-\section{Model Testing}
-The \gls{nft} trait rarity and trait content based Recommendation Systems were matched against each other to demonstrate the difference in recommendations produced by each other even though they are both generated based on the traits and overall repetition of each of these traits across a collection.
+\section{Model Testing \& Evaluation}
 
-The trends-based recommender that is expected to enhance content-based Recommendation Systems with Collaborative-filtering-like capabilities without collecting user click-data was tested to identify if the expected output was obtained. These findings are further elaborated under qualitative evaluations in the next chapter.
+\subsection{Model Testing}
 
-\subsection{Trait Rarity \& Content based Recommendations Systems}
+% The content based recommender, trait rarity, trait content recommenders and trends-based recommenders 
+
+The multiple ensemble models developed in the project were tested based on the following conditions.
+
+% \vspace{-4mm}
+\begin{longtable}[h!]{|l|p{0.65\linewidth}|}
+\caption{Testing Trait Content \& Trait Rarity based recommendations}
+\endfirsthead
+\hline
+\textbf{Model} & \textbf{Testing Method} \\
+\hline
+Trait Rarity based RecSys & The total rarity being as close as possible to the reference item's rarity\\
+\hline
+Trait Content based RecSys & Cosine Similarity being the closest to the reference item's traits\\
+\hline
+Trends based RecSys & Check if the items that get the highest trend score will be recommended and identify if the most trending, accepted \& timely items are obtained using the available data. \\
+\hline
+\end{longtable}
+
+\noindent Following graphical analysis of the test output shows the validity of the outputs produced by the trait rarity \& content based models.
+
+
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Testing/Cosine Similarities of Recommended NFTs - Trait Content Based Recomendations Model.png}
+         \caption{Trait Content based recommendations}
+         \label{fig:trait-content-output}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Testing/Trait rarity representation graph - rarity recommendations.png}
+         \caption{Total Rarity based recommendations}
+         \label{fig:total-rarity-output}
+     \end{subfigure}
+     \hfill
+        \caption{Outputs produced by Trait Content \& Rarity Recommendation Systems \textit{(self-composed)}}
+        \label{fig:trait-recs-outputs}
+\end{figure}
+
+
+% TODO: test this with multiple collections and add findings graphs to appendix
+
+\subsection{Model Evaluation}
+
+\subsubsection{Trait Rarity \& Content based Recommendations Systems}
 
 % TODO: test if the closest 10 are obtained in both algorithms
 
-\vspace{-4mm}
+The \gls{nft} trait rarity and trait content based Recommendation Systems were matched against each other to demonstrate the difference in recommendations produced by each other even though they are both generated based on the traits and overall repetition of each of these traits across a collection.
+
+% \vspace{-4mm}
 \begin{table}[h!]
 \centering
-\caption{Testing Trait Content \& Trait Rarity based recommendations}
+\caption{Evaluating Trait Content \& Trait Rarity based recommendations}
 \begin{tabular}{|l|l|l|l|}
 \hline
 \textbf{Testing Method} & \textbf{precision@k} &
@@ -55,21 +103,64 @@ These were calculated using the below formulae.
 
 \[\text{Recommender System Recall} = \frac{\text{no. of recommendations that are relevant}}{\text{no. of all the possible relevant items}}\]
 
-The formula for f1 score is the same, except that the above altered precision \& recall were used.
+\noindent The formula for f1 score is the same, except that the above altered precision \& recall were used.
 
-The reason that both the models were self-scored \& combined-scored was to demonstrate that although they produce the best possible results by themselves, using only one of the models won't give all the possible results. This is further explained with aggregate diversity in the evaluation chapter of this thesis.
+% TODO: discuss the results - why both precision & recall cannot be high in a recommendations system.
 
-% TODO: discuss the results - why both precision & recall annot be high in a recommendations system. - here or in eval? here seems to be better?
+The reason that both the models were self-scored \& combined-scored was to demonstrate that although they produce the best possible results by themselves, using only one of the models won't give all the possible results. This can be further explained with the aggregate diversity graphs displayed in the \textbf{\nameref{sec:test-benchmarking}} section.
 
-% TODO: reference to the graphs in appendix
+% show graphs with all outputs here - to explain why combined score is necessary to be considered & both models are important.
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Testing/Cosine Similarities of Recommended NFTs (Trait Content Based + Total Rarity Recomendations Models).png}
+         \caption{Cosine similarities of content}
+         \label{fig:1-1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/Testing/Total rarities content + rarity based.png}
+         \caption{Total rarities}
+         \label{fig:1-2}
+     \end{subfigure}
+     \hfill
+        \caption{Comparison Recommendations generated by both models \textit{(self-composed)}}
+        \label{fig:1}
+\end{figure}
+
+The above graphs establishes the necessity of generating recommendations from both models.
+
+The items marked in blue were recommended by the Trait content based RecSys, the green ones by the Trait rarity based RecSys and the orange item was the reference item used to generate recommendations.
+It is clear that although both the trait content and rarity based Recommendation Systems are generating recommendations using traits of items, they produce very different outputs, especially in the case of rarity based recommendations.
 
 
-\subsection{Trends based Recommendations System}
+\subsubsection{Trends based Recommendations System}
 
+
+The trends-based recommender that is expected to enhance content-based Recommendation Systems with Collaborative-filtering-like capabilities without collecting user click-data was tested to identify if the expected output was obtained.
 
 
 \section{Benchmarking}
+\label{sec:test-benchmarking}
+
 % mention aggregate diversity of trait content & rarity based recommendations here.
+% TODO: show aggregate diversity graph here. reference to the graphs in appendix?
+The following graph shows the aggregate diversity of items generated by both the models by using the entire \textit{Bored Ape Yatch Club} \gls{nft} collection of 10,000 \gls{nft}s.
+
+\begin{figure}[h!]
+\centering
+\frame{\includegraphics[width=0.7\textwidth]{images/Testing/aggregate diversity.png}}
+\caption{Aggregate diversity of generated Recommendations \textit{(self-composed)}}
+\label{fig:aggregate-diversity-traits}
+\end{figure}
+
+\noindent As displayed, the maximum overlapping of items was 3, while most recommendations had 1 or less than one similarities.
+
+% TODO: benchmark trends based recommender
+% show using how many days/ trends, how many items were recommended out of the total number in the collection.
+% Can show how the recommendations vary with time as well
 
 
 \section{Functional Testing}
@@ -77,6 +168,9 @@ The reason that both the models were self-scored \& combined-scored was to demon
 
 \section{Module \& Integration Testing}
 
+% trends scoring module
+
+% sentiment analysis module
 
 \section{Non-functional Testing}
 

@@ -17,7 +17,7 @@
 
 % \chapter{Appendix B - Work Breakdown Structure}
 
-% \chapter{Appendix  - Requirement Engineering Survey}
+% \chapter{Appendix  - Requirement Engineering Survey} (questionnaire)
 
 \chapter{Appendix  - UI Wireframes}
 \label{appendix:UI-Wireframes}
@@ -64,6 +64,71 @@
 % \label{fig:ui-wireframes-1}
 \end{figure}
 
+
+\chapter{Appendix  - Testing}
+\label{appendix:testing}
+
+\section*{Appendix 1 - Model Evaluation}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{images/Testing/trends-matches-eval2.png}
+\caption{Total Trends based Recommendations made with time \textit{(self-composed)}}
+\label{fig:trends-recsys-total-matches}
+\end{figure}
+
+\section*{Appendix 2 - Functional Testing}
+
+\vspace{-4mm}
+\begin{longtable}{|l|l|p{0.22\linewidth}|p{0.21\linewidth}|p{0.21\linewidth}|l|}
+\caption{Testing results of Functional Requirements}
+\label{tab:test-func-requirements}
+\\ 
+\hline
+\begin{tabular}[c]{@{}l@{}}\textbf{Test}\\\textbf{Case}\end{tabular}
+&
+\begin{tabular}[c]{@{}l@{}}\textbf{FR}\\\textbf{ID}\end{tabular}
+&
+\begin{tabular}[c]{@{}c@{}}\textbf{User}\\\textbf{Action}\end{tabular}
+&
+\begin{tabular}[c]{@{}c@{}}\textbf{Expected}\\\textbf{Result}\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}\textbf{Actual}\\\textbf{Result}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\textbf{Result}\\\textbf{Status}\end{tabular}
+\endfirsthead 
+\hline
+1 & FR1 & Users adds a chosen \gls{nft} to be considered as the reference & item details are fetched and validated & item details were fetched and validated & Passed \\ 
+\hline
+2 & FR2 & Admins adds a collection of \gls{nft}s to be used as recommendations. & The details of the \gls{nft}s get fetched and pre-processed for recommendations & The details of the \gls{nft}s were fetched and pre-processed for recommendations & \\ 
+\hline
+3 & FR3 & A user enters a contract address \& token Id of an \gls{nft}. & The system fetches relevant data of the \gls{nft} & The system fetched relevant data of the \gls{nft} & Passed \\ 
+\hline
+4 & FR4 & Users sets/ adjusts the bias and parameters to be used & The user specific bias and general bias get adjusted & The user specific bias and general bias were adjusted & \\
+\hline
+5 & FR5 & Admins adjusts the admin bias & The admin-bias gets adjusted in the system & The admin-bias was adjusted in the system & \\ 
+\hline
+6 & FR6 & Users clicks a button to generate recommendations & Recommendations are generated and made visible to the user & Recommendations were generated and made visible to the user & Passed \\
+\hline
+7 & FR7 & A user enters feedback regarding the satisfaction level of the generated recommendations & The feedback of the user is collected and stored in the Database & The feedback of the user was collected and stored in the Database & \\
+\hline
+8 & FR8 & User requests the reason for recommending the item & Reasons for recommending each item is displayed & Reasons for recommending each item was displayed & Passed \\
+\hline
+% 9 & FR9 & The system should generate price predictions and consider the results for recommendations. & S & UC5 & \\ 
+% \hline
+10 & FR10 & User requests featured trending \gls{nft} recommendations & Opinion mining trends data is used to generate \gls{nft} recommendations. & Opinion mining trends data was used to generate \gls{nft} recommendations. & Passed \\
+\hline
+11 & FR11 & User inputs data-points such as interested public figures, websites to use as opinion mining data for recommendations & The data-points entered are pre-processed and used for trends based recommendations & The data-points entered were pre-processed and used for trends based recommendations & \\ 
+\hline
+12 & FR12 & Admins inputs data-points such as interested public figures, websites to use as opinion mining data for recommendations. & The data-points entered are pre-processed and used for trends based recommendations & The data-points entered were pre-processed and used for trends based recommendations & \\
+\hline
+% 13 & FR13 & User-input could be aggregated and used as a reinforcement learning bias for the Recommendations Model. & C & &  \\
+% \hline
+% 14 & FR14 & The system will not act as a decentralized system. & W & &  \\
+% \hline
+\end{longtable}
+
+% \section*{Module \& Integration Testing}
+
+
+
 \chapter{Appendix C - Evaluations}
 \label{appendix:C}
 
@@ -73,7 +138,7 @@
 % OR group evaluators - separate using row with category ID?
 
 \vspace{-4mm}
-\begin{longtable}{|p{0.26\linewidth}|p{0.66\linewidth}|}
+\begin{longtable}{|p{0.23\linewidth}|p{0.69\linewidth}|}
 \caption{Evaluations received by Evaluators}
 \label{tab:evaluators-eval-feedback}
 \\
@@ -81,11 +146,19 @@
 \textbf{Evaluator} & \textbf{Feedback} \endfirsthead
 \hline
 % name & Qualifications/~ Position of Employment 
-&  \\
+\textbf{Mr. Sharmilan Somasundaram}
+[\textit{CEO of Niftron - Blockchain as a Service, Certified Blockchain Solution Architect (CBSA)}]
+&  Because there's no system like this, it's a good research. The research project is good because gathering data \& domain side is difficult \& new.
+The trends based model needs more evaluation. Try synthesizing data to show how recommended items vary across time. Try to show the significance of using the model.
+\\
 \hline
- & \\
+\textbf{Mr. Nipuna Senanayake} [\textit{}] & The concept of the trends based recommendations system is good. Evaluation of the trends based model is a bit of a concern. Might be possible to evaluate it by web-scraping.
+Good amount of work has been done. Keep up the same enthusiasm for research, it will help in the long run, wherever you go.
+ \\
 \hline
- & \\
+Anonymous [\textit{Blockchain Masters Researcher}] & The research is good, haven't seen \gls{nft} researches that much, although there're quite a lot of Blockchain researches. Will give an A for the project since proper research has been done with the identified research gap.
+Price prediction might be possible using art market pricing (if available) since the \gls{nft} market is similar to the market.
+\\
 \hline
  & \\
 \hline

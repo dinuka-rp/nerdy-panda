@@ -37,7 +37,7 @@
 %% values in them; it is your responsibility as an author to replace
 %% the commands and values with those provided to you when you
 %% complete the rights form.
-\setcopyright{acmcopyright}
+% \setcopyright{acmcopyright}
 \copyrightyear{2022}
 \acmYear{2022}
 % \acmDOI{10.1145/1122445.1122456}
@@ -77,7 +77,7 @@
 %%
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
-\title{A Review on Pushing the Limits of Baseline Recommendation Systems with the integration of Opinion Mining Techniques}
+\title{A Review on Pushing the Limits of Baseline Recommendation Systems with the integration of Opinion Mining \& Information Retrieval Techniques}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -145,6 +145,11 @@ This paper is a review of the novel models \& architectures of hybrid Recommenda
 <concept_significance>500</concept_significance>
 </concept>
 <concept>
+<concept_id>10002951.10003317.10003338</concept_id>
+<concept_desc>Information systems~Retrieval models and ranking</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+<concept>
 <concept_id>10002951.10003227.10003351</concept_id>
 <concept_desc>Information systems~Data mining</concept_desc>
 <concept_significance>300</concept_significance>
@@ -159,6 +164,7 @@ This paper is a review of the novel models \& architectures of hybrid Recommenda
 
 \ccsdesc[500]{Information systems~Recommender systems}
 \ccsdesc[500]{Human-centered computing~Social recommendation}
+\ccsdesc[300]{Information systems~Retrieval models and ranking}
 \ccsdesc[300]{Information systems~Data mining}
 \ccsdesc[100]{Applied computing~Online shopping}
 
@@ -200,7 +206,7 @@ More recently, after many attempts to go beyond the gold standard of recommendat
 In several research \& review papers, it has been brought to sight that Deep learning techniques in the area of recommendation systems have failed to live up to the expectations compared to the advancements in Computer Vision, Speech Recognition \& Natural Language Processing (NLP) domains \cite{choi_local_2021}. The results that have been published presenting advancements in the Recommendation Systems domain using Deep learning techniques have not been very convincing for the majority of use cases. Many standard Machine learning \& regression techniques have been able to outperform systems created using Deep learning models in terms of recommendations. As highlighted in past reviews \cite{dacrema_are_2019} it is understood that Deep learning models have been used as baseline methods for evaluating new Deep learning models. Thus, when looking back at older Machine learning techniques, they haven't been making an impactful improvement in many cases. As a result, much of the work related to Recommendation Systems using Deep learning techniques has been giving poorer recommendations, for higher computational power.
 
 
-A study conducted in 2019 questioned if we are really making any progress with Deep Learning models in the domain of Recommendations \cite{dacrema_are_2019}. In a more recent study researchers tried to understand the similarities and advantages of using \textbf{MLP} versus \textbf{dot product} \cite{rendle_neural_2020}. Similar to many Deep learning approaches, it was understood that MLP wasn't necessary unless the dataset was too large or the embedding dimension was very small. A dot product was identified as a better choice since it was efficient to a satisfactory extent.
+A study conducted in 2019 questioned if we are really making any progress with Deep Learning models in the domain of Recommendations \cite{dacrema_are_2019}. In a more recent study, researchers tried to understand the similarities and advantages of using \textbf{MLP} versus \textbf{dot product} \cite{rendle_neural_2020}. Similar to many Deep learning approaches, it was understood that MLP wasn't necessary unless the dataset was too large or the embedding dimension was very small. A dot product was identified as a better choice since it was efficient to a satisfactory extent.
 
 \section{How to choose the ideal algorithm for a Recommendations System?}
 
@@ -256,7 +262,7 @@ Because the proposed method is highly reliant on the technique of text-mining us
 \subsection{Cross-Domain Recommendations with Decision-making Support based on Twitter Sentiment}
 \subsubsection{A Cross-Domain Hybrid Recommendation System}
 When it comes to recommending items from multiple domains, it becomes challenging to use the same recommendation model for recommendations. Each of these domains may have distinctive features as well as a varied bias in weights of each feature towards recommendations.
-Taking into consideration of the 3 domains music, movies \& books a group of researchers has been able to produce a cross-domain recommendations system \cite{pes_universitydepartment_of_computer_science_bangalore_560085_india_cross-domain_2018}. This work has focused on using the domain knowledge gained from movies to generate recommendations for books and music.
+Taking into consideration of the 3 domains music, movies \& books a group of researchers has been able to produce a cross-domain recommendations system \cite{ayushi_cross-domain_2018}. This work has focused on using the domain knowledge gained from movies to generate recommendations for books and music.
 
 In order to build the required system, the authors have tested various supervised classification algorithms together with a hybrid approach for recommendations with the combination of content-based recommendations, user-to-user Collaborative filtering, and personalized recommendation techniques. Out of the tested classifiers, the Decision tree classifier was found to give the highest accuracy.
 
@@ -303,22 +309,22 @@ There have been many attempts to expand the capabilities of Recommendations by m
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{images/Enhanced Recommendation Systems.png}
+\includegraphics[width=\textwidth]{images/Enhanced_Recommendation_Systems.png}
 \caption{Enhancements done to Recommendation Systems using opinion mining techniques \textit{(self-composed)}}
 \label{fig:recommendation-opinion-mining-enhancements}
 \end{figure}
 
 The figure \ref{fig:recommendation-opinion-mining-enhancements} shows the identified possible points of integration of opinion mining techniques into a Recommendations System.
-1, 2 \cite{linden_amazoncom_2003, larry_history_2019}, 3 \cite{cheng_hybrid_2020} \& 4 \cite{ayushi_cross-domain_2018} techniques have been already applied as identified in past literature, while the 7\textsuperscript{th} technique has been mentioned as a possible future work from the 3rd technique \cite{chen_user_2019}. Method 5 hasn't been explicitly attempted in recent literature with respect to Recommendation Systems, but the data science models used aren't expected to require a lot of tweaking to achieve it, after the feature engineering step is being taken care of.
+1, 2 \cite{linden_amazoncom_2003, larry_history_2019}, 3 \cite{cheng_hybrid_2020} \& 4 \cite{ayushi_cross-domain_2018} techniques have been already applied as identified in past literature, while the 7\textsuperscript{th} technique has been mentioned as possible future work from the 3rd technique \cite{chen_user_2019}. Method 5 hasn't been explicitly attempted in recent literature concerning Recommendation Systems, but the data science models used aren't expected to require a lot of tweaking to achieve it, after the feature engineering step is taken care of.
 
 Method 6 has not been identified in previous literature and is expected to align better with the desires circulating market places that don't directly track \& collect user input such as user clicks. This can be extended to method 8. Finally, if methods 7 \& 8 turn out to give promising results, method 9 would be the next step to provide a completely new personalized recommendations architecture that integrates social media trends that are related to the content of the items.
 
 \section{NLP techniques that can be applied to support the integration of opinion mining into Recommendation Systems}
 
 % NLP techniques that can be applied (Sentiment analysis, word/ noun matching)
-The main NLP techniques that were identified to be useful to be implemented in a system that requires data-mining \& opinion mining techniques are were Sentiment Analysis, Named Entity-Recognition, Tokenization, Stemming \& Lammetization; the latter 4 techniques being required for pre-processing scraped data from opinion-mining techniques.
+The main NLP techniques that were identified to be useful to be implemented in a system that requires data-mining \& opinion mining techniques were Sentiment Analysis, Named Entity-Recognition, Tokenization, Stemming \& Lammetization; the latter 4 techniques being required for pre-processing scraped data from opinion-mining techniques.
 
-In order to apply these techniques, many past literature (as mentioned in Existing Work), points in the direction of using industrial-grade libraries that utilize \textbf{Recurrent Neural Network (RNN) architectures} such as \textit{SpaCy and NLTK}. The most state-of-the-art models \& techniques that make use of \textbf{Transformer architectures} can be found in the \textit{Hugging Face} library \cite{wolf_transformers_2020}. Transformer models particularly trained to analyze Twitter Sentiment can be identified to be highly accurate \& fast with classifying opinion mining data from social media.
+In order to apply these techniques, many past literature (as mentioned in Existing Work), point in the direction of using industrial-grade libraries that utilize \textbf{Recurrent Neural Network (RNN) architectures} such as \textit{SpaCy and NLTK}. The most state-of-the-art models \& techniques that make use of \textbf{Transformer architectures} can be found in the \textit{Hugging Face} library \cite{wolf_transformers_2020}. Transformer models particularly trained to analyze Twitter Sentiment can be identified to be highly accurate \& fast with classifying opinion mining data from social media \cite{noauthor_cardiffnlptwitter-roberta-base-sentiment_nodate, barbieri_tweeteval_2020}.
 
 \section{Common Challenges Faced by Sentiment-aware Recommendations Systems}
 One of the most common challenges faced by Recommendation Systems that wish to integrate sentiment analysis into any part of their architecture is the inability to filter out and classify sarcastic comments. This is an area of NLP that needs to be researched further together with the ability to classify the relevant comments.
@@ -377,7 +383,7 @@ Since the goal of the Recommendations System is to provide the user with multipl
 Apart from these metrics, quality-of-service measures such as CPU \& Memory usage can be considered for evaluation as well. 
 
 
-In the review questioning the advancements of Recommendation Systems \cite{dacrema_are_2019} the author mentions that the lack of used datasets and code-bases hinder the ability to properly benchmark and evaluate new research related to Recommendation Systems. The importance of reproducibility of research related to Recommendations Systems have future been elaborated in reviews that follow \cite{dacrema_troubling_2021, ferrari_dacrema_critically_2020, dacrema_methodological_2020}.
+In the review questioning the advancements of Recommendation Systems, \cite{dacrema_are_2019} the author mentions that the lack of used datasets and code bases hinders the ability to properly benchmark and evaluate new research related to Recommendation Systems. The importance of reproducibility of research related to Recommendations Systems has future been elaborated on in the reviews that follow \cite{dacrema_troubling_2021, ferrari_dacrema_critically_2020, dacrema_methodological_2020}.
 
 
 \section{Conclusion}
@@ -433,7 +439,7 @@ Since this review has covered many opinion mining-related work, the NLP techniqu
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{references_jrnl}
+\bibliography{main}
 
 %%
 %% If your work has an appendix, this is the place to put it.

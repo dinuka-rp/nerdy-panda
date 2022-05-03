@@ -21,9 +21,25 @@
 %% same distribution. (The sources need not necessarily be
 %% in the same archive or directory.)
 %%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%%
 %% The first command in your LaTeX source must be the \documentclass command.
-\documentclass[manuscript,screen,review]{acmart}
+\documentclass[manuscript,screen,natbib=false]{acmart}
+% [review]
 \usepackage{multirow}
+
+\usepackage[style=acmnumeric]{biblatex}
+\addbibresource{main.bib}
 
 
 %%
@@ -40,13 +56,12 @@
 % \setcopyright{acmcopyright}
 \copyrightyear{2022}
 \acmYear{2022}
-% \acmDOI{10.1145/1122445.1122456}
+% \acmDOI{XXXXXXX.XXXXXXX}
 
 %% These commands are for a PROCEEDINGS abstract or paper.
-% \acmConference[Woodstock '18]{Woodstock '18: ACM Symposium on Neural
-%   Gaze Detection}{June 03--05, 2018}{Woodstock, NY}
-% \acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
-%   June 03--05, 2018, Woodstock, NY}
+% \acmConference[Conference acronym 'XX]{Make sure to enter the correct
+%   conference title from your rights confirmation emai}{June 03--05,
+%   2018}{Woodstock, NY}
 % \acmPrice{15.00}
 % \acmISBN{978-1-4503-XXXX-X/18/06}
 
@@ -57,6 +72,19 @@
 %% receive a unique submission ID from the organizers
 %% of the event, and this ID should be used as the parameter to this command.
 %%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
 
 %%
 %% The majority of ACM publications use numbered citations and
@@ -121,7 +149,7 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
- Recommendations Systems allow users to identify trending items among a community while being timely and relevant to the user's expectations. When the purpose of various Recommendation Systems differs, the required type of recommendations also differs for each use case. While one Recommendation System may focus on recommending popular items, another may focus on recommending items that are comparable to the user's interests. Content-based filtering, user-to-user \& item-to-item Collaborative filtering, and more recently; Deep Learning methods have been brought forward by the researchers to achieve better quality recommendations. 
+Recommendations Systems allow users to identify trending items among a community while being timely and relevant to the user's expectations. When the purpose of various Recommendation Systems differs, the required type of recommendations also differs for each use case. While one Recommendation System may focus on recommending popular items, another may focus on recommending items that are comparable to the user's interests. Content-based filtering, user-to-user \& item-to-item Collaborative filtering, and more recently; Deep Learning methods have been brought forward by the researchers to achieve better quality recommendations. 
 
 Even though each of these methods has proven to perform well individually, there have been attempts to push the boundaries of their limitations. Following a wide range of methods, researchers have tried to expand on the capabilities of standard recommendation systems to provide the most effective recommendations to users while being more profitable from a business's perspective. This has been achieved by taking a hybrid approach when building models and architectures for Recommendation Systems.
 
@@ -167,6 +195,7 @@ This paper is a review of the novel models \& architectures of hybrid Recommenda
 \ccsdesc[300]{Information systems~Retrieval models and ranking}
 \ccsdesc[300]{Information systems~Data mining}
 \ccsdesc[100]{Applied computing~Online shopping}
+
 
 %%
 %% Keywords. The author(s) should pick words that accurately describe
@@ -392,40 +421,6 @@ In this review, the author has pointed out the reasons to as why baseline Recomm
 Since this review has covered many opinion mining-related work, the NLP techniques that can be applied to these, the common challenges faced and practices that could be followed to optimize the use of gathered opinions for recommendations purposes have been noted. Finally, since evaluating Recommendation Systems has also not been clearly handled in the past, the author has included a summary of several evaluation metrics that can be adopted together with each of their objected orientations.
 
 
-% \section{Acknowledgments}
-% Identification of funding sources and other support, and thanks to
-% individuals and groups that assisted in the research and the
-% preparation of the work should be included in an acknowledgment
-% section, which is placed just before the reference section in your
-% document.
-
-% This section has a special environment:
-% \begin{verbatim}
-%   \begin{acks}
-%   ...
-%   \end{acks}
-% \end{verbatim}
-% so that the information contained therein can be more easily collected
-% during the article metadata extraction phase, and to ensure
-% consistency in the spelling of the section heading.
-
-% Authors should not prepare this section as a numbered or unnumbered {\verb|\section|}; please use the ``{\verb|acks|}'' environment.
-
-% \section{Appendices}
-
-% If your work needs an appendix, add it before the
-% ``\verb|\end{document}|'' command at the conclusion of your source
-% document.
-
-% Start the appendix with the ``\verb|appendix|'' command:
-% \begin{verbatim}
-%   \appendix
-% \end{verbatim}
-% and note that in the appendix, sections are lettered, not
-% numbered. This document has two appendices, demonstrating the section
-% and subsection identification method.
-
-
 %%
 %% The acknowledgments section is defined using the "acks" environment
 %% (and NOT an unnumbered section). This ensures the proper
@@ -438,12 +433,13 @@ Since this review has covered many opinion mining-related work, the NLP techniqu
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
-\bibliographystyle{ACM-Reference-Format}
-\bibliography{main}
+% \bibliographystyle{ACM-Reference-Format}
+% \bibliography{sample-base}
+\printbibliography
 
 %%
 %% If your work has an appendix, this is the place to put it.
-\appendix
+% \appendix
 
 % \section{Research Methods}
 

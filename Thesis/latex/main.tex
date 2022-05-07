@@ -27,21 +27,21 @@
 \begin{document}
 
 \frontmatter
-\import{}{cover_page.tex}
+\import{frontmatter/}{cover_page.tex}
 
 % \pagenumbering{roman} % Start roman numbering - this is not needed in the book class - it's automatically handled.
 
 \chapter*{Declaration}
-\import{}{declaration.tex}
+\import{frontmatter/}{declaration.tex}
 
 \chapter*{Abstract}
-\import{}{abstract.tex}
+\import{frontmatter/}{abstract.tex}
 
 \chapter*{Publications}
-\import{}{publications.tex}
+\import{frontmatter/}{publications.tex}
 
 \chapter*{Acknowledgement}
-\import{}{acknowledgement.tex}
+\import{frontmatter/}{acknowledgement.tex}
 
 {\setstretch{1}  % only for toc, lof, lot, acronyms - change line spacing to 1 of Word
 
@@ -51,8 +51,9 @@
 \listoffigures
 % }
 
-{\let\clearpage\relax
-\listoftables}
+% {\let\clearpage\relax
+\listoftables
+% }
 
 % {\let\clearpage\relax
 \printglossary[type=\acronymtype,nonumberlist, style=super

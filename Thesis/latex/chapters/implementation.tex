@@ -44,7 +44,7 @@ These data requirements were sourced from the following sources and heavily pre-
 \item Global trends data
 \begin{itemize}
     \item Twitter data - From \textbf{Twitter developer API}.
-    \item Google Trends data - From Google Dataset Search \& unofficial \textbf{Google Trends Python API (Pytrends)}.
+    % \item Google Trends data - From Google Dataset Search \& unofficial \textbf{Google Trends Python API (Pytrends)}.
 %     \item Reddit data - From the Reddit API.
 \end{itemize}
 \item Ethereum Smart Contract data - From Etherscan \& OpenSea
@@ -65,6 +65,8 @@ All the data-points that could be used for recommendations and explored with ite
 Gin Gonic & It's extremely convenient to build \gls{api}s using Gin with Golang. It also has an easily debuggable log output \& claims smashing performance (up to 40 times faster!)\\
 \hline
 Ant Design & The world's second most popular React UI framework. Used in many industrial applications and has a wide range of components to match most UI requirements. Since it's tree-shaking compatible, it will build only the components that are used. This reduces build time of the frontend. The CSS is easily customizable as well. \\ 
+\hline
+Flask & Easy to build \gls{api}s for Python. \\ 
 \hline
 \end{longtable}
 
@@ -94,14 +96,20 @@ Pandas & Pandas dataframes allow a vast range of functionalities required for da
 Scikit-learn & Used for vectorizing text and generate similarity matrices between items, for recommendations. \\
 \hline
 NLTK & Convenient to use for \gls{nlp} data parsing, using the RAKE vectorizer. \\
+% \hline
+% SpaCy & Allows production-ready advanced \gls{nlp}. \\
+% \hline
+% Beautiful Soup & Convenient to scrape data from the internet. \\
 \hline
-SpaCy & Allows production-ready advanced \gls{nlp}. \\
+Hugging Face Transformers & Availability of pre-built high performance Open-source \gls{nlp} Transformer models. A model that was built using Pytorch was chosen due to it's speed. \\
 \hline
-Beautiful Soup & Convenient to scrape data from the internet. \\
+% Pytorch &  \\
+% \hline
+Matplotlib \& Seaborn & Has almost any type of visualization method for data analysis. \\
 \hline
-Matplotlib & Has almost any type of visualization method for data analysis. \\
-\hline
-React & A UI library that makes it easy to build interactive websites. Used as an alternative to using a framework since the vast array of capabilities and other integratable frameworks and libraries. It was important to develop an easily interactible frontend, since it will be the users’ point of interaction with the system. \\
+React & A UI library that makes it easy to build interactive websites. 
+% Used as an alternative to using a framework since the vast array of capabilities and other integratable frameworks and libraries. 
+It was important to develop an easily interactible frontend, since it will be the users’ point of interaction with the system. This was easily doable thanks to the vast array of capabilities offered by React. \\
 \hline
 \end{longtable}
 
@@ -120,8 +128,8 @@ VSCode & Extremely dynamic while being simple to use, yet powerful for front-end
 \hline
 Golang & Convenient syntax highlighting \& auto-completion for Golang development. \\
 \hline
-PyCharm & Well-equipped Python \gls{ide} with a lot of capabilities.\\
-\hline
+% PyCharm & Well-equipped Python \gls{ide} with a lot of capabilities.\\
+% \hline
 \end{longtable}
 
 
@@ -135,15 +143,15 @@ PyCharm & Well-equipped Python \gls{ide} with a lot of capabilities.\\
 \hline
 Programming Languages & Python, Golang, JavaScript \\
 \hline
-Development Framework & Gin Gonic \\
+Development Framework & Gin Gonic, Flask \\
 \hline
 UI Framework & Ant Design of React \\
 \hline
-Libraries & Pandas, Scikit-learn, NLTK, SpaCy, Beautiful Soup, Matplotlib, React \\
+Libraries & Pandas, Scikit-learn, NLTK, Matplotlib, React \\
 \hline
 IDE – Research & Google Colab \\
 \hline
-IDE – Product & VSCode, Golang, Pycharm \\
+IDE – Product & VSCode, Golang \\
 \hline
 Version Control & Git, GitHub \\
 \hline
@@ -170,10 +178,10 @@ Continuously being able to add new \gls{nft}s or even adding an initial set of \
 \label{fig:code-nft-data-mining}
 \end{figure}
 
-\vspace{-6mm}
+% \vspace{-6mm}
 The data extraction is done to extract information required for recommendations, to view details of items \& to save information for recommendation algorithms/ predictions that are potentially possible in the future.
 
-\subsubsection{\gls{nlp} Preprocessing, Vectorizing \& Recommendations}
+\subsubsection{Trait Content \& Rarity Preprocessing, Vectorizing \& Recommendations}
 
 %  -- using a countvectorizer with reasoning
 \begin{figure}[h!]
@@ -188,7 +196,7 @@ A Count Vectorizer was used from the \textit{scikit learn} library to vectorize 
 % generating a cosine similarity matrix
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{images/Implementation/code/cosine-matrix.png}
+\includegraphics[width=0.73\textwidth]{images/Implementation/code/cosine-matrix.png}
 \caption{Implementation code segment: Generating the Cosine Similarity Matrix \textit{(self-composed)}}
 \label{fig:code-cosine-matrix}
 \end{figure}
@@ -198,49 +206,74 @@ A Cosine Similarity Matrix is then generated from the \textit{scikit learn} libr
 % -- matching using trait-rarity - trait-rarity recommendations
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{images/Implementation/code/trait-rarity recommendations.png}
-\caption{Implementation code segment: Produce Trait Rarity Based Recommendations \textit{(self-composed)}}
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/trait-rarity-similarity functions.png}
+\caption{Implementation code segment: Generate Trait Rarity \& Similarity Recommendations \textit{(self-composed)}}
 \label{fig:code-trait-rarity-rec}
 \end{figure}
 
-The above recommendation generation algorithms were created to cater towards matching \gls{nft}s within a collection, since most of the major \gls{nft}-collections have comparatively more unique data in traits compared to descriptions. Trait rarity similarity was identified to be the best way to identify total uniqueness which represents the value of each \gls{nft}. Although the calculation of total rarity was explored by \textit{rarity tools} during the course of the research \autocite{raritytools_introducing_2021,raritytools_ranking_2021}, recommending similar total rarities is a novel implementation in the application domain.
+The recommendation generation algorithms in Fig \ref{fig:code-trait-rarity-rec} were created to cater towards matching \gls{nft}s within a collection, since most of the major \gls{nft}-collections have comparatively more unique data in traits compared to descriptions. Trait rarity similarity was identified to be the best way to identify total uniqueness which represents the value of each \gls{nft}. Although the calculation of total rarity was explored by \textit{rarity tools} during the course of the research \autocite{raritytools_introducing_2021,raritytools_ranking_2021}, recommending similar total rarities is a novel implementation in the application domain.
 
-\subsubsection{Trends Extraction, Preprocessing \& Recommendations}
+\subsubsection{Trends Sentiment Analysis, Preprocessing \& Recommendations}
+
+% tweet sentiment analysis
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{images/Implementation/code/sentiment-decision.png}
+\caption{Implementation code segment: Tweet Sentiment Analysis \textit{(self-composed)}}
+\label{fig:code-tweet-sentiment-analysis}
+\end{figure}
+
+The output of the Sentiment analysis model was returned as negative for negative sentiment, as it is for neutral sentiment \& multiplied by 2 for positive sentiment to make an impact on the rankings of the output produced.
+
 % trends data preprocessing
 % preprocessing trends
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{images/Implementation/code/preprocessing trends.png}
+\includegraphics[width=0.8\textwidth]{images/Implementation/code/pre-process twitter trends.png}
 \caption{Implementation code segment: Preprocess Trends Data \textit{(self-composed)}}
 \label{fig:code-preprocess-trends}
 \end{figure}
 
-The above code segment preprcoesses trends that are fetched from the live Twitter \gls{api}.
+The code segment in Fig \ref{fig:code-preprocess-trends} preprcoesses trends that are fetched from the live Twitter \gls{api}.
+
 
 % tweet volume extraction
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.95\textwidth]{images/Implementation/code/tweet-volume calculation.png}
-\caption{Implementation code segment: Calculating Trends Score \textit{(self-composed)}}
-\label{fig:code-tweet-volume-extraction}
-\end{figure}
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=0.95\textwidth]{images/Implementation/code/tweet-volume calculation.png}
+% \caption{Implementation code segment: Tweet volume calculation \textit{(self-composed)}}
+% \label{fig:code-tweet-volume-extraction}
+% \end{figure}
 
-The above code segment assigns a tweet volume for trends with no volume \& calculates the median Tweet volume which used to calculate the impact score of each trend.
+The code segment in \ref{} assigns a tweet volume for trends with no volume \& calculates the median Tweet volume which used to calculate the impact score of each trend.
 
 % calculating trends score for trends based recommendations
-The below code segment is used to calculate the trends score for each \gls{nft} and finally make trends-based recommendations.
+The code segment in Fig \ref{fig:code-trends-score-func} is used to calculate the trends score for each \gls{nft} and finally make trends-based recommendations.
+
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{images/Implementation/code/calculating trends score.png}
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/calculate trend-score func.png}
 \caption{Implementation code segment: Calculating Trends Score \textit{(self-composed)}}
+\label{fig:code-trends-score-func}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{images/Implementation/code/calculate trend-score 2.png}
+\caption{Implementation code segment: Calculating All Trends Scores \textit{(self-composed)}}
 \label{fig:code-trends-score}
 \end{figure}
 
 % ensembling
 
+% add testing, eval code to appendix and ref here under a new subsection
+
+\newpage
 \section{User Interface}
 
 The UI wireframes depicting the planned UI for the MVP (Minimum Viable Product) have been place in \textbf{\nameref{appendix:UI-Wireframes}}.
+
+% \section{Research Product Documentation}
 
 % \section{Self-Reflection}
 % % reflection on your current prototype.
@@ -254,7 +287,7 @@ The UI wireframes depicting the planned UI for the MVP (Minimum Viable Product) 
 % Embarrassing concepts of Decentralized Systems \& paving the path to Web 3.0, the research contribution brought forward in this project is expected to open up even more possibilities with time.
 
 % \section{Video Demo}
-% moved to eval
+% > moved to eval
 
 \section{Chapter Summary}
 The chapter comprised of the technologies, languages \& supporting tools utilized to implement the prototype developed as part of the research. Discussions accompany the code snippets and algorithms produced as part of core functionality.

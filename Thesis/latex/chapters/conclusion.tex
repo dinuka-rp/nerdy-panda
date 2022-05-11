@@ -61,7 +61,7 @@ Web Design and Development & The prototype was made with UI/ UX guidlines taught
 \section{Achievement of Learning Outcomes (LOs)}
 
 \vspace{-4mm}
-\begin{longtable}{|p{0.8\linewidth}|p{0.15\linewidth}|}
+\begin{longtable}{|p{0.8\linewidth}|p{0.1471\linewidth}|}
 \caption{Achievement of Learning Outcomes}\\ 
 \hline
 \textbf{Learnings} & \textbf{LOs}\endfirsthead 
@@ -76,14 +76,21 @@ Web Design and Development & The prototype was made with UI/ UX guidlines taught
 % Need to mention how did you overcome the problems and challenges
 
 \vspace{-4mm}
-\begin{longtable}{|p{0.473\linewidth}|p{0.473\linewidth}|}
+\begin{longtable}{|p{0.5\linewidth}|p{0.425\linewidth}|}
 \caption{Mitigations to Problems and Challenges Faced}\\ 
 \hline
 \textbf{Problem/ Challenge} & \textbf{Mitigation}\endfirsthead 
 \hline
- &  \\
+Low battery \& no internet connectivity caused due to long hours of powercuts for more than one month towards the end of the project. & Worked overnight, at co-working spaces and bought a UPS to power the Wifi router and  required peripherals. \\
 \hline
- & \\
+Since the \gls{nft} domain is very new \& there wasn't any research done on \gls{nft}s prior to starting the research, it was extremely difficult to find evaluators for the project. Those who were able to evaluate the project without much difficulty had comparatively low amount of paper-qualifications/ prior research experience. & The author had to explore the domain quite a lot. Evaluations were taken from multiple perspectives. Domain \& project evaluations from domain experts \& enthusiasts who were quite young \& senior researchers who could evaluate the project from the research process \& \gls{ml} perspectives. \\
+\hline
+Lack of \gls{nft} \& trends data \& rate-limited \gls{api}s with \gls{api}-keys. & 
+Scripts were written with time-outs to fetch \& preprocess data. \gls{api} keys were requested and received after multiple requests from OpenSea \& Twitter.\\
+\hline
+Testing \& evaluating the suggested models was challenging since there was no ground-truth to evaluate the models against. Especially, the trends based model. Testing \& evaluating \gls{recsys} models have known to be unclear/ challenging even based on Literature. & Modified testing \& evaluation were conducted for possible models, while algorithmic testing \& evaluation was conducted for the Trends based model. \\
+\hline
+The novelty of the research \& specificities of the domain made it pretty much impossible to benchmark the system against existing solution. & 2 of the newly created \gls{ml} models were benchmarked against each other. \\
 \hline
 \end{longtable}
 
@@ -96,30 +103,62 @@ After considering possible \gls{dl} methods to build a Recommendations Model, it
 \section{Limitations of the Research}
 % Should be linked with the test output
 \begin{itemize}
-% \item Since the \gls{nft} domain is very new \& there wasn't any research done on \gls{nft}s prior to starting the research, it was extremely difficult to find evaluators for the project. Those who were able to evaluate the project without much difficulty had comparatively low amount of paper-qualifications/ prior research experience.
-% \item Testing \& evaluating the suggested models was challenging
 \item Since this project was one of the very first of its kind, there were very limited number of scientific documents, data \& a clear direction to follow. 
-% \item The novelty of the research \& specificities of the domain made it pretty much impossible to benchmark the system against existing solutions. 2 of the \gls{ml} models were benchmarked against each other.
 \item  The limited time allocated for the research and the need to spend a lot of time mining \& pre-processing data, constrained the author from working on price-prediction and considering the trading \& value aspect of \gls{nft}s for recommendations.
 \item The trends based model is only effective if accurate, diverse descriptions are provided for \gls{nft}s.
 \item Personalized recommendations cannot be made with the current trends-based model.
 \item The words in hashtags aren't split although received as trends. This decreases the possibility of matching with keywords of items.
 \item The system works in a centralized manner.
 \item The current system may struggle with large-scale system \& data since pure Python \& Pandas are used for the data science component.
-\item % >> only twitter trends used
+\item The current prototype support only Twitter Trends, but can be expanded to use trends from other social platforms.
 \end{itemize}
 
 
 \section{Future Enhancements}
 \begin{itemize}
-\item 
+\item Identify possibilities of sourcing trends from more platforms such as Reddit, Discord, Google \& private forums.
+\item Attempt to create a decentralized Recommendations Eco-system using the Trends-based \gls{recsys} model, since the trends and items can come from two different sources.
+\item The current solution does a string match with keywords of each item. This may cause some matches to be skipped due to appearing in different forms. The \gls{nlp} technique, lemmatization could be a possible solution for this. Name Entity Recognition is another \gls{nlp} technique that could enhance the quality of trends data used. The significance of introducing such techniques will have to be tested since they may not have a significant impact on the output as most trends appear to be nouns.
+\item One of the short-comings to help match trends for this purpose is that Twitter trends contain hashtags as trends names at times. Either the developers from the end of Twitter could give a possible solution to it or hashtags may have to be pre-processed and separated.
+\item Work on a price-prediction model for \gls{nft}s. This may be extremely difficult due to the uniqueness of \gls{nft}s and due to the low amount of available data. A suggestion that I received for this was to attempt using a dataset of rare-physical artwork since they tend to resemble the nature of \gls{nft} pricing.
+\textit{Closer to the completion of this research, the author came across a \gls{nft} dataset \autocite{zomglings_ethereum_2021} that may be usable for price/ bid prediction training purposes.}
+\item As a substitute or addition to recently released movies, Amazon's \gls{dl} Neural Network Model could make use of trends, maybe to bolster recommendations for movies as well as e-commerce items. Due to the lack of \gls{nft} data, this \gls{dl} based approach could not be attempted.
+\item The trends could be categorized to identify similar trends that users seem to show interest in. It would be almost impossible to attempt this level of personalization without collecting user data. Therefore, the value of such an attempt may have to be justified.
 \end{itemize}
 
 
 \section{Achievement of the Contribution to Body of Knowledge}
 %  explain in para - maybe highlight points?
 
-% point out that no SL e-commerce site provides recommendations & this will help generate recommendations without having to collect & store a lot of data
+By concluding the research project, the author has managed to make contributions in the domain of \gls{nft}s, technology of Recommendation Systems and towards the research process.
+
+\subsection{Technical Contribution (Recommendations Systems)}
+
+\begin{enumerate}
+\item Social Trends influenced Recommendation Model - a novel \& innovative concept \& approach taken.
+\item Trends-score calculation equation \& algorithm
+\end{enumerate}
+
+\noindent Currently, no Sri Lankan based e-commerce site currently provides recommendations. The introduced Trends-based \gls{recsys} will help generate timely \& trending recommendations without having to collect \& store large amounts of user-data.
+
+\subsection{Domain Contribution (NFTs)}
+Identification \& analysis of factors that can be used to produce \gls{nft} item recommendations.
+
+\subsection{Additional Contributions}
+\begin{enumerate}
+\item Data Preprocessing scripts
+    \begin{enumerate}
+        \item Social media trends extraction
+        \item NFT Data extraction
+        \begin{itemize}
+            \item Trait rarity calculation
+        \end{itemize}
+     \end{enumerate}
+     
+\item NFT Asset datasets
+\item Created a Latex template for the expected thesis structure that can be used by IIT students in the future (\textit{Contributions made by Visal Rajapakse, Isala Piyarisi \& Akassharjun Shanmugarajah}).
+\end{enumerate}
+
 
 \section{Concluding Remarks}
 This concludes a research which lays the ground work for future \gls{nft} research projects \& novel ways of generating recommendations using sparse data. The introduced algorithm has the potential to evolve into a much complex \& utilitarian Recommendation System which may be embraced by digital systems \& internet of the next decade.

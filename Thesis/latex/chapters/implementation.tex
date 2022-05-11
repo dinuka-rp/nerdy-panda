@@ -236,16 +236,8 @@ The output of the Sentiment analysis model was returned as negative for negative
 
 The code segment in Fig \ref{fig:code-preprocess-trends} preprcoesses trends that are fetched from the live Twitter \gls{api}.
 
-
-% tweet volume extraction
-% \begin{figure}[h!]
-% \centering
-% \includegraphics[width=0.95\textwidth]{images/Implementation/code/tweet-volume calculation.png}
-% \caption{Implementation code segment: Tweet volume calculation \textit{(self-composed)}}
-% \label{fig:code-tweet-volume-extraction}
-% \end{figure}
-
-The code segment in \ref{} assigns a tweet volume for trends with no volume \& calculates the median Tweet volume which used to calculate the impact score of each trend.
+% tweet volume \& median
+The code segment in Fig \ref{fig:code-tweet-volume-calculation} of \textit{\nameref{appendix:implementation}} assigns a tweet volume for trends with no volume \& calculates the median Tweet volume which used to calculate the impact score of each trend.
 
 % calculating trends score for trends based recommendations
 The code segment in Fig \ref{fig:code-trends-score-func} is used to calculate the trends score for each \gls{nft} and finally make trends-based recommendations.
@@ -266,12 +258,14 @@ The code segment in Fig \ref{fig:code-trends-score-func} is used to calculate th
 
 % ensembling
 
+\section{Testing \& Evaluation Code of Models}
 % add testing, eval code to appendix and ref here under a new subsection
+All code snippets that were created for Testing \& Evaluation purposes have been mentioned under \textit{\nameref{appendix:implementation}}
 
 \newpage
 \section{User Interface}
 
-The UI wireframes depicting the planned UI for the MVP (Minimum Viable Product) have been place in \textbf{\nameref{appendix:UI-Wireframes}}.
+The UI wireframes depicting the planned UI for the MVP (Minimum Viable Product) have been place in \textit{\nameref{appendix:implementation}}.
 
 % \section{Research Product Documentation}
 
@@ -290,4 +284,4 @@ The UI wireframes depicting the planned UI for the MVP (Minimum Viable Product) 
 % > moved to eval
 
 \section{Chapter Summary}
-The chapter comprised of the technologies, languages \& supporting tools utilized to implement the prototype developed as part of the research. Discussions accompany the code snippets and algorithms produced as part of core functionality.
+The chapter comprised of the technologies, languages \& supporting tools utilized to implement the prototype developed as part of the research. Discussions accompany the code snippets and algorithms produced as part of core functionality. the UIs expectable in the Minimum Viable Porduct of the project have been presented.

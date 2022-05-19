@@ -597,28 +597,31 @@ FR1 & Users must be able to add a chosen NFT to be considered as the reference p
 \hline
 FR2 & Admins should be able to add a collection of NFT to be used as recommendations. & S & UC1 \\ 
 \hline
-FR3 & The system could be able to fetch relevant data of the NFT using an entered token Id. & C & UC1 \\ 
+FR3 & The system could be able to fetch relevant data of the NFT using an entered contract address \& token Id. & C & UC1 \\ 
 \hline
 FR4 & Users must be able to set/ adjust the bias and parameters to be used by the Recommendations System using parametric selections prior to generating recommendations. & M & UC2 \\ 
 \hline
-FR5 & Admins should be able to adjust the default bias of the Recommendations System. & S & UC3 \\ 
+FR5 & Admins should be able to choose the bias of the Recommendations System. & S & UC3 \\ 
 \hline
 FR6 & Users must be able to view recommendations with the click of a button. & M & UC4 \\
 \hline
 FR7 & The prototype could have an option to receive user feedback regarding the satisfaction level of the generated recommendations by the system. & C & UC4 \\
 \hline
-FR8 & The system could show the reasons for recommending each item to users. & C & UC4 \\ \hline
-FR9 & The system should generate price predictions and consider the results for recommendations. & S & UC5 \\ 
+FR8 & The system could show the reasons for recommending each item to users. & C & UC4 \\ 
 \hline
-FR10 & Opinion mining trends data must be used to generate \gls{nft} recommendations. & M & UC7 \\
+FR9 & The system should generate recommendations based on what the user expects to view & S & UC5 \\ 
+% \hline
+% FR9 & The system should generate price predictions and consider the results for recommendations. & S & UC5 \\ 
 \hline
-FR11 & A user could be allowed to feed data-points such as interested public figures, websites to use as opinion mining data for recommendations. & C & UC8 \\ 
+FR10 & Opinion mining trends data must be used to generate \gls{nft} recommendations. & M & UC8\\
+% \hline
+% FR11 & A user could be allowed to feed data-points such as interested public figures, websites to use as opinion mining data for recommendations. & C & UC8 \\ 
 \hline
-FR12 & Admins should be able to~feed data-points such as interested public figures, websites to use as opinion mining data for recommendations. & S & UC8 \\
+FR11 & Admins could be allowed to feed data-points such as various social networks, interested public figures, websites to use as opinion mining data for recommendations. & C & UC7 \\
 \hline
-FR13 & User-input could be aggregated and used as a reinforcement learning bias for the Recommendations Model. & C & NA  \\
+FR12 & User-input could be used as a reinforcement learning bias for the Recommendations Model. & C & NA  \\
 \hline
-FR14 & The system will not act as a decentralized system. & W & NA \\
+FR13 & The system will not act as a decentralized system. & W & NA \\
 \hline
 % FR15 search NFTs by tags?
 \end{longtable}

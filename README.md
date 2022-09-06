@@ -5,7 +5,7 @@ Research work related to producing NFT (Non-fungible Token) Recommendations.
 ## Research Papers
 [Exploration of the possibility of infusing Social Media Trends into generating NFT Recommendations](https://arxiv.org/abs/2205.11229)
 
-[An Analysis of the Features Considerable for NFT Recommendations](https://arxiv.org/abs/2205.00456)
+[An Analysis of the Features Considerable for NFT Recommendations](https://ieeexplore.ieee.org/document/9869497)
 
 ## Review Paper
 [A Review on Pushing the Limits of Baseline Recommendation Systems with the integration of Opinion Mining & Information Retrieval Techniques](https://arxiv.org/abs/2205.01802)
